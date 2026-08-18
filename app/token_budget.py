@@ -24,7 +24,7 @@ WORDS_TO_TOKENS_RATIO = 0.75  # tokens per word, rough English-prose average
 BUDGET_TOKENS = {
     "system_prompt": 400,
     "personality_directives": 150,
-    "conversation_history": 500,  # reserved, unspent — no Conversation Memory yet (later phase)
+    "conversation_history": 500,  # Conversation Memory (conversation_memory.py) — trimmed to fit, most-recent-first
     "trusted_knowledge": 4000,  # see module docstring for the deviation from the illustrative 2000
     "user_query": 100,
     "output_reserve": 800,
@@ -44,14 +44,20 @@ def estimate_tokens(text: str) -> int:
     return max(1, int(len(text.split()) / WORDS_TO_TOKENS_RATIO))
 
 
-def estimate_prompt_tokens(system_prompt: str, style_directives: str, trusted_knowledge: str, user_query: str) -> int:
+def estimate_prompt_tokens(
+    system_prompt: str, style_directives: str, trusted_knowledge: str, user_query: str,
+    conversation_history: str = "",
+) -> int:
     """Realized total for a specific assembled prompt — used by the Model
     Router's hard context-window filter (Section 27: 'will not route a
-    request whose realized prompt exceeds a model's window')."""
+    request whose realized prompt exceeds a model's window'). Defaults
+    conversation_history to "" so existing call sites without a session
+    history behave exactly as before."""
     return (
         estimate_tokens(system_prompt)
         + estimate_tokens(style_directives)
         + estimate_tokens(trusted_knowledge)
+        + estimate_tokens(conversation_history)
         + estimate_tokens(user_query)
         + BUDGET_TOKENS["output_reserve"]  # reserve room for the response too, not just the input
     )

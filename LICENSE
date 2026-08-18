@@ -1,0 +1,43 @@
+MIT License
+
+Copyright (c) 2026 N Sai Harshith Varma
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+NOTICE — scope of this license
+
+This license applies to all original code and documentation in this
+repository — including app/, ingestion/, CHANDLEROS_BLUEPRINT.md, and
+plan.md — EXCEPT the Chandleros/ directory.
+
+Chandleros/ contains a derived personality-analysis dataset built from
+dialogue drawn from the television sitcom "Friends" (Warner Bros.
+Television / NBCUniversal). As documented in
+Chandleros/dataset_provenance.json, that source dialogue is treated as
+copyrighted, unlicensed third-party input: it is not redistributed
+verbatim, and the original source file (data.parquet) is not included in
+this repository. The abstracted statistical/structural artifacts in
+Chandleros/ (frequency tables, structural templates, rule sets) describe
+patterns found in that dataset rather than republishing it, but this MIT
+grant does not extend to that directory's contents — no license is
+granted here with respect to any underlying "Friends" intellectual
+property, and downstream reuse of Chandleros/ should independently confirm
+its provenance and copyright status before relying on it.

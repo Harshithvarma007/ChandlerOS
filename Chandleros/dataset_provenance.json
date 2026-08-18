@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "source_file": "data.parquet",
-  "local_path_at_analysis_time": "/Users/harshithvarma/Desktop/upskill/data.parquet",
+  "local_path_at_analysis_time": "<redacted local path>/data.parquet",
   "row_count": 2535,
   "content_origin": {
     "description": "Dialogue lines drawn from the television sitcom 'Friends' (Warner Bros. Television / NBC), attributed to the character Chandler Bing and 187 other named cast members (dominant: Monica Geller, Joey Tribbiani, Ross Geller, Phoebe Buffay, Rachel Green; remainder are minor/guest characters).",

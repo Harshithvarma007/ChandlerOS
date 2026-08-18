@@ -2,11 +2,22 @@
 kaggle.json
 *.env
 .env.*
+!.env.example
+
+# Raw personal Medium data export — only ingestion/raw/medium/{posts_parsed,profile}.json
+# (separate, already-curated files) are actually used by the ingestion pipeline.
+# The rest of this raw export includes IP login history, session data, Medium
+# Partner Program earnings, and social-graph data that has no reason to be public.
+medium/
 
 # Python
 ingestion/.venv/
+app/.venv/
 __pycache__/
 *.pyc
+
+# Runtime state (cost_ledger.py) — operational, not source
+app/runtime.db
 
 # OS
 .DS_Store

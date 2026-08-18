@@ -25,7 +25,7 @@ MIN_ANSWER_WORDS = 2  # informational only, never blocks
 MAX_ANSWER_WORDS = 500
 
 LEAK_MARKERS = [
-    "system_instructions", "trusted_knowledge", "user_input",
+    "system_instructions", "trusted_knowledge", "recent_conversation", "user_input",
     "===begin_", "===end_",
 ]
 

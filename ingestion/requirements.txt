@@ -1,0 +1,5 @@
+requests>=2.31,<3.0
+python-dotenv>=1.0,<2.0
+kaggle>=2.2,<3.0
+jsonschema>=4.20,<5.0
+jupytext>=1.19,<2.0

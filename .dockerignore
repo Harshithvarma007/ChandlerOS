@@ -1,0 +1,14 @@
+.git
+.github
+**/.venv
+**/__pycache__
+**/*.pyc
+Chandleros
+medium
+ingestion/raw
+ingestion/.venv
+CHANDLEROS_BLUEPRINT.md
+plan.md
+kaggle.json
+.env
+.DS_Store

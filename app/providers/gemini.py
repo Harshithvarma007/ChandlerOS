@@ -96,9 +96,27 @@ def generate(request, model: str) -> GatewayResponse:
     data = resp.json()
     try:
         candidate = data["candidates"][0]
-        parts = candidate["content"]["parts"]
+        finish_reason_raw = candidate.get("finishReason", "STOP")
+        parts = candidate.get("content", {}).get("parts")
+        if not parts:
+            if finish_reason_raw == "MAX_TOKENS":
+                # Newer Gemini models spend completion tokens on a hidden
+                # "thinking" pass before visible content, same failure shape
+                # as Groq's gpt-oss reasoning models (providers/groq.py) — a
+                # too-small max_tokens exhausts the budget mid-thought and
+                # returns empty content. Surfaced as CONTEXT_TOO_LONG (not a
+                # raw KeyError -> UNKNOWN crash) for parity with that
+                # precedent; non-retriable by the same design reasoning
+                # (Section 21): the fix is sizing max_tokens up front, not a
+                # blind retry against the same model.
+                raise GatewayError(
+                    CONTEXT_TOO_LONG,
+                    "Gemini exhausted max_tokens on an internal reasoning pass before producing "
+                    "visible content", raw=data,
+                )
+            raise KeyError("content.parts")
         text = "".join(p.get("text", "") for p in parts)
-        finish_reason = candidate.get("finishReason", "STOP").lower()
+        finish_reason = finish_reason_raw.lower()
     except (KeyError, IndexError) as exc:
         raise GatewayError(UNKNOWN, f"Unexpected Gemini response shape: {data}", raw=data) from exc
 

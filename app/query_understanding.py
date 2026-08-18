@@ -61,12 +61,13 @@ SIMPLE_FACT_PATTERNS = [
 ]
 
 # Ellipsis/pronoun-reference opener heuristic (Section 25/26's
-# context_dependent flag). Real pronoun resolution against session history
-# is Query Understanding's job once Conversation Memory (Section 28) exists
-# — that's a later phase, not built yet. This catches the OBVIOUS surface
-# patterns ("what about that one") without pretending to resolve them; it
-# exists so caching has a real (if partial) safety signal now rather than
-# silently treating every query as cacheable until real session state lands.
+# context_dependent flag). Real resolution against session history now
+# happens in understand() below via the optional `prior_entities` argument
+# (Conversation Memory, Section 28) — this list only has to catch the
+# surface pattern; understand() decides what to do about it. The flag also
+# still disables caching for every match regardless of whether resolution
+# from prior_entities succeeds (Section 25/26) — a resolved-from-context
+# turn is still session-specific and must never be cached.
 CONTEXT_DEPENDENT_PATTERNS = [
     r"^(what|how) about\b",
     r"^and (what about|that|this|it)\b",
@@ -90,6 +91,7 @@ class QueryUnderstanding:
     unresolved_mentions: list = field(default_factory=list)
     confidence: float = 0.0
     context_dependent: bool = False  # Section 25/26: disables response/semantic caching for this turn
+    resolved_from_context: bool = False  # Section 28: entities inherited from prior_entities, not matched fresh
 
 
 def _normalize(text: str) -> str:
@@ -157,7 +159,12 @@ def _extract_entities(normalized: str, alias_index: dict):
     return list(resolved.values())
 
 
-def understand(raw_query: str, conn=None) -> QueryUnderstanding:
+def understand(raw_query: str, conn=None, prior_entities: list = None) -> QueryUnderstanding:
+    """`prior_entities` (Conversation Memory, Section 28) is the calling
+    session's most-recently-resolved entities, when available — used only
+    as a fallback when the current query itself resolves nothing AND
+    matches an obvious ellipsis/pronoun opener, never to override entities
+    the query text itself actually names."""
     owns_conn = conn is None
     if owns_conn:
         conn = get_connection()
@@ -169,6 +176,12 @@ def understand(raw_query: str, conn=None) -> QueryUnderstanding:
         query_class = _classify(normalized)
         alias_index = _load_alias_index(conn)
         resolved = _extract_entities(normalized, alias_index)
+        context_dependent = _is_context_dependent(normalized)
+
+        resolved_from_context = False
+        if not resolved and context_dependent and prior_entities:
+            resolved = list(prior_entities)
+            resolved_from_context = True
 
         if not resolved and query_class != "unknown" and query_class not in ENTITY_OPTIONAL_CLASSES:
             # Ambiguous case: pattern matched a question shape but no known entity.
@@ -176,6 +189,8 @@ def understand(raw_query: str, conn=None) -> QueryUnderstanding:
             query_class = "unknown"
 
         confidence = 1.0 if (resolved or query_class in ENTITY_OPTIONAL_CLASSES) else 0.0
+        if resolved_from_context:
+            confidence = min(confidence, 0.85)  # inherited, not freshly matched — slightly less certain
 
         return QueryUnderstanding(
             raw_query=raw_query,
@@ -184,7 +199,8 @@ def understand(raw_query: str, conn=None) -> QueryUnderstanding:
             resolved_entities=resolved,
             unresolved_mentions=[],
             confidence=confidence,
-            context_dependent=_is_context_dependent(normalized),
+            context_dependent=context_dependent,
+            resolved_from_context=resolved_from_context,
         )
     finally:
         if owns_conn:

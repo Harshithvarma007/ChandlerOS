@@ -22,6 +22,7 @@ from cache import TTLCache
 from chandler_fallback import build_fallback_response
 from circuit_breaker import get_breaker
 from context_builder import build_context
+from conversation_memory import format_turns_for_prompt, get_conversation_memory
 from db import get_knowledge_version
 from degradation import FALLBACK as DEGRADATION_FALLBACK
 from degradation import get_degradation_tracker
@@ -49,7 +50,7 @@ from retrieval_router import (
 )
 from semantic_cache import get_semantic_cache
 from structured_output import build_structured_response
-from token_budget import estimate_prompt_tokens
+from token_budget import BUDGET_TOKENS, estimate_prompt_tokens
 from vector_retrieval import retrieve_chunks
 from viral_mode import VIRAL, get_viral_tracker, max_output_tokens_for_state
 
@@ -98,10 +99,11 @@ DEFAULT_MAX_OUTPUT_TOKENS = 1024  # matches GatewayRequest's own default; named 
                                    # trimming has a base to scale from without importing gateway_types just for this
 
 
-def _rejected(reason, message, budget):
+def _rejected(reason, message, budget, retry_after_s=None):
     return {
         "answer": message, "rejected_reason": reason, "used_llm": False,
         "budget_ms_elapsed": budget.elapsed_ms() if budget else None,
+        "retry_after_s": retry_after_s,
     }
 
 
@@ -140,10 +142,23 @@ def ask(question: str, ip: str = DEFAULT_IP, session_id: str = DEFAULT_SESSION) 
                 f"rate_limited:{rate_result.layer}",
                 f"Rate limit reached ({rate_result.layer}).{retry_note}",
                 budget,
+                retry_after_s=rate_result.retry_after_s,
             )
 
     with get_limiter().in_flight():
-        return _ask_inner(question, budget)
+        result = _ask_inner(question, budget, session_id)
+
+    # Conversation Memory (Section 28): recorded once here, after every
+    # non-rejected path (all of _ask_inner's return branches carry
+    # query_understanding — verified against every return statement below)
+    # rather than scattered across each branch. Rejections above never
+    # reach here, correctly — an abuse/rate-limit rejection isn't a real
+    # conversational turn.
+    qu = result.get("query_understanding")
+    get_conversation_memory().record_turn(
+        session_id, question, result.get("answer", ""), qu.resolved_entities if qu else [],
+    )
+    return result
 
 
 def _cache_hit_result(cached, qu, strategy, policy, budget, cache_type: str) -> dict:
@@ -157,11 +172,14 @@ def _cache_hit_result(cached, qu, strategy, policy, budget, cache_type: str) -> 
     }
 
 
-def _ask_inner(question: str, budget: RequestBudget) -> dict:
+def _ask_inner(question: str, budget: RequestBudget, session_id: str) -> dict:
     get_viral_tracker().record_request()  # Section 36: interpretation of existing traffic, one counter's worth of new instrumentation
 
+    memory = get_conversation_memory()
+    prior_entities = memory.most_recent_entities(session_id)
+
     with budget.stage("query_understanding"):
-        qu = understand(question)
+        qu = understand(question, prior_entities=prior_entities)
     strategy = decide_strategy(qu)
 
     # Injection detection (Section 30) — a signal, not a block. Flagged
@@ -283,7 +301,17 @@ def _ask_inner(question: str, budget: RequestBudget) -> dict:
 
     style_directives = render_directives(policy)
 
-    prompt_text = build_prompt(context, qu, style_directives=style_directives)
+    # Conversation Memory (Section 28): prior turns from *this* session only,
+    # rendered as a separately-fenced, non-authoritative section — never
+    # merged into TRUSTED_KNOWLEDGE (prompt.py's build_prompt keeps them
+    # fenced apart; SYSTEM_INSTRUCTIONS explicitly tells the model this
+    # section is continuity-only, not a fact source).
+    recent_turns = memory.get_recent_turns(session_id)
+    conversation_history_text = format_turns_for_prompt(recent_turns, BUDGET_TOKENS["conversation_history"])
+
+    prompt_text = build_prompt(
+        context, qu, style_directives=style_directives, conversation_history_text=conversation_history_text,
+    )
 
     # task_complexity_hint (Section 17): set deterministically here by the
     # retrieval strategy already decided, never guessed by the Router itself.
@@ -293,6 +321,7 @@ def _ask_inner(question: str, budget: RequestBudget) -> dict:
     # filter — computed once from the actual assembled prompt, not guessed.
     estimated_prompt_tokens = estimate_prompt_tokens(
         SYSTEM_INSTRUCTIONS, style_directives, context.trusted_knowledge_text, qu.raw_query,
+        conversation_history=conversation_history_text,
     )
 
     # Viral Mode (Section 36, HIGH_TRAFFIC/VIRAL row): "output token budget
@@ -452,8 +481,11 @@ def ask_stream(question: str, ip: str = DEFAULT_IP, session_id: str = DEFAULT_SE
             return
 
     with get_limiter().in_flight():
+        memory = get_conversation_memory()
+        prior_entities = memory.most_recent_entities(session_id)
+
         with budget.stage("query_understanding"):
-            qu = understand(question)
+            qu = understand(question, prior_entities=prior_entities)
         strategy = decide_strategy(qu)
 
         injection_result = check_injection(qu.raw_query)
@@ -510,10 +542,15 @@ def ask_stream(question: str, ip: str = DEFAULT_IP, session_id: str = DEFAULT_SE
             return
 
         style_directives = render_directives(policy)
-        prompt_text = build_prompt(context, qu, style_directives=style_directives)
+        recent_turns = memory.get_recent_turns(session_id)
+        conversation_history_text = format_turns_for_prompt(recent_turns, BUDGET_TOKENS["conversation_history"])
+        prompt_text = build_prompt(
+            context, qu, style_directives=style_directives, conversation_history_text=conversation_history_text,
+        )
         task_complexity_hint = "complex" if (strategy != GRAPH_ONLY or escalated or qu.query_class == "multi_hop") else "simple"
         estimated_prompt_tokens = estimate_prompt_tokens(
             SYSTEM_INSTRUCTIONS, style_directives, context.trusted_knowledge_text, qu.raw_query,
+            conversation_history=conversation_history_text,
         )
 
         gateway_request = GatewayRequest(
@@ -559,6 +596,11 @@ def ask_stream(question: str, ip: str = DEFAULT_IP, session_id: str = DEFAULT_SE
             "validation_status": validation_status, "streamed": True,
             "budget_ms_elapsed": budget.elapsed_ms(),
         })
+        # Conversation Memory (Section 28): only the full-success path records
+        # a turn here — the early-return refusal/error paths above don't (a
+        # documented, contained gap consistent with this function's own
+        # "deliberately duplicates rather than shares" design note).
+        memory.record_turn(session_id, question, full_text, qu.resolved_entities)
 
 
 def main():

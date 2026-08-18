@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r app/requirements.txt
+
+      - name: Regression suite (Phases 0-8 — no live provider calls)
+        working-directory: app
+        run: |
+          for i in 1 2 3 4 5 6 7 8; do
+            python eval_phase$i.py
+          done
+
+      - name: Conversation memory checks (live-call sub-check auto-skips without provider keys)
+        working-directory: app
+        run: python eval_conversation_memory.py
+
+      # Skips entirely (prints [SKIP], exits 0) unless GEMINI_API_KEY/GROQ_API_KEY
+      # are set — not configured as repo secrets here on purpose: each run that
+      # DOES execute this consumes live free-tier LLM quota (Section 49's own
+      # "free tiers are not unlimited" point), which isn't something to spend
+      # on every push without a deliberate choice to do so.
+      - name: LLM-as-judge regression (opt-in — set repo secrets to enable live runs)
+        working-directory: app
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python eval_llm_judge.py
+
+      - name: Dependency vulnerability scan
+        run: |
+          pip install --quiet pip-audit
+          pip-audit -r app/requirements.txt
+
+      - name: API layer smoke test (no live provider calls)
+        working-directory: app
+        run: python test_api_smoke.py
