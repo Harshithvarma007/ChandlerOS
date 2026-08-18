@@ -47,7 +47,7 @@ SESSION_COOKIE_MAX_AGE_S = 86400
 ALLOWED_ORIGINS = [
     o.strip() for o in os.environ.get(
         "ALLOWED_ORIGINS",
-        "https://harshithvarma.dev,https://www.harshithvarma.dev,http://localhost:5173",
+        "https://harshithvarma.in,https://www.harshithvarma.in,http://localhost:5173,http://localhost:3000",
     ).split(",") if o.strip()
 ]
 # Spoofable unless a reverse proxy in front of this process is trusted to set
