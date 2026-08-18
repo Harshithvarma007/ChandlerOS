@@ -1,0 +1,589 @@
+{
+  "phase": "10 - Emotional Analysis",
+  "methodology": {
+    "sampling": "Systematic stratified sample: response_word_count split into 3 terciles over the full dataset (cutoffs computed on all N rows), rows sorted by id within each tercile, every 5th row selected (systematic sampling within stratum).",
+    "tercile_cutoffs_word_count": {
+      "short_max": 5,
+      "medium_max": 10
+    },
+    "sample_size": 508,
+    "full_dataset_size": 2535,
+    "categories_used": [
+      "happiness",
+      "excitement",
+      "sadness",
+      "frustration",
+      "anger",
+      "embarrassment",
+      "awkwardness",
+      "uncertainty",
+      "fear",
+      "vulnerability",
+      "seriousness",
+      "celebration",
+      "disappointment",
+      "confusion"
+    ],
+    "measurement_method": "context_raw classified into 1+ emotional-context categories via curated regex/keyword lexicons (semantic judgment operationalized as lexicon rules; lexicons were calibrated by checking match-rate distributions against the full dataset to avoid degenerate over/under-matching before scoring the sample). response_raw scored for each behavior dimension via lexical-marker presence (0/1 per response), averaged per matched context category. verbosity_avg_word_count uses response_word_count directly (OBSERVED). directness = assertion-marker rate minus a discount for hedge-marker rate, clipped to [0,1]. conversational_energy is a composite of exclamation-mark rate, average word count, and humor-marker rate.",
+    "labeling_note": "A response's context can match more than one emotional-context category (multi-label); rows with no lexicon hits default to 'neutrality'. Sarcasm/humor/self-deprecation are lexically detected on explicit surface markers only; irony and structural (non-lexical) jokes are under-counted by construction, so these rates should be read as conservative lower bounds, not ceilings.",
+    "tag_legend": "OBSERVED = directly counted from data fields. INFERRED = derived by applying the stated lexicon/heuristic rules to text. HYPOTHESIS = interpretive claim beyond what the counts alone establish."
+  },
+  "context_frequency_in_sample": {
+    "tag": "INFERRED",
+    "counts": {
+      "neutrality": 366,
+      "uncertainty": 43,
+      "excitement": 30,
+      "celebration": 19,
+      "happiness": 14,
+      "sadness": 13,
+      "seriousness": 11,
+      "anger": 11,
+      "awkwardness": 11,
+      "frustration": 4,
+      "vulnerability": 4,
+      "fear": 3,
+      "confusion": 2,
+      "disappointment": 2
+    },
+    "pct_of_sample": {
+      "neutrality": 72.0,
+      "uncertainty": 8.5,
+      "excitement": 5.9,
+      "celebration": 3.7,
+      "happiness": 2.8,
+      "sadness": 2.6,
+      "seriousness": 2.2,
+      "anger": 2.2,
+      "awkwardness": 2.2,
+      "frustration": 0.8,
+      "vulnerability": 0.8,
+      "fear": 0.6,
+      "confusion": 0.4,
+      "disappointment": 0.4
+    }
+  },
+  "context_to_behavior_matrix": {
+    "tag": "INFERRED (behavior scores) / OBSERVED (verbosity_avg_word_count)",
+    "matrix": {
+      "neutrality": {
+        "sample_n": 366,
+        "confidence": "adequate",
+        "humor_level": {
+          "score": 0.022,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.003,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.011,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 9.75,
+        "directness": {
+          "score": 0.062,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.03,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.005,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.314,
+          "band": "med"
+        }
+      },
+      "excitement": {
+        "sample_n": 30,
+        "confidence": "adequate",
+        "humor_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 10.07,
+        "directness": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.033,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.317,
+          "band": "med"
+        }
+      },
+      "sadness": {
+        "sample_n": 13,
+        "confidence": "medium (small sample, interpret cautiously)",
+        "humor_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 6.23,
+        "directness": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.216,
+          "band": "med"
+        }
+      },
+      "celebration": {
+        "sample_n": 19,
+        "confidence": "medium (small sample, interpret cautiously)",
+        "humor_level": {
+          "score": 0.053,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 9.89,
+        "directness": {
+          "score": 0.084,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.294,
+          "band": "med"
+        }
+      },
+      "seriousness": {
+        "sample_n": 11,
+        "confidence": "medium (small sample, interpret cautiously)",
+        "humor_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 8.27,
+        "directness": {
+          "score": 0.091,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.355,
+          "band": "high"
+        }
+      },
+      "anger": {
+        "sample_n": 11,
+        "confidence": "medium (small sample, interpret cautiously)",
+        "humor_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 11.45,
+        "directness": {
+          "score": 0.055,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.115,
+          "band": "low"
+        }
+      },
+      "awkwardness": {
+        "sample_n": 11,
+        "confidence": "medium (small sample, interpret cautiously)",
+        "humor_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 9.27,
+        "directness": {
+          "score": 0.091,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.229,
+          "band": "med"
+        }
+      },
+      "uncertainty": {
+        "sample_n": 43,
+        "confidence": "adequate",
+        "humor_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.023,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 9.44,
+        "directness": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.373,
+          "band": "high"
+        }
+      },
+      "happiness": {
+        "sample_n": 14,
+        "confidence": "medium (small sample, interpret cautiously)",
+        "humor_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 13.21,
+        "directness": {
+          "score": 0.114,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.311,
+          "band": "med"
+        }
+      },
+      "confusion": {
+        "sample_n": 2,
+        "confidence": "low (n<10, indicative only, not reliable for extrapolation)",
+        "humor_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 4.5,
+        "directness": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.045,
+          "band": "low"
+        }
+      },
+      "fear": {
+        "sample_n": 3,
+        "confidence": "low (n<10, indicative only, not reliable for extrapolation)",
+        "humor_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 9,
+        "directness": {
+          "score": 0.333,
+          "band": "med"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.09,
+          "band": "low"
+        }
+      },
+      "frustration": {
+        "sample_n": 4,
+        "confidence": "low (n<10, indicative only, not reliable for extrapolation)",
+        "humor_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 4,
+        "directness": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.165,
+          "band": "med"
+        }
+      },
+      "vulnerability": {
+        "sample_n": 4,
+        "confidence": "low (n<10, indicative only, not reliable for extrapolation)",
+        "humor_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 14,
+        "directness": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.64,
+          "band": "high"
+        }
+      },
+      "disappointment": {
+        "sample_n": 2,
+        "confidence": "low (n<10, indicative only, not reliable for extrapolation)",
+        "humor_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "sarcasm_level": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "warmth": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "verbosity_avg_word_count": 5,
+        "directness": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "self_deprecation": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "empathy": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "reassurance": {
+          "score": 0.0,
+          "band": "low"
+        },
+        "conversational_energy": {
+          "score": 0.3,
+          "band": "med"
+        }
+      }
+    }
+  }
+}

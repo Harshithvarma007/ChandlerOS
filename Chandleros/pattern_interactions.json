@@ -1,0 +1,79 @@
+{
+  "phase": 20,
+  "title": "Pattern Interactions",
+  "purpose": "Identifies feature combinations that are disproportionately characteristic, rather than analyzing every feature independently.",
+  "interactions": [
+    {
+      "interaction": "sarcasm + rhetorical_question",
+      "evidence": "sarcasm_profile.json: rhetorical_or_sarcastic_question_tone marker present in 13.0% of sarcastic instances; conversation_timing.json: rhetorical-question-openers cluster in disagreement_humor/teasing discourse categories, which independently correlate with sarcasm.",
+      "characteristic_strength": "medium",
+      "tag": "INFERRED"
+    },
+    {
+      "interaction": "self_deprecation + awkward/serious context (NOT + praise)",
+      "evidence": "self_deprecation.json: triggers are awkward(55.6%)/unprompted(33.3%)/after_mistake(11.1%)/after_praise(0%); emotional_context shows 67% of self-deprecation instances occur in serious/awkward context tone vs 52% baseline light-context share of the sample.",
+      "characteristic_strength": "high (within the rare self-deprecation category)",
+      "tag": "INFERRED"
+    },
+    {
+      "interaction": "humor + awkwardness",
+      "evidence": "humor_statistics.json: awkwardness is a mechanism in its own right (6.4% of sampled rows) and co-occurs with deadpan/absurdity; discourse_patterns.json: teasing and observation_punchline (both comic structures) are frequently triggered by awkward or socially tense preceding lines per typical_context_by_structure.",
+      "characteristic_strength": "medium",
+      "tag": "INFERRED"
+    },
+    {
+      "interaction": "warmth + teasing",
+      "evidence": "discourse_patterns.json: teasing (10.4% of sample) is structurally described as targeting a friend's stated flaw/situation, implying an underlying affectionate relationship even though social_behavior.json's lexical-marker warmth score is near-zero -- this is a case where the STRUCTURAL evidence (teasing directed at friends, never strangers, in a sitcom-friend-group context) supports an underlying warmth that the lexical-marker method cannot detect directly.",
+      "characteristic_strength": "medium (structural inference, not directly measured co-occurrence)",
+      "tag": "HYPOTHESIS"
+    },
+    {
+      "interaction": "short sentence + punchline",
+      "evidence": "sentence_rhythm.json: short_punchline_structure requires a >=7-word setup and a <=4-word final sentence by definition; conversation_timing.json independently confirms punchline-at-end concentration (65.2% of humor-present responses) and that 'whole' (single-short-sentence) humor dominates short responses.",
+      "characteristic_strength": "high",
+      "tag": "OBSERVED (by construction of the two measurements) + INFERRED (generalization)"
+    },
+    {
+      "interaction": "uncertainty + humor",
+      "evidence": "emotional_behavior.json: uncertainty context shows the joint-highest conversational_energy score (0.373) of any category alongside seriousness; response_intents.json: express_uncertainty intent (6.3% baseline) frequently co-occurs with question_question discourse structure, which is itself linked to deflection/disbelief humor.",
+      "characteristic_strength": "medium",
+      "tag": "INFERRED"
+    },
+    {
+      "interaction": "seriousness + reduced sarcasm",
+      "evidence": "sarcasm_profile.json: sarcasm rate is lowest in serious/vulnerable context (49.1%) vs light context (65.3%) -- a directly measured ~16pp reduction.",
+      "characteristic_strength": "high",
+      "tag": "OBSERVED"
+    },
+    {
+      "interaction": "emotional vulnerability + reduced humor/entertain-suppression is PARTIALLY CONTRADICTED",
+      "evidence": "response_intents.json: entertain intent is actually HIGHER in distress-signaling context (69.2%) than mundane context (52.5%) -- the naive hypothesis that vulnerability suppresses humor does NOT hold for the 'entertain' intent, even though sarcasm specifically IS suppressed (see previous row). This is an important nuance: Chandler's SARCASM (an edged, potentially dismissive register) drops in vulnerable moments, but his general HUMOR/ENTERTAIN drive does not -- consistent with humor being redirected toward gentler mechanisms (e.g. reassurance-with-a-joke, per discourse_patterns.json's 'reassurance undercut by joke' template) rather than being switched off.",
+      "characteristic_strength": "high (and important as a corrective to the naive assumption)",
+      "tag": "INFERRED"
+    },
+    {
+      "interaction": "technical/explanatory content + conversational aside",
+      "evidence": "Not strongly evidenced in this dataset: technical_vocabulary is rare overall (0.093% of tokens, lexical_categories.json) and no worker reported a distinct 'technical explanation interrupted by aside' pattern. Included here as a checked-and-not-found interaction per the master spec's requirement to check this combination explicitly.",
+      "characteristic_strength": "low / not supported",
+      "tag": "HYPOTHESIS (explicitly checked, evidence insufficient to confirm)"
+    },
+    {
+      "interaction": "response length + discourse structure + intent (three-way)",
+      "evidence": "discourse_patterns.json + response_intents.json + humor_statistics.json jointly show a single underlying gradient: as response length increases, direct/reactive structures (direct_answer, question_question, emotional_response) give way to layered comic structures (observation_punchline, setup_punchline, disagreement_humor, agreement_escalation), the entertain intent share rises from 28% to 78%, and the humor rate rises from 59.5% to 94.2%. All three independently-sampled files converge on the same length-driven gradient.",
+      "characteristic_strength": "very high -- the single strongest cross-file interaction found in this dataset",
+      "tag": "INFERRED (triangulated across 3 independent samples)"
+    },
+    {
+      "interaction": "addressee identity + insecurity/hedge marker rate",
+      "evidence": "social_behavior.json: hedge/insecurity marker rate is ~4x higher when addressing Rachel Green (9.9%) than Joey Tribbiani (2.2%) or Ross Geller (2.4%), all groups above the n>=15 confidence threshold.",
+      "characteristic_strength": "medium-high",
+      "tag": "INFERRED"
+    },
+    {
+      "interaction": "deadpan (delivery mode) + understatement/sarcasm (content mode)",
+      "evidence": "humor_statistics.json: deadpan's top co-occurrence pairs are with understatement (7.1% of humorous sample) and sarcasm (5.6%), supporting the interpretation that deadpan functions as a delivery-mode tag layered onto a content mechanism, not a standalone joke type.",
+      "characteristic_strength": "high",
+      "tag": "OBSERVED co-occurrence counts; INFERRED interpretation"
+    }
+  ]
+}

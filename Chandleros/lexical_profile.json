@@ -1,0 +1,1036 @@
+{
+  "meta": {
+    "dataset": "parsed_dataset.json (2535 Chandler Bing response records, i.i.d. context/response pairs from Friends scripts)",
+    "sample_size_responses": 2535,
+    "sample_size_word_tokens": 23781,
+    "measurement_method": "All token counts computed on the pre-tokenized response_words field (regex [A-Za-z']+, alpha tokens with apostrophes preserved, lowercased for counting).",
+    "ip_safety_note": "This file contains single-word frequency statistics and short (2-3 word) function-word n-grams only. No verbatim lines or distinctive multi-word quotes are reproduced."
+  },
+  "vocabulary_size": {
+    "value": 3141,
+    "definition": "count of distinct lowercased word types across all 2535 responses",
+    "tag": "OBSERVED"
+  },
+  "type_token_ratio": {
+    "value": 0.13208,
+    "definition": "vocab_size / total_word_count, computed over the full pooled corpus (not per-response averaged)",
+    "caveat": "Pooled TTR is sensitive to corpus size and is not directly comparable to per-utterance TTR figures; provided as a single-number summary only.",
+    "tag": "OBSERVED"
+  },
+  "lexical_diversity_supplementary_indices": {
+    "guiraud_root_ttr": {
+      "value": 20.368,
+      "definition": "vocab_size / sqrt(total_word_count); less sensitive to corpus-size than raw TTR"
+    },
+    "herdan_log_ttr_C": {
+      "value": 0.7991,
+      "definition": "log(vocab_size) / log(total_word_count)"
+    },
+    "tag": "OBSERVED"
+  },
+  "hapax_legomena": {
+    "count": 1803,
+    "pct_of_vocabulary": 57.4,
+    "pct_of_all_tokens": 7.58,
+    "interpretation": "About 57% of distinct word types occur only once across 2535 responses -- consistent with short, topic-varied conversational utterances rather than a narrow, repetitive script vocabulary.",
+    "interpretation_tag": "INFERRED",
+    "tag_measurement": "OBSERVED (counts), INFERRED (interpretation)"
+  },
+  "top_unigrams": {
+    "description": "Top 40 most frequent lowercased word tokens by raw count and per-1000-word normalized frequency.",
+    "items": [
+      {
+        "token": "you",
+        "count": 865,
+        "per_1000": 36.374
+      },
+      {
+        "token": "i",
+        "count": 772,
+        "per_1000": 32.463
+      },
+      {
+        "token": "the",
+        "count": 624,
+        "per_1000": 26.239
+      },
+      {
+        "token": "a",
+        "count": 484,
+        "per_1000": 20.352
+      },
+      {
+        "token": "to",
+        "count": 438,
+        "per_1000": 18.418
+      },
+      {
+        "token": "and",
+        "count": 359,
+        "per_1000": 15.096
+      },
+      {
+        "token": "that",
+        "count": 324,
+        "per_1000": 13.624
+      },
+      {
+        "token": "it",
+        "count": 314,
+        "per_1000": 13.204
+      },
+      {
+        "token": "is",
+        "count": 264,
+        "per_1000": 11.101
+      },
+      {
+        "token": "oh",
+        "count": 235,
+        "per_1000": 9.882
+      },
+      {
+        "token": "we",
+        "count": 235,
+        "per_1000": 9.882
+      },
+      {
+        "token": "what",
+        "count": 231,
+        "per_1000": 9.714
+      },
+      {
+        "token": "hey",
+        "count": 219,
+        "per_1000": 9.209
+      },
+      {
+        "token": "of",
+        "count": 211,
+        "per_1000": 8.873
+      },
+      {
+        "token": "no",
+        "count": 207,
+        "per_1000": 8.704
+      },
+      {
+        "token": "in",
+        "count": 204,
+        "per_1000": 8.578
+      },
+      {
+        "token": "this",
+        "count": 197,
+        "per_1000": 8.284
+      },
+      {
+        "token": "i'm",
+        "count": 195,
+        "per_1000": 8.2
+      },
+      {
+        "token": "so",
+        "count": 191,
+        "per_1000": 8.032
+      },
+      {
+        "token": "me",
+        "count": 187,
+        "per_1000": 7.863
+      },
+      {
+        "token": "my",
+        "count": 178,
+        "per_1000": 7.485
+      },
+      {
+        "token": "okay",
+        "count": 167,
+        "per_1000": 7.022
+      },
+      {
+        "token": "just",
+        "count": 166,
+        "per_1000": 6.98
+      },
+      {
+        "token": "have",
+        "count": 163,
+        "per_1000": 6.854
+      },
+      {
+        "token": "it's",
+        "count": 161,
+        "per_1000": 6.77
+      },
+      {
+        "token": "not",
+        "count": 160,
+        "per_1000": 6.728
+      },
+      {
+        "token": "know",
+        "count": 160,
+        "per_1000": 6.728
+      },
+      {
+        "token": "was",
+        "count": 158,
+        "per_1000": 6.644
+      },
+      {
+        "token": "with",
+        "count": 156,
+        "per_1000": 6.56
+      },
+      {
+        "token": "don't",
+        "count": 155,
+        "per_1000": 6.518
+      },
+      {
+        "token": "do",
+        "count": 155,
+        "per_1000": 6.518
+      },
+      {
+        "token": "are",
+        "count": 150,
+        "per_1000": 6.308
+      },
+      {
+        "token": "well",
+        "count": 146,
+        "per_1000": 6.139
+      },
+      {
+        "token": "on",
+        "count": 146,
+        "per_1000": 6.139
+      },
+      {
+        "token": "yeah",
+        "count": 145,
+        "per_1000": 6.097
+      },
+      {
+        "token": "for",
+        "count": 144,
+        "per_1000": 6.055
+      },
+      {
+        "token": "be",
+        "count": 132,
+        "per_1000": 5.551
+      },
+      {
+        "token": "all",
+        "count": 131,
+        "per_1000": 5.509
+      },
+      {
+        "token": "that's",
+        "count": 124,
+        "per_1000": 5.214
+      },
+      {
+        "token": "but",
+        "count": 121,
+        "per_1000": 5.088
+      }
+    ],
+    "tag": "OBSERVED"
+  },
+  "top_bigrams": {
+    "description": "Top 40 most frequent 2-word sequences (computed within each response, not across response boundaries). Dominated by function-word combinations, not distinctive quoted phrases.",
+    "items": [
+      {
+        "tokens": [
+          "no",
+          "no"
+        ],
+        "count": 75,
+        "per_1000": 3.154
+      },
+      {
+        "tokens": [
+          "are",
+          "you"
+        ],
+        "count": 60,
+        "per_1000": 2.523
+      },
+      {
+        "tokens": [
+          "you",
+          "know"
+        ],
+        "count": 56,
+        "per_1000": 2.355
+      },
+      {
+        "tokens": [
+          "i",
+          "don't"
+        ],
+        "count": 55,
+        "per_1000": 2.313
+      },
+      {
+        "tokens": [
+          "i",
+          "think"
+        ],
+        "count": 52,
+        "per_1000": 2.187
+      },
+      {
+        "tokens": [
+          "all",
+          "right"
+        ],
+        "count": 50,
+        "per_1000": 2.103
+      },
+      {
+        "tokens": [
+          "in",
+          "the"
+        ],
+        "count": 45,
+        "per_1000": 1.892
+      },
+      {
+        "tokens": [
+          "of",
+          "the"
+        ],
+        "count": 44,
+        "per_1000": 1.85
+      },
+      {
+        "tokens": [
+          "i",
+          "was"
+        ],
+        "count": 42,
+        "per_1000": 1.766
+      },
+      {
+        "tokens": [
+          "you",
+          "guys"
+        ],
+        "count": 42,
+        "per_1000": 1.766
+      },
+      {
+        "tokens": [
+          "this",
+          "is"
+        ],
+        "count": 41,
+        "per_1000": 1.724
+      },
+      {
+        "tokens": [
+          "have",
+          "to"
+        ],
+        "count": 41,
+        "per_1000": 1.724
+      },
+      {
+        "tokens": [
+          "do",
+          "you"
+        ],
+        "count": 40,
+        "per_1000": 1.682
+      },
+      {
+        "tokens": [
+          "and",
+          "i"
+        ],
+        "count": 39,
+        "per_1000": 1.64
+      },
+      {
+        "tokens": [
+          "i",
+          "mean"
+        ],
+        "count": 39,
+        "per_1000": 1.64
+      },
+      {
+        "tokens": [
+          "did",
+          "you"
+        ],
+        "count": 38,
+        "per_1000": 1.598
+      },
+      {
+        "tokens": [
+          "what",
+          "are"
+        ],
+        "count": 32,
+        "per_1000": 1.346
+      },
+      {
+        "tokens": [
+          "it",
+          "was"
+        ],
+        "count": 32,
+        "per_1000": 1.346
+      },
+      {
+        "tokens": [
+          "i",
+          "know"
+        ],
+        "count": 32,
+        "per_1000": 1.346
+      },
+      {
+        "tokens": [
+          "a",
+          "little"
+        ],
+        "count": 32,
+        "per_1000": 1.346
+      },
+      {
+        "tokens": [
+          "come",
+          "on"
+        ],
+        "count": 30,
+        "per_1000": 1.262
+      },
+      {
+        "tokens": [
+          "i'm",
+          "not"
+        ],
+        "count": 30,
+        "per_1000": 1.262
+      },
+      {
+        "tokens": [
+          "to",
+          "be"
+        ],
+        "count": 29,
+        "per_1000": 1.219
+      },
+      {
+        "tokens": [
+          "have",
+          "a"
+        ],
+        "count": 28,
+        "per_1000": 1.177
+      },
+      {
+        "tokens": [
+          "to",
+          "the"
+        ],
+        "count": 28,
+        "per_1000": 1.177
+      },
+      {
+        "tokens": [
+          "i",
+          "have"
+        ],
+        "count": 26,
+        "per_1000": 1.093
+      },
+      {
+        "tokens": [
+          "i",
+          "can"
+        ],
+        "count": 26,
+        "per_1000": 1.093
+      },
+      {
+        "tokens": [
+          "if",
+          "you"
+        ],
+        "count": 25,
+        "per_1000": 1.051
+      },
+      {
+        "tokens": [
+          "gonna",
+          "be"
+        ],
+        "count": 25,
+        "per_1000": 1.051
+      },
+      {
+        "tokens": [
+          "oh",
+          "yeah"
+        ],
+        "count": 25,
+        "per_1000": 1.051
+      },
+      {
+        "tokens": [
+          "i",
+          "just"
+        ],
+        "count": 24,
+        "per_1000": 1.009
+      },
+      {
+        "tokens": [
+          "going",
+          "to"
+        ],
+        "count": 24,
+        "per_1000": 1.009
+      },
+      {
+        "tokens": [
+          "i",
+          "am"
+        ],
+        "count": 24,
+        "per_1000": 1.009
+      },
+      {
+        "tokens": [
+          "you",
+          "can"
+        ],
+        "count": 23,
+        "per_1000": 0.967
+      },
+      {
+        "tokens": [
+          "you",
+          "have"
+        ],
+        "count": 23,
+        "per_1000": 0.967
+      },
+      {
+        "tokens": [
+          "you",
+          "don't"
+        ],
+        "count": 23,
+        "per_1000": 0.967
+      },
+      {
+        "tokens": [
+          "don't",
+          "know"
+        ],
+        "count": 23,
+        "per_1000": 0.967
+      },
+      {
+        "tokens": [
+          "y'know",
+          "what"
+        ],
+        "count": 23,
+        "per_1000": 0.967
+      },
+      {
+        "tokens": [
+          "i'm",
+          "gonna"
+        ],
+        "count": 22,
+        "per_1000": 0.925
+      },
+      {
+        "tokens": [
+          "on",
+          "the"
+        ],
+        "count": 22,
+        "per_1000": 0.925
+      }
+    ],
+    "tag": "OBSERVED"
+  },
+  "top_trigrams": {
+    "description": "Top 40 most frequent 3-word sequences (within-response only).",
+    "items": [
+      {
+        "tokens": [
+          "no",
+          "no",
+          "no"
+        ],
+        "count": 43,
+        "per_1000": 1.808
+      },
+      {
+        "tokens": [
+          "what",
+          "are",
+          "you"
+        ],
+        "count": 27,
+        "per_1000": 1.135
+      },
+      {
+        "tokens": [
+          "oh",
+          "my",
+          "god"
+        ],
+        "count": 20,
+        "per_1000": 0.841
+      },
+      {
+        "tokens": [
+          "i",
+          "don't",
+          "know"
+        ],
+        "count": 18,
+        "per_1000": 0.757
+      },
+      {
+        "tokens": [
+          "i",
+          "think",
+          "i"
+        ],
+        "count": 11,
+        "per_1000": 0.463
+      },
+      {
+        "tokens": [
+          "i",
+          "love",
+          "you"
+        ],
+        "count": 11,
+        "per_1000": 0.463
+      },
+      {
+        "tokens": [
+          "you",
+          "know",
+          "what"
+        ],
+        "count": 11,
+        "per_1000": 0.463
+      },
+      {
+        "tokens": [
+          "a",
+          "lot",
+          "of"
+        ],
+        "count": 10,
+        "per_1000": 0.421
+      },
+      {
+        "tokens": [
+          "i",
+          "don't",
+          "think"
+        ],
+        "count": 10,
+        "per_1000": 0.421
+      },
+      {
+        "tokens": [
+          "wait",
+          "a",
+          "minute"
+        ],
+        "count": 10,
+        "per_1000": 0.421
+      },
+      {
+        "tokens": [
+          "i",
+          "can't",
+          "believe"
+        ],
+        "count": 10,
+        "per_1000": 0.421
+      },
+      {
+        "tokens": [
+          "are",
+          "you",
+          "doing"
+        ],
+        "count": 10,
+        "per_1000": 0.421
+      },
+      {
+        "tokens": [
+          "i",
+          "think",
+          "it's"
+        ],
+        "count": 9,
+        "per_1000": 0.378
+      },
+      {
+        "tokens": [
+          "oh",
+          "come",
+          "on"
+        ],
+        "count": 9,
+        "per_1000": 0.378
+      },
+      {
+        "tokens": [
+          "do",
+          "you",
+          "know"
+        ],
+        "count": 9,
+        "per_1000": 0.378
+      },
+      {
+        "tokens": [
+          "oh",
+          "no",
+          "no"
+        ],
+        "count": 9,
+        "per_1000": 0.378
+      },
+      {
+        "tokens": [
+          "you",
+          "have",
+          "to"
+        ],
+        "count": 8,
+        "per_1000": 0.336
+      },
+      {
+        "tokens": [
+          "here",
+          "we",
+          "go"
+        ],
+        "count": 8,
+        "per_1000": 0.336
+      },
+      {
+        "tokens": [
+          "you",
+          "know",
+          "i"
+        ],
+        "count": 8,
+        "per_1000": 0.336
+      },
+      {
+        "tokens": [
+          "don't",
+          "have",
+          "to"
+        ],
+        "count": 8,
+        "per_1000": 0.336
+      },
+      {
+        "tokens": [
+          "i",
+          "got",
+          "a"
+        ],
+        "count": 8,
+        "per_1000": 0.336
+      },
+      {
+        "tokens": [
+          "want",
+          "you",
+          "to"
+        ],
+        "count": 8,
+        "per_1000": 0.336
+      },
+      {
+        "tokens": [
+          "talk",
+          "to",
+          "you"
+        ],
+        "count": 8,
+        "per_1000": 0.336
+      },
+      {
+        "tokens": [
+          "why",
+          "don't",
+          "you"
+        ],
+        "count": 8,
+        "per_1000": 0.336
+      },
+      {
+        "tokens": [
+          "dum",
+          "dum",
+          "dum"
+        ],
+        "count": 8,
+        "per_1000": 0.336
+      },
+      {
+        "tokens": [
+          "you",
+          "don't",
+          "have"
+        ],
+        "count": 7,
+        "per_1000": 0.294
+      },
+      {
+        "tokens": [
+          "go",
+          "to",
+          "the"
+        ],
+        "count": 7,
+        "per_1000": 0.294
+      },
+      {
+        "tokens": [
+          "i",
+          "didn't",
+          "know"
+        ],
+        "count": 7,
+        "per_1000": 0.294
+      },
+      {
+        "tokens": [
+          "i'm",
+          "gonna",
+          "go"
+        ],
+        "count": 7,
+        "per_1000": 0.294
+      },
+      {
+        "tokens": [
+          "one",
+          "of",
+          "the"
+        ],
+        "count": 7,
+        "per_1000": 0.294
+      },
+      {
+        "tokens": [
+          "y'know",
+          "what",
+          "i"
+        ],
+        "count": 7,
+        "per_1000": 0.294
+      },
+      {
+        "tokens": [
+          "monica",
+          "and",
+          "i"
+        ],
+        "count": 7,
+        "per_1000": 0.294
+      },
+      {
+        "tokens": [
+          "i'm",
+          "sorry",
+          "i"
+        ],
+        "count": 6,
+        "per_1000": 0.252
+      },
+      {
+        "tokens": [
+          "ew",
+          "ew",
+          "ew"
+        ],
+        "count": 6,
+        "per_1000": 0.252
+      },
+      {
+        "tokens": [
+          "i",
+          "don't",
+          "care"
+        ],
+        "count": 6,
+        "per_1000": 0.252
+      },
+      {
+        "tokens": [
+          "what",
+          "do",
+          "you"
+        ],
+        "count": 6,
+        "per_1000": 0.252
+      },
+      {
+        "tokens": [
+          "it",
+          "was",
+          "a"
+        ],
+        "count": 6,
+        "per_1000": 0.252
+      },
+      {
+        "tokens": [
+          "it's",
+          "gonna",
+          "be"
+        ],
+        "count": 6,
+        "per_1000": 0.252
+      },
+      {
+        "tokens": [
+          "get",
+          "out",
+          "get"
+        ],
+        "count": 6,
+        "per_1000": 0.252
+      },
+      {
+        "tokens": [
+          "out",
+          "get",
+          "out"
+        ],
+        "count": 6,
+        "per_1000": 0.252
+      }
+    ],
+    "tag": "OBSERVED"
+  },
+  "contractions_summary": {
+    "total_contraction_tokens": 1761,
+    "pct_of_all_tokens": 7.405,
+    "top_contraction_forms": [
+      {
+        "form": "i'm",
+        "count": 195
+      },
+      {
+        "form": "it's",
+        "count": 161
+      },
+      {
+        "form": "don't",
+        "count": 155
+      },
+      {
+        "form": "that's",
+        "count": 124
+      },
+      {
+        "form": "gonna",
+        "count": 107
+      },
+      {
+        "form": "you're",
+        "count": 83
+      },
+      {
+        "form": "y'know",
+        "count": 79
+      },
+      {
+        "form": "we're",
+        "count": 55
+      },
+      {
+        "form": "i'll",
+        "count": 47
+      },
+      {
+        "form": "can't",
+        "count": 46
+      },
+      {
+        "form": "didn't",
+        "count": 39
+      },
+      {
+        "form": "he's",
+        "count": 39
+      },
+      {
+        "form": "she's",
+        "count": 38
+      },
+      {
+        "form": "what's",
+        "count": 34
+      },
+      {
+        "form": "wanna",
+        "count": 24
+      },
+      {
+        "form": "there's",
+        "count": 22
+      },
+      {
+        "form": "i've",
+        "count": 22
+      },
+      {
+        "form": "let's",
+        "count": 22
+      },
+      {
+        "form": "they're",
+        "count": 20
+      },
+      {
+        "form": "gotta",
+        "count": 18
+      }
+    ],
+    "measurement_method": "Token flagged as a contraction if it contains an apostrophe in the raw (pre-lowercasing) form, plus a small set of common no-apostrophe informal contractions (gonna, wanna, gotta, cause, dunno).",
+    "tag": "OBSERVED"
+  },
+  "informal_vs_formal_ratio": {
+    "informal_signal_count": 2671,
+    "informal_per_1000_words": 112.317,
+    "formal_connector_count": 1,
+    "formal_per_1000_words": 0.042,
+    "informal_to_formal_ratio": 2671.0,
+    "definition": "informal_signal = contractions + informal slang lexicon (gonna/wanna/gotta/dude/stuff/etc); formal_signal = formal connective lexicon (however/furthermore/nevertheless/etc)",
+    "interpretation": "Informal markers outnumber formal connectors by roughly 2671.0:1, indicating a strongly informal/colloquial register.",
+    "interpretation_tag": "INFERRED",
+    "measurement_tag": "OBSERVED"
+  }
+}

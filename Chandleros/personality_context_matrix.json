@@ -1,0 +1,122 @@
+{
+  "phase": 14,
+  "title": "Contextual Personality Matrix",
+  "methodology": "Synthesizes trait-by-context measurements from sarcasm_profile.json (context_tone: light/neutral/awkward/serious), emotional_behavior.json (context_to_behavior_matrix by 14 emotion categories), and response_intents.json (distress-keyword cross-tab). All cross-file syntheses are tagged INFERRED; a value is OBSERVED only where it is a direct pass-through of a single source file's OBSERVED figure.",
+  "trait_classification": {
+    "description": "Every trait below is classified A=INVARIANT (stable across contexts, always present at some floor level), B=CONTEXT_DEPENDENT (presence/absence or target shifts materially by context), or C=INTENSITY_DEPENDENT (always present but strength/rate scales with context).",
+    "sarcasm": "C - INTENSITY_DEPENDENT",
+    "humor_entertain_intent": "A - INVARIANT (dominant in every context sampled, including distress)",
+    "self_deprecation": "B - CONTEXT_DEPENDENT (concentrated in awkward/serious contexts, absent after praise)",
+    "verbosity": "C - INTENSITY_DEPENDENT (scales down in sadness, up in vulnerability/happiness contexts)",
+    "reassurance_intent": "B - CONTEXT_DEPENDENT (near-absent in mundane context, rises ~5x in distress context)",
+    "protect_other_intent": "B - CONTEXT_DEPENDENT (rises >10x in distress context, otherwise negligible)",
+    "conversational_energy": "C - INTENSITY_DEPENDENT (varies from 0.09-0.12 in anger/fear/confusion to 0.35-0.64 in seriousness/uncertainty/vulnerability)",
+    "directness": "C - INTENSITY_DEPENDENT (near-zero baseline; rises modestly in fear/serious/awkward/happiness contexts)"
+  },
+  "trait_context_intensity": [
+    {
+      "trait": "sarcasm",
+      "default_rate_pct": 59.2,
+      "sample_size": 363,
+      "by_context_tone": {
+        "light_mundane": 65.3,
+        "awkward": 61.8,
+        "neutral_informational": 51.2,
+        "serious_vulnerable": 49.1
+      },
+      "finding": "Sarcasm is present at a high floor rate in every context tone measured (49-65%), but is measurably suppressed (~16 percentage points, ~25% relative drop) when the immediately preceding line is genuine emotional vulnerability, and measurably elevated in light banter and awkward social moments.",
+      "source": "sarcasm_profile.json:context_dependency",
+      "tag": "INFERRED"
+    },
+    {
+      "trait": "entertain_intent (humor as primary goal)",
+      "default_rate_pct": 54.6,
+      "sample_size": 317,
+      "by_context": {
+        "mundane_context": 52.5,
+        "distress_context": 69.2
+      },
+      "finding": "Entertain is not suppressed by distress context -- it is if anything somewhat higher (69.2% vs 52.5%), consistent with humor functioning as Chandler's default coping/response mechanism rather than being displaced by sincerity when things get emotionally serious.",
+      "source": "response_intents.json:intent_vs_distress_context_cross_tab",
+      "tag": "INFERRED"
+    },
+    {
+      "trait": "reassurance_intent",
+      "default_rate_pct": 3.2,
+      "sample_size": 317,
+      "by_context": {
+        "mundane_context": 2.2,
+        "distress_context": 10.3
+      },
+      "finding": "Reassurance is a low-base-rate intent overall but is roughly 4-5x more likely when the preceding line signals distress -- a real but secondary contextual shift, not a dominant response mode even in distress.",
+      "source": "response_intents.json:intent_vs_distress_context_cross_tab",
+      "tag": "INFERRED"
+    },
+    {
+      "trait": "protect_other_intent",
+      "default_rate_pct": 0.9,
+      "sample_size": 317,
+      "by_context": {
+        "mundane_context": 0.4,
+        "distress_context": 5.1
+      },
+      "finding": "The largest relative context-swing of any measured intent (~13x); still a minority behavior even in distress context.",
+      "source": "response_intents.json:intent_vs_distress_context_cross_tab",
+      "tag": "INFERRED"
+    },
+    {
+      "trait": "self_deprecation",
+      "default_rate_pct": 2.5,
+      "sample_size": 363,
+      "by_context_tone": {
+        "light": 2,
+        "serious": 4,
+        "awkward": 1,
+        "neutral": 2
+      },
+      "note_sample_note": "Counts (n=9 total instances), not percentages, given rarity -- serious+awkward together account for 6/9 (67%) despite the overall sample being only ~15% serious+awkward.",
+      "finding": "Self-deprecation is disproportionately concentrated in serious/awkward emotional contexts relative to its rarity in the overall sample, and never followed direct praise (0/9) -- consistent with a defensive rather than celebratory function.",
+      "source": "self_deprecation.json:emotional_context, triggers",
+      "tag": "INFERRED"
+    },
+    {
+      "trait": "verbosity (avg response word count)",
+      "default_value": 9.38,
+      "unit": "words",
+      "by_emotional_context": {
+        "sadness": 6.23,
+        "neutrality": 9.75,
+        "excitement": 10.07,
+        "celebration": 9.89,
+        "happiness": 13.21,
+        "vulnerability_n4_low_confidence": 14.0,
+        "anger": 11.45,
+        "confusion_n2_low_confidence": 4.5
+      },
+      "finding": "Verbosity is not flat: responses to sadness run notably shorter than the norm (6.23 vs ~9.4-10.1 words for neutral/excited/celebratory contexts), while happiness-context responses run longer (13.21) -- OBSERVED word-count differences (n per bucket varies, see emotional_behavior.json for confidence tiers).",
+      "source": "emotional_behavior.json:context_to_behavior_matrix",
+      "tag": "OBSERVED (word counts) / INFERRED (pattern interpretation)"
+    },
+    {
+      "trait": "conversational_energy (composite: exclamation rate + length + humor markers)",
+      "by_emotional_context": {
+        "anger": 0.115,
+        "fear_n3_low_confidence": 0.09,
+        "confusion_n2_low_confidence": 0.045,
+        "sadness": 0.216,
+        "neutrality": 0.314,
+        "uncertainty": 0.373,
+        "seriousness": 0.355,
+        "vulnerability_n4_low_confidence": 0.64
+      },
+      "finding": "Energy is lowest in anger/fear/confusion contexts and highest in uncertainty/seriousness/vulnerability -- but the vulnerability figure rests on only 4 sampled instances and should be treated as suggestive, not confirmed.",
+      "source": "emotional_behavior.json:context_to_behavior_matrix",
+      "tag": "INFERRED",
+      "caveat": "Composite score built from lexical markers (exclamation rate, word count, humor-marker rate); the humor-marker component is known to undercount structural/non-lexical humor (see cross_worker_discrepancy_note below), so this composite is a lower-bound proxy, not a validated 'energy' scale."
+    }
+  ],
+  "cross_worker_discrepancy_note": {
+    "tag": "OBSERVED (discrepancy between two independently-computed files)",
+    "finding": "emotional_behavior.json and social_behavior.json report near-zero humor_level/sarcasm_level/self_deprecation_rate scores across every context and every addressee (lexical-marker method, explicit surface-word matching only), while humor_statistics.json and sarcasm_profile.json (semantic/contextual judgment method) report an 80.0% humor rate and 59.2% sarcasm rate on the same underlying dataset. This is NOT a contradiction about the dataset -- it is a documented method-sensitivity artifact: Chandler's humor and sarcasm are overwhelmingly STRUCTURAL and TONAL (deadpan delivery, absurd content, ironic reversal) rather than carried by fixed surface lexical items (e.g. no reliable single word or phrase set flags 'this is sarcastic'). Any downstream engineer building control_dimensions or behavioral_rules should treat the SEMANTIC classification numbers (humor_statistics.json, sarcasm_profile.json) as authoritative for overall rate estimates, and the lexical-marker numbers (emotional_behavior.json, social_behavior.json) as authoritative only for the relative CONTEXTUAL SHAPE (which contexts go up/down relative to each other), not absolute levels."
+  }
+}

@@ -1,0 +1,516 @@
+{
+  "meta": {
+    "sample_size_responses": 2535,
+    "sample_size_word_tokens": 23781,
+    "sample_size_pos_tags": 23781,
+    "measurement_method": "nltk.pos_tag() [averaged_perceptron_tagger_eng] applied per-response to response_words (alpha-token list); tags aggregated across all 2535 responses",
+    "pos_tag_caveat": "response_words is alpha-only (punctuation and sentence boundaries stripped before tagging), which can reduce POS-tagger accuracy relative to tagging the raw punctuated sentence; treat tag-level percentages as approximate, especially for ambiguous short utterances (Chandler's median response is 7 words)."
+  },
+  "pos_broad_category_frequency": {
+    "description": "Frequency of Penn-Treebank POS tags rolled up into broad grammatical categories (noun/verb/adjective/adverb/pronoun/determiner/conjunction/interjection/modal), across all tagged tokens.",
+    "data": {
+      "noun": {
+        "raw_count": 6298,
+        "pct_of_all_tokens": 26.483,
+        "per_1000_words": 264.833
+      },
+      "verb": {
+        "raw_count": 4841,
+        "pct_of_all_tokens": 20.357,
+        "per_1000_words": 203.566
+      },
+      "pronoun": {
+        "raw_count": 3490,
+        "pct_of_all_tokens": 14.676,
+        "per_1000_words": 146.756
+      },
+      "other": {
+        "raw_count": 2955,
+        "pct_of_all_tokens": 12.426,
+        "per_1000_words": 124.259
+      },
+      "determiner": {
+        "raw_count": 1951,
+        "pct_of_all_tokens": 8.204,
+        "per_1000_words": 82.04
+      },
+      "adverb": {
+        "raw_count": 1661,
+        "pct_of_all_tokens": 6.985,
+        "per_1000_words": 69.846
+      },
+      "adjective": {
+        "raw_count": 1435,
+        "pct_of_all_tokens": 6.034,
+        "per_1000_words": 60.342
+      },
+      "conjunction": {
+        "raw_count": 530,
+        "pct_of_all_tokens": 2.229,
+        "per_1000_words": 22.287
+      },
+      "interjection": {
+        "raw_count": 323,
+        "pct_of_all_tokens": 1.358,
+        "per_1000_words": 13.582
+      },
+      "modal": {
+        "raw_count": 297,
+        "pct_of_all_tokens": 1.249,
+        "per_1000_words": 12.489
+      }
+    },
+    "tag": "OBSERVED"
+  },
+  "pos_fine_grained_top_tags": {
+    "description": "Top 30 individual Penn Treebank tags by frequency.",
+    "items": [
+      {
+        "tag": "NN",
+        "count": 3281,
+        "pct_of_all_tokens": 13.797
+      },
+      {
+        "tag": "PRP",
+        "count": 2763,
+        "pct_of_all_tokens": 11.619
+      },
+      {
+        "tag": "NNP",
+        "count": 2392,
+        "pct_of_all_tokens": 10.058
+      },
+      {
+        "tag": "DT",
+        "count": 1894,
+        "pct_of_all_tokens": 7.964
+      },
+      {
+        "tag": "IN",
+        "count": 1869,
+        "pct_of_all_tokens": 7.859
+      },
+      {
+        "tag": "RB",
+        "count": 1624,
+        "pct_of_all_tokens": 6.829
+      },
+      {
+        "tag": "VB",
+        "count": 1377,
+        "pct_of_all_tokens": 5.79
+      },
+      {
+        "tag": "VBP",
+        "count": 1367,
+        "pct_of_all_tokens": 5.748
+      },
+      {
+        "tag": "JJ",
+        "count": 1350,
+        "pct_of_all_tokens": 5.677
+      },
+      {
+        "tag": "VBD",
+        "count": 870,
+        "pct_of_all_tokens": 3.658
+      },
+      {
+        "tag": "NNS",
+        "count": 618,
+        "pct_of_all_tokens": 2.599
+      },
+      {
+        "tag": "VBZ",
+        "count": 547,
+        "pct_of_all_tokens": 2.3
+      },
+      {
+        "tag": "CC",
+        "count": 530,
+        "pct_of_all_tokens": 2.229
+      },
+      {
+        "tag": "VBG",
+        "count": 465,
+        "pct_of_all_tokens": 1.955
+      },
+      {
+        "tag": "PRP$",
+        "count": 455,
+        "pct_of_all_tokens": 1.913
+      },
+      {
+        "tag": "TO",
+        "count": 437,
+        "pct_of_all_tokens": 1.838
+      },
+      {
+        "tag": "UH",
+        "count": 323,
+        "pct_of_all_tokens": 1.358
+      },
+      {
+        "tag": "MD",
+        "count": 297,
+        "pct_of_all_tokens": 1.249
+      },
+      {
+        "tag": "WP",
+        "count": 270,
+        "pct_of_all_tokens": 1.135
+      },
+      {
+        "tag": "WRB",
+        "count": 215,
+        "pct_of_all_tokens": 0.904
+      },
+      {
+        "tag": "VBN",
+        "count": 215,
+        "pct_of_all_tokens": 0.904
+      },
+      {
+        "tag": "RP",
+        "count": 201,
+        "pct_of_all_tokens": 0.845
+      },
+      {
+        "tag": "CD",
+        "count": 153,
+        "pct_of_all_tokens": 0.643
+      },
+      {
+        "tag": "EX",
+        "count": 52,
+        "pct_of_all_tokens": 0.219
+      },
+      {
+        "tag": "JJR",
+        "count": 45,
+        "pct_of_all_tokens": 0.189
+      },
+      {
+        "tag": "JJS",
+        "count": 40,
+        "pct_of_all_tokens": 0.168
+      },
+      {
+        "tag": "WDT",
+        "count": 34,
+        "pct_of_all_tokens": 0.143
+      },
+      {
+        "tag": "RBR",
+        "count": 33,
+        "pct_of_all_tokens": 0.139
+      },
+      {
+        "tag": "PDT",
+        "count": 23,
+        "pct_of_all_tokens": 0.097
+      },
+      {
+        "tag": "POS",
+        "count": 13,
+        "pct_of_all_tokens": 0.055
+      }
+    ],
+    "tag": "OBSERVED"
+  },
+  "tense_distribution": {
+    "past": {
+      "count": 904,
+      "pct_of_tense_events": 25.92
+    },
+    "present": {
+      "count": 2014,
+      "pct_of_tense_events": 57.76
+    },
+    "future": {
+      "count": 38,
+      "pct_of_tense_events": 1.09
+    },
+    "other_participle_gerund": {
+      "count": 531,
+      "pct_of_tense_events": 15.23
+    },
+    "raw_subtype_counts": {
+      "present_simple": 1914,
+      "past_simple": 870,
+      "progressive": 100,
+      "gerund_or_participle_other": 350,
+      "passive_participle": 43,
+      "participle_other": 138,
+      "past_perfect_or_present_perfect": 34,
+      "future_going_to": 15,
+      "future_modal": 23
+    },
+    "sample_size_tense_events": 3487,
+    "measurement_method": "Heuristic classification from POS-tag sequences per response: VBD=past_simple; VBN preceded by have/has/had=perfect; VBN preceded by be-form=passive_participle; VBP/VBZ=present_simple; VBG preceded by be-form=progressive; 'going'+'to'+VB=future_going_to; MD('will'/'shall')=future_modal. This is an approximation, not a full parse -- tag_confidence=INFERRED for tense category boundaries."
+  },
+  "passive_voice_estimate": {
+    "responses_with_passive_construction": 53,
+    "pct_of_responses": 2.091,
+    "passive_instances_total": 56,
+    "per_1000_words": 2.355,
+    "measurement_method": "Pattern match: BE-form token followed within 2 tokens by a VBN-tagged token, scanned per response. Likely undercounts long-distance passives and overcounts stative BE+adjective-like participles (e.g. 'married', 'excited'). INFERRED estimate, not a syntactic parse.",
+    "interpretation": "Active voice is overwhelmingly dominant given this rate; consistent with short, direct conversational responses."
+  },
+  "active_voice_estimate_pct": 97.909,
+  "person_pronoun_ratio": {
+    "first_person": {
+      "count": 1485,
+      "pct_of_pronouns": 45.73
+    },
+    "second_person": {
+      "count": 991,
+      "pct_of_pronouns": 30.52
+    },
+    "third_person": {
+      "count": 771,
+      "pct_of_pronouns": 23.74
+    },
+    "pos_tag_cross_check_PRP_PRP$_count": 3490,
+    "lexicon_based_pronoun_total": 3247,
+    "measurement_method": "Lexicon-based classification of response_words into person categories (Phase 2 lexicons), cross-checked against POS-tag pronoun count (PRP/PRP$/WP/WP$) from nltk.pos_tag.",
+    "sample_size_tokens": 23781
+  },
+  "contextual_distribution_by_response_length": {
+    "description": "Broad POS-category rate (per 1000 tags) by response-length bucket.",
+    "data": {
+      "very_short_1-3": {
+        "n_responses": 612,
+        "total_pos_tags": 1130,
+        "rates_per_1000": {
+          "noun": 534.51,
+          "verb": 92.92,
+          "adjective": 40.71,
+          "adverb": 50.44,
+          "pronoun": 115.93,
+          "determiner": 43.36,
+          "conjunction": 6.19,
+          "interjection": 53.98,
+          "modal": 7.08
+        }
+      },
+      "short_4-8": {
+        "n_responses": 850,
+        "total_pos_tags": 5036,
+        "rates_per_1000": {
+          "noun": 281.57,
+          "verb": 208.5,
+          "adjective": 58.78,
+          "adverb": 71.09,
+          "pronoun": 153.89,
+          "determiner": 80.82,
+          "conjunction": 14.3,
+          "interjection": 17.28,
+          "modal": 12.31
+        }
+      },
+      "medium_9-15": {
+        "n_responses": 637,
+        "total_pos_tags": 7264,
+        "rates_per_1000": {
+          "noun": 248.49,
+          "verb": 210.08,
+          "adjective": 59.06,
+          "adverb": 74.34,
+          "pronoun": 147.58,
+          "determiner": 89.07,
+          "conjunction": 19.0,
+          "interjection": 12.67,
+          "modal": 13.22
+        }
+      },
+      "long_16-30": {
+        "n_responses": 362,
+        "total_pos_tags": 7402,
+        "rates_per_1000": {
+          "noun": 238.04,
+          "verb": 209.4,
+          "adjective": 62.69,
+          "adverb": 69.04,
+          "pronoun": 147.26,
+          "determiner": 83.36,
+          "conjunction": 29.18,
+          "interjection": 9.19,
+          "modal": 11.89
+        }
+      },
+      "very_long_31plus": {
+        "n_responses": 74,
+        "total_pos_tags": 2949,
+        "rates_per_1000": {
+          "noun": 240.42,
+          "verb": 206.85,
+          "adjective": 67.82,
+          "adverb": 66.12,
+          "pronoun": 143.1,
+          "determiner": 78.33,
+          "conjunction": 32.89,
+          "interjection": 5.09,
+          "modal": 14.58
+        }
+      }
+    },
+    "tag": "OBSERVED"
+  },
+  "contextual_distribution_by_last_speaker": {
+    "description": "Broad POS-category rate (per 1000 tags) for the top 6 most frequent last_speaker values.",
+    "data": {
+      "Monica Geller": {
+        "n_responses": 593,
+        "total_pos_tags": 5734,
+        "rates_per_1000": {
+          "noun": 260.55,
+          "verb": 207.01,
+          "adjective": 61.04,
+          "adverb": 67.49,
+          "pronoun": 146.32,
+          "determiner": 77.61,
+          "conjunction": 25.29,
+          "interjection": 13.6,
+          "modal": 11.68
+        }
+      },
+      "Joey Tribbiani": {
+        "n_responses": 523,
+        "total_pos_tags": 4569,
+        "rates_per_1000": {
+          "noun": 260.67,
+          "verb": 205.08,
+          "adjective": 62.81,
+          "adverb": 69.16,
+          "pronoun": 148.83,
+          "determiner": 86.01,
+          "conjunction": 21.01,
+          "interjection": 14.01,
+          "modal": 12.69
+        }
+      },
+      "Ross Geller": {
+        "n_responses": 455,
+        "total_pos_tags": 4363,
+        "rates_per_1000": {
+          "noun": 253.95,
+          "verb": 207.66,
+          "adjective": 60.28,
+          "adverb": 78.16,
+          "pronoun": 147.15,
+          "determiner": 85.49,
+          "conjunction": 20.4,
+          "interjection": 12.15,
+          "modal": 12.84
+        }
+      },
+      "Phoebe Buffay": {
+        "n_responses": 333,
+        "total_pos_tags": 2876,
+        "rates_per_1000": {
+          "noun": 297.64,
+          "verb": 197.5,
+          "adjective": 59.11,
+          "adverb": 62.93,
+          "pronoun": 133.87,
+          "determiner": 84.14,
+          "conjunction": 22.25,
+          "interjection": 11.47,
+          "modal": 11.82
+        }
+      },
+      "Rachel Green": {
+        "n_responses": 306,
+        "total_pos_tags": 2953,
+        "rates_per_1000": {
+          "noun": 243.14,
+          "verb": 207.92,
+          "adjective": 53.84,
+          "adverb": 78.23,
+          "pronoun": 163.56,
+          "determiner": 70.78,
+          "conjunction": 21.67,
+          "interjection": 12.53,
+          "modal": 15.92
+        }
+      },
+      "Janice Litman Goralnik": {
+        "n_responses": 22,
+        "total_pos_tags": 279,
+        "rates_per_1000": {
+          "noun": 304.66,
+          "verb": 186.38,
+          "adjective": 53.76,
+          "adverb": 53.76,
+          "pronoun": 154.12,
+          "determiner": 75.27,
+          "conjunction": 28.67,
+          "interjection": 7.17,
+          "modal": 14.34
+        }
+      }
+    },
+    "tag": "OBSERVED",
+    "caveat": "Rows are i.i.d. sampled pairs, not a sequential dialogue -- speaker differences reflect scene/partner variation across the corpus, not turn-taking dynamics within one conversation."
+  },
+  "tense_distribution_by_response_length": {
+    "description": "Past/present/future share of tense events by response-length bucket.",
+    "data": {
+      "very_short_1-3": {
+        "n_responses": 612,
+        "tense_events": 85,
+        "past_pct": 29.41,
+        "present_pct": 52.94,
+        "future_pct": 1.18
+      },
+      "short_4-8": {
+        "n_responses": 850,
+        "tense_events": 768,
+        "past_pct": 25.78,
+        "present_pct": 57.55,
+        "future_pct": 1.04
+      },
+      "medium_9-15": {
+        "n_responses": 637,
+        "tense_events": 1092,
+        "past_pct": 24.54,
+        "present_pct": 59.89,
+        "future_pct": 1.01
+      },
+      "long_16-30": {
+        "n_responses": 362,
+        "tense_events": 1111,
+        "past_pct": 27.81,
+        "present_pct": 55.81,
+        "future_pct": 0.81
+      },
+      "very_long_31plus": {
+        "n_responses": 74,
+        "tense_events": 431,
+        "past_pct": 24.13,
+        "present_pct": 58.7,
+        "future_pct": 2.09
+      }
+    },
+    "tag": "OBSERVED"
+  },
+  "headline_findings": [
+    {
+      "finding": "Present tense dominates (~58% of tense events) over past (~26%) and future (~1%), with the remainder ambiguous participle/gerund forms.",
+      "tag": "OBSERVED"
+    },
+    {
+      "finding": "Active voice is overwhelmingly dominant; passive-pattern constructions appear in only ~2% of responses.",
+      "tag": "OBSERVED/INFERRED (pattern-heuristic estimate)"
+    },
+    {
+      "finding": "First-person pronouns (~46% of all pronoun tokens) are used roughly 1.5x as often as second-person (~31%) and nearly 2x as often as third-person (~24%), consistent with a speaker who frequently frames things in terms of his own reaction/perspective.",
+      "tag": "OBSERVED (counts); INFERRED (interpretive framing)"
+    },
+    {
+      "finding": "Nouns (~26%) and verbs (~20%) are the two largest POS categories, with pronouns unusually prominent (~15% of all tags) relative to typical written-English POS distributions.",
+      "tag": "OBSERVED"
+    }
+  ]
+}

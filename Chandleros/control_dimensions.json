@@ -1,0 +1,253 @@
+{
+  "phase": 17,
+  "title": "ChandlerOS Control Variables",
+  "purpose": "Converts findings into controllable dimensions (continuous or categorical) that a downstream character-system engineer can expose as tunable parameters. Each dimension lists an observed baseline, observed range across measured contexts, context sensitivity, strongest predictors, and correlations with other traits, all traced to source phase files.",
+  "dimensions": [
+    {
+      "dimension": "humor_frequency",
+      "type": "continuous [0,1]",
+      "observed_baseline": 0.8,
+      "observed_range": [
+        0.595,
+        0.942
+      ],
+      "range_context": "0.595 in short responses (<=5 words), rising to 0.942 in long responses (>10 words)",
+      "context_sensitivity": "high -- strongest single predictor is response length",
+      "strongest_predictors": [
+        "response_length (positive)",
+        "response_length_quartile"
+      ],
+      "correlations": [
+        "positively correlated with entertain_intent (0.546 baseline co-occurs)",
+        "positively correlated with sarcasm_frequency (23.8% of humorous rows are also sarcastic)"
+      ],
+      "source_files": [
+        "humor_statistics.json",
+        "response_intents.json"
+      ]
+    },
+    {
+      "dimension": "sarcasm_frequency",
+      "type": "continuous [0,1]",
+      "observed_baseline": 0.592,
+      "observed_range": [
+        0.491,
+        0.653
+      ],
+      "range_context": "0.491 in serious/vulnerable context, 0.653 in light/mundane context",
+      "context_sensitivity": "medium -- ~16 percentage point swing by context tone, never drops to near-zero",
+      "strongest_predictors": [
+        "preceding-line emotional tone (light/awkward raise it, serious/vulnerable lower it)"
+      ],
+      "correlations": [
+        "deadpan_delivery marker present in 42.8% of instances",
+        "co-occurs with self_deprecation in 88.9% of self-deprecation cases"
+      ],
+      "source_files": [
+        "sarcasm_profile.json"
+      ]
+    },
+    {
+      "dimension": "sarcasm_target_bias",
+      "type": "categorical_distribution",
+      "observed_baseline": {
+        "other_character": 0.451,
+        "situation": 0.307,
+        "self": 0.172,
+        "other": 0.07
+      },
+      "context_sensitivity": "medium -- self-target share rises somewhat in awkward/serious contexts",
+      "strongest_predictors": [
+        "context tone (awkward/serious raises self-target share)"
+      ],
+      "source_files": [
+        "sarcasm_profile.json"
+      ]
+    },
+    {
+      "dimension": "self_deprecation_frequency",
+      "type": "continuous [0,1]",
+      "observed_baseline": 0.025,
+      "observed_range": [
+        0.0,
+        0.06
+      ],
+      "range_context": "effectively 0 after praise; highest (though still low in absolute terms) after awkward/embarrassing moments",
+      "context_sensitivity": "high in relative terms, though the absolute base rate is low",
+      "strongest_predictors": [
+        "awkward/embarrassing trigger (55.6% of instances)",
+        "unprompted/spontaneous (33.3%)"
+      ],
+      "correlations": [
+        "88.9% co-occurrence with sarcasm -- should not be modeled as an independent sincere register"
+      ],
+      "caution": "This is one of the most commonly OVER-set dimensions when building a Chandler-like system -- observed baseline is low; see negative_constraints.json.",
+      "source_files": [
+        "self_deprecation.json"
+      ]
+    },
+    {
+      "dimension": "warmth",
+      "type": "continuous [0,1]",
+      "observed_baseline": 0.01,
+      "observed_range": [
+        0.0,
+        0.022
+      ],
+      "range_context": "lexical-marker measurement; highest (still low) when addressing Monica Geller (0.022)",
+      "context_sensitivity": "low-medium in absolute lexical terms",
+      "strongest_predictors": [
+        "addressee (Monica > others)"
+      ],
+      "caution": "Lexical-marker method undercounts warmth conveyed structurally/tonally (e.g. through banter or protective joking rather than explicit warm phrases); treat as a floor estimate, not a ceiling.",
+      "source_files": [
+        "social_behavior.json"
+      ]
+    },
+    {
+      "dimension": "empathy_reassurance",
+      "type": "continuous [0,1]",
+      "observed_baseline": 0.032,
+      "observed_range": [
+        0.022,
+        0.103
+      ],
+      "range_context": "0.022 mundane context, 0.103 distress context (reassure intent specifically)",
+      "context_sensitivity": "high (relative) -- 4-5x swing between mundane and distress framing",
+      "strongest_predictors": [
+        "distress/vulnerability cue in preceding line"
+      ],
+      "source_files": [
+        "response_intents.json",
+        "social_behavior.json"
+      ]
+    },
+    {
+      "dimension": "verbosity",
+      "type": "continuous, unit=words",
+      "observed_baseline": 9.38,
+      "observed_range": [
+        6.23,
+        14.0
+      ],
+      "range_context": "6.23 words in sadness-context responses; 13-14 words in happiness/vulnerability contexts (vulnerability n=4, low confidence)",
+      "context_sensitivity": "medium",
+      "strongest_predictors": [
+        "emotional context of the preceding line"
+      ],
+      "correlations": [
+        "strongly correlated with humor_frequency (longer responses are far more likely to contain humor) and with discourse structure (multi-beat comic structures need length)"
+      ],
+      "source_files": [
+        "emotional_behavior.json",
+        "humor_statistics.json"
+      ]
+    },
+    {
+      "dimension": "directness",
+      "type": "continuous [0,1]",
+      "observed_baseline": 0.062,
+      "observed_range": [
+        0.0,
+        0.333
+      ],
+      "range_context": "near-zero in most contexts; highest in fear context (0.333, n=3, low confidence)",
+      "context_sensitivity": "low-medium, mostly low-n driven",
+      "source_files": [
+        "emotional_behavior.json"
+      ]
+    },
+    {
+      "dimension": "conversationality_informality",
+      "type": "continuous, unit=relative_frequency_multiplier_vs_baseline",
+      "observed_baseline": {
+        "interjections": 6.69,
+        "fillers": 3.25,
+        "contractions": 2.96,
+        "conversational_markers": 2.36,
+        "discourse_markers": 2.1
+      },
+      "context_sensitivity": "low -- this is close to a floor/invariant (see character_invariants.json rank 3)",
+      "source_files": [
+        "lexical_categories.json"
+      ]
+    },
+    {
+      "dimension": "rhetorical_question_frequency",
+      "type": "continuous [0,1]",
+      "observed_baseline": 0.054,
+      "observed_range": [
+        0.0,
+        0.1
+      ],
+      "range_context": "as an opener specifically: 5.4% of sampled responses; rises within challenge/tease/disagreement_humor discourse categories",
+      "context_sensitivity": "medium -- concentrated in specific discourse functions rather than spread evenly",
+      "strongest_predictors": [
+        "discourse category (statement_rhetorical_q, disagreement_humor, teasing)"
+      ],
+      "source_files": [
+        "conversation_timing.json",
+        "sentence_rhythm.json"
+      ]
+    },
+    {
+      "dimension": "punchline_frequency_and_placement",
+      "type": "categorical (none / whole_response / tag_end / embedded) + continuous rate",
+      "observed_baseline": {
+        "end_pct_of_humor_present": 65.2,
+        "whole_response_pct_of_humorous": 95.3
+      },
+      "context_sensitivity": "medium -- 'whole' dominates short/single-sentence responses, 'end' dominates multi-sentence responses",
+      "strongest_predictors": [
+        "response length / sentence count"
+      ],
+      "source_files": [
+        "conversation_timing.json",
+        "humor_statistics.json"
+      ]
+    },
+    {
+      "dimension": "vocabulary_informality",
+      "type": "continuous, unit=informal_to_formal_ratio",
+      "observed_baseline": 2671.0,
+      "context_sensitivity": "very low -- essentially a hard floor across the dataset (1 formal connector token in 23,781 words)",
+      "source_files": [
+        "lexical_statistics.json"
+      ]
+    },
+    {
+      "dimension": "teasing_frequency",
+      "type": "continuous [0,1]",
+      "observed_baseline": 0.104,
+      "observed_range": [
+        0.1,
+        0.14
+      ],
+      "range_context": "rises modestly with response length (10% short -> 14% medium -> 13% long)",
+      "context_sensitivity": "low-medium",
+      "source_files": [
+        "discourse_patterns.json",
+        "response_intents.json"
+      ]
+    },
+    {
+      "dimension": "deflection_frequency",
+      "type": "continuous [0,1]",
+      "observed_baseline": 0.066,
+      "context_sensitivity": "medium -- associated with self-protective or awkward-personal-topic contexts",
+      "source_files": [
+        "response_intents.json",
+        "discourse_patterns.json"
+      ]
+    },
+    {
+      "dimension": "uncertainty_expression",
+      "type": "continuous [0,1]",
+      "observed_baseline": 0.063,
+      "context_sensitivity": "low-medium",
+      "source_files": [
+        "response_intents.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "summary": "Structurally clean, single-schema dataset. Main quality concerns are (a) attribution ambiguity -- the 'gpt' turn's speaker identity (Chandler Bing) is asserted by dataset framing, not encoded as a field, and (b) a meaningful minority of responses are short, generic, low-information strings duplicated many times.",
+  "checks": [
+    {
+      "check": "null_or_missing_fields",
+      "result": "PASS",
+      "detail": "0 rows with missing 'conversations', 0 turns with missing 'from' or 'value'.",
+      "confidence": "OBSERVED"
+    },
+    {
+      "check": "empty_strings",
+      "result": "PASS",
+      "detail": "0 empty human or gpt 'value' strings after whitespace stripping.",
+      "confidence": "OBSERVED"
+    },
+    {
+      "check": "schema_uniformity",
+      "result": "PASS",
+      "detail": "All 2535 rows have exactly 2 turns in order [human, gpt]. No conversation has additional turns.",
+      "confidence": "OBSERVED"
+    },
+    {
+      "check": "malformed_records",
+      "result": "PASS",
+      "detail": "0 rows failed parsing (dict access on all turns succeeded, 'from' in {human,gpt} for every turn).",
+      "confidence": "OBSERVED"
+    },
+    {
+      "check": "exact_duplicate_responses",
+      "result": "WARN",
+      "detail": "230 of 2535 responses (9.1%) are exact string duplicates of another response in the dataset, collapsing into 80 distinct repeated strings. Nearly all are short backchannel/interjection lines (e.g. single greetings, one-word acknowledgments, 'Thanks.'-style closers) that recur naturally across many unrelated scenes because they are generic, not because they are distinctively 'Chandler'.",
+      "confidence": "OBSERVED",
+      "implication": "These strings should NOT be treated as high-signal characteristic vocabulary purely because of high raw frequency -- see negative_constraints.json for the correction applied (frequency is down-weighted for entries also common in generic English backchannel usage)."
+    },
+    {
+      "check": "near_duplicate_responses",
+      "result": "WARN",
+      "detail": "89 normalized (lowercased, punctuation-stripped) response groups cover 365 rows (14.4%), a slightly larger set than exact duplicates -- driven mainly by punctuation variants of the same short interjections (e.g. 'Hey' / 'Hey.' / 'Hey!').",
+      "confidence": "OBSERVED"
+    },
+    {
+      "check": "duplicate_context_blocks",
+      "result": "INFO",
+      "detail": "49 exact-duplicate human-turn contexts exist (out of 2535), a low rate (1.9%) consistent with independent sampling rather than systematic re-scraping.",
+      "confidence": "OBSERVED"
+    },
+    {
+      "check": "row_independence",
+      "result": "PASS (independence assumption holds)",
+      "detail": "Only 12/2534 adjacent-row pairs show the prior response text reappearing in the next row's context, a 0.47% rate consistent with coincidental short-string overlap rather than true sequential/chained transcript ordering. Rows can be treated as i.i.d. (context, response) samples for statistical purposes.",
+      "confidence": "INFERRED"
+    },
+    {
+      "check": "response_length_outliers",
+      "result": "INFO",
+      "detail": "13 responses (0.5%) are word_count<=1 (pure interjections, e.g. 'Ahhh.', 'Already?!'); a small tail of long multi-sentence responses exists above ~50 words (monologue-style scenes: toasts, wedding vows, apologies), consistent with occasional dramatic/emotional set-piece scenes rather than typical turn length.",
+      "confidence": "OBSERVED"
+    },
+    {
+      "check": "encoding_integrity",
+      "result": "PASS",
+      "detail": "No non-ASCII characters detected in either field; no mojibake, no control characters found.",
+      "confidence": "OBSERVED"
+    },
+    {
+      "check": "speaker_attribution_confidence",
+      "result": "WARN",
+      "detail": "The dataset schema does not explicitly label the 'gpt' turn as 'Chandler Bing' -- this identity is an external framing assumption (the dataset is presumed curated specifically as Chandler-response training pairs). No field cross-validates that every 'gpt' value is actually a Chandler line from the source scripts.",
+      "confidence": "HYPOTHESIS",
+      "implication": "All downstream analysis in this specification treats 'gpt' turns as Chandler's lines per dataset framing, consistent with the user's stated premise, but this is not independently verifiable from the data alone."
+    },
+    {
+      "check": "metadata_completeness",
+      "result": "WARN",
+      "detail": "No episode, season, scene, or timestamp metadata is present. Context-dependent analysis (Phases 10-14) is therefore based solely on the linguistic content of the 1-3 preceding dialogue lines, not on canonical scene/episode context.",
+      "confidence": "OBSERVED"
+    }
+  ],
+  "hidden_structure_notes": [
+    "Context turns are truncated dialogue snippets (1-3 lines, mean 2.59) drawn from a wide cast (188 distinct labeled speakers across all contexts), overwhelmingly the 5 core non-Chandler friends (Monica, Joey, Ross, Phoebe, Rachel cover the vast majority of context lines and of the immediately-preceding line).",
+    "The person speaking the line immediately before Chandler's response ('last_speaker') is dominated by the same 5 core cast members, in a distribution roughly proportional to their overall appearance -- no single interlocutor dominates disproportionately.",
+    "No systematic ordering/index pattern beyond row order was found; row order does not encode reliable episode sequence (see sequential_structure_test in dataset_statistics.json)."
+  ]
+}

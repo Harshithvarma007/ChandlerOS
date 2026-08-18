@@ -1,0 +1,27 @@
+{
+  "active_providers": ["gemini", "groq"],
+  "weights": {
+    "capability_fit": 0.30,
+    "latency": 0.20,
+    "health": 0.25,
+    "quota": 0.15,
+    "cost": 0.05,
+    "quality": 0.05
+  },
+  "providers": {
+    "gemini": {
+      "simple": "gemini-flash-latest",
+      "complex": "gemini-pro-latest"
+    },
+    "groq": {
+      "simple": "openai/gpt-oss-20b",
+      "complex": "openai/gpt-oss-120b"
+    }
+  },
+  "historical_quality": {
+    "gemini-flash-latest": 0.80,
+    "gemini-pro-latest": 0.90,
+    "openai/gpt-oss-20b": 0.75,
+    "openai/gpt-oss-120b": 0.85
+  }
+}

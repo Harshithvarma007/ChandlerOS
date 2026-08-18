@@ -1,0 +1,227 @@
+[
+  {
+    "ref": "harshithvarma007/breast-cancer-dataset",
+    "title": "Breast Cancer Dataset",
+    "size": 49794,
+    "lastUpdated": "2025-11-03T03:47:19.267000",
+    "downloadCount": 34,
+    "voteCount": 0,
+    "usabilityRating": 0.29411766
+  },
+  {
+    "ref": "harshithvarma007/disaster-tweets",
+    "title": "Disaster Tweets",
+    "size": 405133,
+    "lastUpdated": "2024-03-12T05:12:36.697000",
+    "downloadCount": 473,
+    "voteCount": 6,
+    "usabilityRating": 1
+  },
+  {
+    "ref": "harshithvarma007/salary",
+    "title": "salary",
+    "size": 398,
+    "lastUpdated": "2025-11-03T02:36:24.587000",
+    "downloadCount": 24,
+    "voteCount": 0,
+    "usabilityRating": 0.4117647
+  },
+  {
+    "ref": "harshithvarma007/admission-chance",
+    "title": "Admission Chance",
+    "size": 5191,
+    "lastUpdated": "2025-11-03T09:36:58.420000",
+    "downloadCount": 2,
+    "voteCount": 0,
+    "usabilityRating": 0.29411766
+  },
+  {
+    "ref": "harshithvarma007/car-evaluation-dataset",
+    "title": "Car evaluation Dataset",
+    "size": 4775,
+    "lastUpdated": "2025-11-03T09:59:45.653000",
+    "downloadCount": 16,
+    "voteCount": 0,
+    "usabilityRating": 0.29411766
+  },
+  {
+    "ref": "harshithvarma007/trace-the-ace",
+    "title": "Trace The Ace",
+    "size": 459589050,
+    "lastUpdated": "2026-06-23T17:36:47.060000",
+    "downloadCount": 1,
+    "voteCount": 0,
+    "usabilityRating": 0.11764706
+  },
+  {
+    "ref": "harshithvarma007/mallorn-dataset",
+    "title": "MALLORN Dataset",
+    "size": 41403219,
+    "lastUpdated": "2026-01-08T10:28:03.277000",
+    "downloadCount": 5,
+    "voteCount": 0,
+    "usabilityRating": 0.11764706
+  },
+  {
+    "ref": "harshithvarma007/url-dataset-combined",
+    "title": "URL_DATASET_Combined",
+    "size": 26829396,
+    "lastUpdated": "2024-01-04T09:17:03.100000",
+    "downloadCount": 3,
+    "voteCount": 0,
+    "usabilityRating": 0.1764706
+  },
+  {
+    "ref": "harshithvarma007/build-llm-from-scratch",
+    "title": "Build LLM from Scratch",
+    "size": 99563,
+    "lastUpdated": "2025-08-18T15:26:12.963000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.3125
+  },
+  {
+    "ref": "harshithvarma007/train-data",
+    "title": "train_data",
+    "size": 9018,
+    "lastUpdated": "2023-10-28T22:41:46.883000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.11764706
+  },
+  {
+    "ref": "harshithvarma007/bsc-gru-93-47",
+    "title": "BSC_GRU_93.47%",
+    "size": 1456951,
+    "lastUpdated": "2024-10-08T13:06:52.700000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.25
+  },
+  {
+    "ref": "harshithvarma007/shot-classification",
+    "title": "Shot Classification",
+    "size": 66670912,
+    "lastUpdated": "2026-03-16T03:40:38.753000",
+    "downloadCount": 2,
+    "voteCount": 0,
+    "usabilityRating": 0.11764706
+  },
+  {
+    "ref": "harshithvarma007/amazon-ml-challenge",
+    "title": "Amazon ML challenge",
+    "size": 12711078,
+    "lastUpdated": "2024-09-13T03:23:08.383000",
+    "downloadCount": 3,
+    "voteCount": 0,
+    "usabilityRating": 0.23529412
+  },
+  {
+    "ref": "harshithvarma007/face-recognisition",
+    "title": "Face_Recognisition",
+    "size": 172477105,
+    "lastUpdated": "2024-07-12T12:58:09.497000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.125
+  },
+  {
+    "ref": "harshithvarma007/tdl-111",
+    "title": "TDL_111",
+    "size": 816588552,
+    "lastUpdated": "2024-04-10T08:00:20.117000",
+    "downloadCount": 1,
+    "voteCount": 0,
+    "usabilityRating": 0.23529412
+  },
+  {
+    "ref": "harshithvarma007/tdl-gesture",
+    "title": "TDL_gesture",
+    "size": 127245877,
+    "lastUpdated": "2024-04-07T13:11:08.827000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.125
+  },
+  {
+    "ref": "harshithvarma007/lfw-tgz",
+    "title": "lfw.tgz",
+    "size": 180621875,
+    "lastUpdated": "2024-03-15T07:36:11.137000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.25
+  },
+  {
+    "ref": "harshithvarma007/final-dataset",
+    "title": "Final_Dataset",
+    "size": 29755440,
+    "lastUpdated": "2023-12-27T12:55:09.657000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.11764706
+  },
+  {
+    "ref": "harshithvarma007/enterprise-threat-severity-detection-2",
+    "title": "Enterprise Threat Severity Detection 2",
+    "size": 295939,
+    "lastUpdated": "2026-03-11T06:53:12.703000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.11764706
+  },
+  {
+    "ref": "harshithvarma007/enterprise-threat-severity-detection",
+    "title": "Enterprise Threat Severity Detection",
+    "size": 72722,
+    "lastUpdated": "2026-03-11T06:52:32.287000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.11764706
+  },
+  {
+    "ref": "harshithvarma007/classifying-prompt-instructions",
+    "title": "Classifying Prompt Instructions",
+    "size": 198842,
+    "lastUpdated": "2026-03-08T08:03:06.313000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.11764706
+  },
+  {
+    "ref": "harshithvarma007/atp-heuristic-efficiency-distribution-regression",
+    "title": "ATP Heuristic Efficiency Distribution Regression",
+    "size": 2222477,
+    "lastUpdated": "2026-03-12T09:49:59.737000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.11764706
+  },
+  {
+    "ref": "harshithvarma007/english-qa-decision-aware-quality-challenge",
+    "title": "English QA Decision-Aware Quality Challenge",
+    "size": 158579,
+    "lastUpdated": "2026-03-11T09:07:22.600000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.11764706
+  },
+  {
+    "ref": "harshithvarma007/hvac-efficiency-and-setpoint-adherence",
+    "title": "HVAC Efficiency & Setpoint Adherence",
+    "size": 6506910,
+    "lastUpdated": "2026-03-12T07:57:06.980000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.11764706
+  },
+  {
+    "ref": "harshithvarma007/dual-feedback",
+    "title": "Dual Feedback",
+    "size": 2398837,
+    "lastUpdated": "2026-03-17T05:25:57.073000",
+    "downloadCount": 0,
+    "voteCount": 0,
+    "usabilityRating": 0.11764706
+  }
+]

@@ -1,0 +1,468 @@
+{
+  "meta": {
+    "worker": "Syntax/Rhythm Analyst",
+    "phase": "Phase 4 - Rhythm & Rhetorical Structure",
+    "sample_size_responses": 2535,
+    "measurement_method": "Regex/lexical-cue heuristics applied to response_raw (case-insensitive unless noted) plus POS-tag-based sentence segmentation. Rates are count of responses matching a structural pattern / total responses (or relevant denominator), not sentence-level unless stated.",
+    "quartile_definition": "Same response_word_count quartiles as syntax_profile.json."
+  },
+  "short_punchline_structure": {
+    "tag": "INFERRED",
+    "description": "A multi-sentence response where the longest 'setup' sentence (any sentence except the last) has >=7 words and the final sentence has <=4 words and is shorter than the setup. Template: '[setup clause, 7+ words]. [payoff, <=4 words].'",
+    "denominator": "responses with >=2 sentences (778 of 2535, 30.7%)",
+    "rate_over_eligible_responses": {
+      "count": 94,
+      "total": 778,
+      "rate": 0.1208,
+      "pct": 12.08
+    },
+    "rate_over_all_responses": {
+      "count": 94,
+      "total": 2535,
+      "rate": 0.0371,
+      "pct": 3.71
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 0,
+        "total": 782,
+        "rate": 0.0,
+        "pct": 0.0
+      },
+      "Q2_medlow": {
+        "count": 0,
+        "total": 535,
+        "rate": 0.0,
+        "pct": 0.0
+      },
+      "Q3_medhigh": {
+        "count": 30,
+        "total": 588,
+        "rate": 0.051,
+        "pct": 5.1
+      },
+      "Q4_long": {
+        "count": 64,
+        "total": 630,
+        "rate": 0.1016,
+        "pct": 10.16
+      }
+    }
+  },
+  "long_setup_short_payoff_frequency": {
+    "tag": "INFERRED",
+    "description": "Broader version of the punchline pattern: setup sentence length >= 1.8x the final sentence length (and setup >=6 words). Captures graduated setup/payoff ratio rather than a hard short-payoff cutoff.",
+    "rate_over_eligible_responses": {
+      "count": 145,
+      "total": 778,
+      "rate": 0.1864,
+      "pct": 18.64
+    },
+    "rate_over_all_responses": {
+      "count": 145,
+      "total": 2535,
+      "rate": 0.0572,
+      "pct": 5.72
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 0,
+        "total": 782,
+        "rate": 0.0,
+        "pct": 0.0
+      },
+      "Q2_medlow": {
+        "count": 1,
+        "total": 535,
+        "rate": 0.0019,
+        "pct": 0.19
+      },
+      "Q3_medhigh": {
+        "count": 31,
+        "total": 588,
+        "rate": 0.0527,
+        "pct": 5.27
+      },
+      "Q4_long": {
+        "count": 113,
+        "total": 630,
+        "rate": 0.1794,
+        "pct": 17.94
+      }
+    }
+  },
+  "parallel_structures": {
+    "tag": "INFERRED",
+    "description": "Multi-sentence response where >=2 sentences repeat the same first word, or ALL sentences share the same opening POS tag (proxy for repeated syntactic frame, e.g. anaphora-like openings).",
+    "rate_over_eligible_responses": {
+      "count": 160,
+      "total": 778,
+      "rate": 0.2057,
+      "pct": 20.57
+    },
+    "rate_over_all_responses": {
+      "count": 160,
+      "total": 2535,
+      "rate": 0.0631,
+      "pct": 6.31
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 16,
+        "total": 782,
+        "rate": 0.0205,
+        "pct": 2.05
+      },
+      "Q2_medlow": {
+        "count": 22,
+        "total": 535,
+        "rate": 0.0411,
+        "pct": 4.11
+      },
+      "Q3_medhigh": {
+        "count": 33,
+        "total": 588,
+        "rate": 0.0561,
+        "pct": 5.61
+      },
+      "Q4_long": {
+        "count": 89,
+        "total": 630,
+        "rate": 0.1413,
+        "pct": 14.13
+      }
+    }
+  },
+  "repetition_within_response": {
+    "tag": "OBSERVED",
+    "description": "A content word (length>=3 chars, common function words excluded via stoplist) appears >=2 times within the same response_raw.",
+    "rate": {
+      "count": 396,
+      "total": 2535,
+      "rate": 0.1562,
+      "pct": 15.62
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 23,
+        "total": 782,
+        "rate": 0.0294,
+        "pct": 2.94
+      },
+      "Q2_medlow": {
+        "count": 52,
+        "total": 535,
+        "rate": 0.0972,
+        "pct": 9.72
+      },
+      "Q3_medhigh": {
+        "count": 71,
+        "total": 588,
+        "rate": 0.1207,
+        "pct": 12.07
+      },
+      "Q4_long": {
+        "count": 250,
+        "total": 630,
+        "rate": 0.3968,
+        "pct": 39.68
+      }
+    }
+  },
+  "contrast_structures": {
+    "tag": "OBSERVED",
+    "description": "Response contains a contrast/pivot marker: but / except / though / however / then again (word-boundary, case-insensitive).",
+    "rate": {
+      "count": 130,
+      "total": 2535,
+      "rate": 0.0513,
+      "pct": 5.13
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 1,
+        "total": 782,
+        "rate": 0.0013,
+        "pct": 0.13
+      },
+      "Q2_medlow": {
+        "count": 7,
+        "total": 535,
+        "rate": 0.0131,
+        "pct": 1.31
+      },
+      "Q3_medhigh": {
+        "count": 31,
+        "total": 588,
+        "rate": 0.0527,
+        "pct": 5.27
+      },
+      "Q4_long": {
+        "count": 91,
+        "total": 630,
+        "rate": 0.1444,
+        "pct": 14.44
+      }
+    }
+  },
+  "conditional_structures": {
+    "tag": "OBSERVED",
+    "description": "Response contains 'if' anywhere (broad denominator), with sub-flags for 'if...then' spanning <=60 chars, 'if I', and 'what if'.",
+    "rate_any_if": {
+      "count": 82,
+      "total": 2535,
+      "rate": 0.0323,
+      "pct": 3.23
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 0,
+        "total": 782,
+        "rate": 0.0,
+        "pct": 0.0
+      },
+      "Q2_medlow": {
+        "count": 4,
+        "total": 535,
+        "rate": 0.0075,
+        "pct": 0.75
+      },
+      "Q3_medhigh": {
+        "count": 16,
+        "total": 588,
+        "rate": 0.0272,
+        "pct": 2.72
+      },
+      "Q4_long": {
+        "count": 62,
+        "total": 630,
+        "rate": 0.0984,
+        "pct": 9.84
+      }
+    }
+  },
+  "rhetorical_question_surface_rate": {
+    "tag": "HYPOTHESIS",
+    "description": "Surface heuristic only (per instructions, deeper discourse categorization deferred to Discourse worker). Flags a question-containing response as 'rhetorical-like' if it contains a tag-question pattern (e.g. '...right?', '...isn't it?') or a rhetorical lexical cue (e.g. 'who doesn't', 'what's the point'). This measures surface rate, not confirmed communicative intent.",
+    "denominator": "responses containing at least one '?' (741 of 2535, 29.2%)",
+    "rate_over_question_responses": {
+      "count": 40,
+      "total": 741,
+      "rate": 0.054,
+      "pct": 5.4
+    },
+    "rate_over_all_responses": {
+      "count": 40,
+      "total": 2535,
+      "rate": 0.0158,
+      "pct": 1.58
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 0,
+        "total": 782,
+        "rate": 0.0,
+        "pct": 0.0
+      },
+      "Q2_medlow": {
+        "count": 6,
+        "total": 535,
+        "rate": 0.0112,
+        "pct": 1.12
+      },
+      "Q3_medhigh": {
+        "count": 12,
+        "total": 588,
+        "rate": 0.0204,
+        "pct": 2.04
+      },
+      "Q4_long": {
+        "count": 22,
+        "total": 630,
+        "rate": 0.0349,
+        "pct": 3.49
+      }
+    }
+  },
+  "self_correction": {
+    "tag": "OBSERVED",
+    "description": "Response contains a self-correction cue: 'I mean', 'wait, no'/'no, wait', 'actually', 'or not', 'scratch that', 'sorry, I'.",
+    "rate": {
+      "count": 78,
+      "total": 2535,
+      "rate": 0.0308,
+      "pct": 3.08
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 2,
+        "total": 782,
+        "rate": 0.0026,
+        "pct": 0.26
+      },
+      "Q2_medlow": {
+        "count": 7,
+        "total": 535,
+        "rate": 0.0131,
+        "pct": 1.31
+      },
+      "Q3_medhigh": {
+        "count": 12,
+        "total": 588,
+        "rate": 0.0204,
+        "pct": 2.04
+      },
+      "Q4_long": {
+        "count": 57,
+        "total": 630,
+        "rate": 0.0905,
+        "pct": 9.05
+      }
+    }
+  },
+  "interruption_markers": {
+    "tag": "OBSERVED",
+    "description": "Response contains an em-dash (\u2014) or double-hyphen (--), used as the primary surface marker of interruption/self-interruption in this dataset's transcription convention.",
+    "rate": {
+      "count": 6,
+      "total": 2535,
+      "rate": 0.0024,
+      "pct": 0.24
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 0,
+        "total": 782,
+        "rate": 0.0,
+        "pct": 0.0
+      },
+      "Q2_medlow": {
+        "count": 0,
+        "total": 535,
+        "rate": 0.0,
+        "pct": 0.0
+      },
+      "Q3_medhigh": {
+        "count": 4,
+        "total": 588,
+        "rate": 0.0068,
+        "pct": 0.68
+      },
+      "Q4_long": {
+        "count": 2,
+        "total": 630,
+        "rate": 0.0032,
+        "pct": 0.32
+      }
+    }
+  },
+  "restatement": {
+    "tag": "INFERRED",
+    "description": "Response contains an explicit restatement cue: 'I mean', 'or rather', 'that is,', 'what I mean is'. Overlaps with self_correction by construction (both key off 'I mean'); treat as related, not independent, structures.",
+    "rate": {
+      "count": 35,
+      "total": 2535,
+      "rate": 0.0138,
+      "pct": 1.38
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 1,
+        "total": 782,
+        "rate": 0.0013,
+        "pct": 0.13
+      },
+      "Q2_medlow": {
+        "count": 0,
+        "total": 535,
+        "rate": 0.0,
+        "pct": 0.0
+      },
+      "Q3_medhigh": {
+        "count": 2,
+        "total": 588,
+        "rate": 0.0034,
+        "pct": 0.34
+      },
+      "Q4_long": {
+        "count": 32,
+        "total": 630,
+        "rate": 0.0508,
+        "pct": 5.08
+      }
+    },
+    "overlap_note": "Shares the 'I mean' cue with self_correction; not statistically independent from it."
+  },
+  "unfinished_thought": {
+    "tag": "OBSERVED",
+    "description": "response_raw (stripped) ends in an ellipsis '...' or ends in a dash ('--' or em-dash) with no following terminal punctuation.",
+    "rate": {
+      "count": 52,
+      "total": 2535,
+      "rate": 0.0205,
+      "pct": 2.05
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 13,
+        "total": 782,
+        "rate": 0.0166,
+        "pct": 1.66
+      },
+      "Q2_medlow": {
+        "count": 15,
+        "total": 535,
+        "rate": 0.028,
+        "pct": 2.8
+      },
+      "Q3_medhigh": {
+        "count": 10,
+        "total": 588,
+        "rate": 0.017,
+        "pct": 1.7
+      },
+      "Q4_long": {
+        "count": 14,
+        "total": 630,
+        "rate": 0.0222,
+        "pct": 2.22
+      }
+    }
+  },
+  "parenthetical_structures": {
+    "tag": "OBSERVED",
+    "description": "Response contains a parenthetical aside marked by a matched parenthesis pair '(...)' or by a paired em-dash/double-hyphen aside (>=2 dash marks in the response). Comma-delimited asides (e.g. appositives) are NOT counted here due to high false-positive risk from ordinary comma use; this metric is a lower bound on true parenthetical rate.",
+    "rate": {
+      "count": 0,
+      "total": 2535,
+      "rate": 0.0,
+      "pct": 0.0
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 0,
+        "total": 782,
+        "rate": 0.0,
+        "pct": 0.0
+      },
+      "Q2_medlow": {
+        "count": 0,
+        "total": 535,
+        "rate": 0.0,
+        "pct": 0.0
+      },
+      "Q3_medhigh": {
+        "count": 0,
+        "total": 588,
+        "rate": 0.0,
+        "pct": 0.0
+      },
+      "Q4_long": {
+        "count": 0,
+        "total": 630,
+        "rate": 0.0,
+        "pct": 0.0
+      }
+    }
+  }
+}

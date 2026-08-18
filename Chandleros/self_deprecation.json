@@ -1,0 +1,197 @@
+{
+  "phase": "Phase 9 - Self-Deprecation Analysis",
+  "methodology": {
+    "method": "Same systematic stratified sample as Phase 8 (every 7th row by id from the id-sorted 2535-record dataset, ~stratified across response-length terciles). Each sampled row's context_raw + response_raw read and classified for self-deprecation using a fixed definition applied before classification began.",
+    "sample_size": 363,
+    "full_dataset_size": 2535,
+    "sampling_fraction": 0.1432,
+    "categories_used": {
+      "trigger": [
+        "after_praise",
+        "after_mistake",
+        "awkward (embarrassing/vulnerable moment)",
+        "unprompted/spontaneous",
+        "other"
+      ],
+      "placement": [
+        "start",
+        "middle",
+        "end",
+        "whole (entire response is a single self-deprecating beat -- typical given short 1-2 sentence response length)"
+      ],
+      "function": [
+        "soften_preceding_statement",
+        "create_humor",
+        "avoid_vulnerability"
+      ]
+    },
+    "definition_self_deprecation": "A response is coded self-deprecating only if Chandler explicitly frames something about HIMSELF (his competence, appearance, past behavior, courage, relationship, or intelligence) in a self-critical or self-mocking way. Absurdist non-sequiturs, deflecting compliments with unrelated jokes that are not self-critical, and general sarcasm not aimed at self were excluded.",
+    "measurement_method": "Binary self-deprecation flag + trigger + placement + function assigned per sampled response; counts tabulated programmatically; proportions extrapolated linearly to the full dataset. Sample counts/proportions tagged OBSERVED; full-dataset extrapolations tagged INFERRED.",
+    "limitations": "Self-deprecation is a genuinely rare event in this sample (9 of 363, ~2.5%), so sub-category proportions (trigger, placement, function breakdowns) rest on a small base (n=9) and should be read as directional/HYPOTHESIS-adjacent rather than precise -- flagged explicitly below where relevant."
+  },
+  "self_deprecation_frequency": {
+    "observed_sample_rate": {
+      "value": 0.0248,
+      "sample_size": 363,
+      "self_deprecating_count": 9,
+      "tag": "OBSERVED"
+    },
+    "inferred_full_dataset": {
+      "estimated_self_deprecating_responses": 63,
+      "of_total": 2535,
+      "tag": "INFERRED"
+    },
+    "note": "Self-deprecation, strictly defined as an explicit self-critical reframe, is markedly less frequent than sarcasm in general (2.5% vs 59.2% of sampled responses) -- Chandler's default defense mechanism is sarcasm aimed outward/at situations, not inward at himself."
+  },
+  "self_deprecation_intensity": {
+    "tag": "OBSERVED",
+    "sample_size": 9,
+    "description": "All 9 observed instances were mild-to-moderate in intensity (light self-mockery embedded in a joke, never a sustained or severe self-attack); none rose to a 'strong' / distressed register.",
+    "mild_count": 6,
+    "moderate_count": 3,
+    "strong_count": 0
+  },
+  "triggers": {
+    "tag": "OBSERVED",
+    "sample_size": 9,
+    "distribution": [
+      {
+        "trigger": "awkward",
+        "count": 5,
+        "proportion": 0.5556
+      },
+      {
+        "trigger": "unprompted",
+        "count": 3,
+        "proportion": 0.3333
+      },
+      {
+        "trigger": "after_mistake",
+        "count": 1,
+        "proportion": 0.1111
+      }
+    ],
+    "after_praise_count": 0,
+    "note": "No sampled instance followed direct praise of Chandler -- self-deprecation in this corpus is triggered far more often by awkward/embarrassing moments (56%) or arises unprompted as a spontaneous joke (33%) than as a reaction to being complimented or criticized."
+  },
+  "placement_in_response": {
+    "tag": "OBSERVED",
+    "sample_size": 9,
+    "distribution": [
+      {
+        "placement": "whole",
+        "count": 7,
+        "proportion": 0.7778
+      },
+      {
+        "placement": "end",
+        "count": 2,
+        "proportion": 0.2222
+      }
+    ],
+    "note": "Because most Chandler responses are only 1-2 sentences (median response length in the full dataset is short), the self-deprecating beat typically IS the entire response ('whole', 78%) rather than being embedded as a discrete start/middle/end clause within a longer response; where the response is longer, the self-deprecating beat lands at the end (22%), functioning as a closing punchline/deflection rather than an opener."
+  },
+  "function": {
+    "tag": "OBSERVED",
+    "sample_size": 9,
+    "primary_function_distribution": [
+      {
+        "function": "humor",
+        "count": 9,
+        "proportion": 1.0
+      }
+    ],
+    "secondary_function_avoid_vulnerability": {
+      "count": 4,
+      "proportion": 0.4444,
+      "description": "4 of 9 instances additionally serve to deflect an emotionally exposing topic (financial shame, cowardice, sex life, physical insecurity) -- the joke's real job is topic-avoidance, humor is the delivery mechanism."
+    },
+    "soften_preceding_statement": {
+      "count": 0,
+      "proportion": 0.0,
+      "description": "No sampled instance used self-deprecation to soften a critical statement Chandler himself had just made about someone else; all instances were standalone jokes about himself, not face-saving hedges for a prior remark."
+    },
+    "note": "100% of instances serve a humor function (self-deprecation is essentially always joke-packaged); within that, roughly 44% also do defensive work of avoiding a genuinely vulnerable topic."
+  },
+  "emotional_context": {
+    "tag": "OBSERVED",
+    "sample_size": 9,
+    "context_tone_distribution": {
+      "light": 2,
+      "serious": 4,
+      "awkward": 1,
+      "neutral": 2
+    },
+    "finding": "Self-deprecation instances skew toward serious/awkward preceding context (6 of 9, 67%) even though the overall sample is majority light-toned context (52%) -- self-deprecation, unlike sarcasm generally, appears disproportionately concentrated in moments of real or performed vulnerability rather than pure banter, consistent with a defense-mechanism reading."
+  },
+  "structures": {
+    "tag": "OBSERVED",
+    "sample_size": 9,
+    "description": "Abstract structural templates (setup -> mechanism -> outcome), no verbatim quotes.",
+    "templates": [
+      {
+        "name": "deflect_wellbeing_check",
+        "count": 2,
+        "template": [
+          "another character checks on speaker's emotional/physical state or asks a direct personal question",
+          "speaker deflects with a self-mocking admission of a personal flaw or bad decision",
+          "vulnerability is avoided and reframed as a joke"
+        ]
+      },
+      {
+        "name": "embarrassing_evidence_reversal",
+        "count": 2,
+        "template": [
+          "speaker is confronted with unflattering evidence about himself (an old photo, a past dating habit)",
+          "speaker exaggerates or mock-panics about his own flaw rather than defending or explaining it",
+          "the embarrassment is neutralized through self-directed exaggeration"
+        ]
+      },
+      {
+        "name": "criticism_deflection",
+        "count": 1,
+        "template": [
+          "another character relays criticism or a corrective note about speaker's behavior/performance",
+          "speaker responds with an unrelated, absurd self-deprecating aside about an unrelated trait (e.g. age)",
+          "the criticism is defused with humor rather than engaged with"
+        ]
+      },
+      {
+        "name": "competitive_self_deprecation",
+        "count": 1,
+        "template": [
+          "another character claims a superlative bad/unlucky status for themselves",
+          "speaker outbids them by claiming an even worse version of the same trait for himself",
+          "self-deprecation becomes a bid for solidarity/attention rather than genuine distress"
+        ]
+      },
+      {
+        "name": "avoidance_admission",
+        "count": 1,
+        "template": [
+          "speaker is placed in a situation requiring courage or direct confrontation",
+          "speaker explicitly admits he will avoid, hide from, or fail at it",
+          "the admission itself becomes the joke, defusing the tension without resolving it"
+        ]
+      },
+      {
+        "name": "preemptive_self_mockery",
+        "count": 2,
+        "template": [
+          "speaker's competence, intelligence, or ability is implicitly relevant to the moment",
+          "speaker jokingly agrees with or exaggerates his own shortcoming before anyone else can",
+          "self-mockery preempts external criticism and closes off the topic"
+        ]
+      }
+    ]
+  },
+  "sarcasm_self_deprecation_cooccurrence": {
+    "tag": "OBSERVED",
+    "sample_size": 363,
+    "cooccurring_count": 8,
+    "cooccurrence_rate_of_full_sample": 0.022,
+    "cooccurrence_rate_within_selfdep_instances": 0.8889,
+    "cooccurrence_rate_within_sarcastic_instances": 0.0372,
+    "note": "8 of 9 self-deprecating instances (89%) are simultaneously sarcastic/ironic in delivery (deadpan, ironic statement, mock horror, exaggerated claim, self-mocking) -- self-deprecation is essentially a special case of sarcasm where the target happens to be the speaker himself, rather than a distinct sincere register."
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "phase": 15,
+  "title": "Character Invariants",
+  "methodology": "Ranks the smallest set of stable characteristics that explain the majority of observed style, drawing on all Phase 1-13 artifacts. Ranked by a composite of: statistical_strength (magnitude of effect/ratio), frequency (how often it's observable), distinctiveness (how far from a generic-English baseline, where applicable), cross_context_stability (does it hold across emotional contexts / addressees / response lengths), and confidence (sample size and method robustness behind the number).",
+  "ranking_note": "Rank 1 = most invariant/defining. This is a curated top-12 list, not exhaustive.",
+  "invariants": [
+    {
+      "rank": 1,
+      "invariant": "Humor/entertainment is the dominant response intent and is not suppressed by emotionally serious context",
+      "type": "conversational_invariant",
+      "evidence": [
+        "response_intents.json: entertain=54.6% overall, dominant across short/medium/long length buckets (28%/58%/78%)",
+        "response_intents.json: entertain=69.2% in distress-signaling contexts vs 52.5% mundane",
+        "humor_statistics.json: 80.0% overall humor rate in sample"
+      ],
+      "statistical_strength": "high",
+      "cross_context_stability": "high (holds across length buckets and emotional contexts; if anything strengthens under distress)",
+      "confidence": "high (n=317-425 across two independently-sampled workers, consistent conclusion)"
+    },
+    {
+      "rank": 2,
+      "invariant": "Punchline/comic-payoff is structurally placed at the END of multi-sentence responses, not the start or middle",
+      "type": "syntactic_invariant / humor_invariant",
+      "evidence": [
+        "conversation_timing.json: 55.4% of multi-sentence responses place humor at the end vs 4.0% at the start",
+        "conversation_timing.json: 65.2% of humor-present responses deliver the punchline at the final clause/sentence",
+        "sentence_rhythm.json: long-setup-short-payoff pattern present in 18.6% of multi-sentence responses"
+      ],
+      "statistical_strength": "high",
+      "cross_context_stability": "high (consistent shape regardless of which discourse category the response falls into)",
+      "confidence": "high (n=101-317, consistent across two measurement approaches -- surface heuristic in sentence_rhythm.json and semantic tagging in conversation_timing.json)"
+    },
+    {
+      "rank": 3,
+      "invariant": "Strongly informal, high-contraction, high-interjection conversational register",
+      "type": "lexical_invariant",
+      "evidence": [
+        "lexical_categories.json: interjections 6.69x assumed baseline, fillers 3.25x, contractions 2.96x, conversational_markers 2.36x, discourse_markers 2.1x",
+        "lexical_statistics.json: informal-to-formal signal ratio ~2671:1 (1 formal connector token found in 23,781 words)"
+      ],
+      "statistical_strength": "very high",
+      "cross_context_stability": "high (measured dataset-wide, not context-gated, though see note that this is a floor -- no sub-context showed a formal register)",
+      "confidence": "high (n=23,781 word tokens; caveat: baseline itself is a stated literature assumption, not an external measured corpus -- see lexical_categories.json meta)"
+    },
+    {
+      "rank": 4,
+      "invariant": "Sarcasm is present at a high floor rate (49-65%) across every context tone measured, making it the single most common humor-adjacent mechanism, but its rate is context-modulated rather than flat",
+      "type": "humor_invariant (with intensity-dependent modulation, see personality_context_matrix.json)",
+      "evidence": [
+        "sarcasm_profile.json: 59.2% sample rate; lowest in serious/vulnerable context (49.1%), highest in light/awkward (61.8-65.3%)",
+        "humor_statistics.json: sarcasm is the 3rd most common humor mechanism at 23.8% of humorous rows, and co-occurs most with exaggeration/irony/rhetorical_humor"
+      ],
+      "statistical_strength": "high",
+      "cross_context_stability": "medium-high (never disappears, but has a measurable ~16pp swing by context)",
+      "confidence": "high (n=363 sample)"
+    },
+    {
+      "rank": 5,
+      "invariant": "Sarcasm targets other characters or the situation far more often than the self",
+      "type": "social_invariant",
+      "evidence": [
+        "sarcasm_profile.json: target distribution other_char=45.1%, situation=30.7%, self=17.2%, abstract/circumstance/group each <4%",
+        "self_deprecation.json: strict self-deprecation is rare in absolute terms (2.5% of all responses) despite Chandler's popular reputation for being self-deprecating"
+      ],
+      "statistical_strength": "high",
+      "cross_context_stability": "high (self-target share rises somewhat in awkward/serious contexts but never becomes dominant)",
+      "confidence": "high (n=363)"
+    },
+    {
+      "rank": 6,
+      "invariant": "Deadpan delivery is the dominant sarcasm/humor marker (flat delivery of absurd or biting content)",
+      "type": "humor_invariant",
+      "evidence": [
+        "sarcasm_profile.json: deadpan_delivery present in 42.8% of sarcastic instances, the single most common marker",
+        "humor_statistics.json: deadpan is the 2nd most frequent humor mechanism overall (24.7% of humorous rows) and pairs most often with understatement and sarcasm as a co-occurring delivery-mode tag"
+      ],
+      "statistical_strength": "high",
+      "cross_context_stability": "high",
+      "confidence": "high (n=215 sarcastic instances, n=340 humorous instances, two independent workers converge)"
+    },
+    {
+      "rank": 7,
+      "invariant": "Short median utterance length with heavy right-skew (many one-liners, occasional long monologue set-pieces)",
+      "type": "syntactic_invariant",
+      "evidence": [
+        "dataset_statistics.json: median=7 words, mean=9.38, stdev=8.46, p90=19, max=98",
+        "dataset_statistics.json: 267 responses (10.5%) are <=1 word"
+      ],
+      "statistical_strength": "high",
+      "cross_context_stability": "high baseline, but see rank-10 for context-dependent modulation",
+      "confidence": "high (full-dataset OBSERVED count, n=2535)"
+    },
+    {
+      "rank": 8,
+      "invariant": "Active voice and first-person-forward framing dominate",
+      "type": "grammatical_invariant",
+      "evidence": [
+        "pos_profile.json: active voice ~97.9% of responses; passive-pattern constructions in only ~2.1%",
+        "pos_profile.json: 1st-person pronouns = 45.7% of all pronoun tokens vs 30.5% 2nd-person and 23.7% 3rd-person"
+      ],
+      "statistical_strength": "high",
+      "cross_context_stability": "high",
+      "confidence": "high (n=23,781 tokens; passive estimate is a pattern-heuristic, not a full parse)"
+    },
+    {
+      "rank": 9,
+      "invariant": "Humor is rarely a single clean mechanism -- jokes stack 2-3 mechanisms simultaneously",
+      "type": "humor_invariant",
+      "evidence": [
+        "humor_statistics.json: mean 2.49 mechanisms per humorous response; 90.9% of humorous responses carry more than one mechanism; max 5 in a single response"
+      ],
+      "statistical_strength": "high",
+      "cross_context_stability": "high",
+      "confidence": "medium-high (n=340 humorous sampled rows; multi-label tagging across 4 unreconciled sub-samples per the humor worker's own caveat)"
+    },
+    {
+      "rank": 10,
+      "invariant": "Response length itself predicts response function: short responses are direct/reactive (answer, acknowledge, clarify, question_question), long responses are vehicles for multi-beat comic or argumentative structure",
+      "type": "conversational_invariant",
+      "evidence": [
+        "discourse_patterns.json: short bucket top structures = direct_answer(44%)/question_question(22%)/emotional_response(18%); long bucket top = observation_punchline(22%)/direct_answer(22%)/setup_punchline(18%)/disagreement_humor(15%)",
+        "response_intents.json: entertain intent rises 28%->58%->78% from short to long buckets",
+        "humor_statistics.json: humor rate rises 59.5%->91.2%->94.2% from short to long tercile"
+      ],
+      "statistical_strength": "high",
+      "cross_context_stability": "high (consistent across three independently-computed files)",
+      "confidence": "high"
+    },
+    {
+      "rank": 11,
+      "invariant": "Verbosity and conversational energy contract in genuinely negative/threatening contexts (sadness, anger, fear, confusion) relative to neutral/upbeat/uncertain contexts",
+      "type": "emotional_invariant",
+      "evidence": [
+        "emotional_behavior.json: sadness verbosity=6.23 words vs neutrality=9.75; anger/fear/confusion conversational_energy scores (0.09-0.115) are the lowest of all 14 categories"
+      ],
+      "statistical_strength": "medium (some buckets have small n, e.g. fear n=3, confusion n=2)",
+      "cross_context_stability": "medium (directionally consistent but several buckets are low-n)",
+      "confidence": "medium (flagged low-confidence for n<10 buckets in the source file itself)"
+    },
+    {
+      "rank": 12,
+      "invariant": "Self-deprecation, when it occurs, is delivered through sarcasm/irony rather than sincere self-criticism, and is never a reaction to praise",
+      "type": "social_invariant / humor_invariant",
+      "evidence": [
+        "self_deprecation.json: 8/9 (89%) sampled self-deprecating instances are simultaneously coded sarcastic; 0/9 followed direct praise; triggers are awkward(56%)/unprompted(33%)/after_mistake(11%)"
+      ],
+      "statistical_strength": "medium (small absolute base, n=9, but the co-occurrence and trigger findings are near-unanimous within that base)",
+      "cross_context_stability": "medium-high",
+      "confidence": "medium (n=9 is small in absolute terms even though the sampling frame, n=363, is solid)"
+    }
+  ]
+}

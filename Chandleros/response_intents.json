@@ -1,0 +1,278 @@
+{
+  "phase": 12,
+  "title": "Response intent classification",
+  "measurement_method": "Same 317-row stratified sample as Phase 6, read jointly; each response was multi-label classified for what Chandler appears to be trying to accomplish, tabulated with Python (collections.Counter), and cross-tabulated against response_word_count bucket, last_speaker group, and a context-based distress-keyword heuristic.",
+  "sample_size": 317,
+  "full_dataset_size": 2535,
+  "categories_used": [
+    "answer",
+    "entertain",
+    "reassure",
+    "deflect",
+    "soften",
+    "challenge",
+    "tease",
+    "clarify",
+    "acknowledge",
+    "disagree",
+    "agree",
+    "express_uncertainty",
+    "change_subject",
+    "protect_self",
+    "protect_other",
+    "rapport",
+    "escalate_humor",
+    "reduce_tension",
+    "increase_tension",
+    "end_conversation",
+    "continue_conversation"
+  ],
+  "claim_type": "INFERRED (sampled and extrapolated; not a full-dataset count)",
+  "confidence_note": "Confidence is medium-high for categories with sample_count >= 15, medium for 6-14, low for 1-5, and 'not observed in sample' for increase_tension (0 occurrences) - absence in a 317-row sample suggests a low but not necessarily zero true rate.",
+  "intent_distributions": {
+    "entertain": {
+      "sample_count": 173,
+      "sample_proportion_pct": 54.6,
+      "estimated_dataset_count": 1383,
+      "confidence": "medium-high"
+    },
+    "tease": {
+      "sample_count": 61,
+      "sample_proportion_pct": 19.2,
+      "estimated_dataset_count": 488,
+      "confidence": "medium-high"
+    },
+    "acknowledge": {
+      "sample_count": 61,
+      "sample_proportion_pct": 19.2,
+      "estimated_dataset_count": 488,
+      "confidence": "medium-high"
+    },
+    "answer": {
+      "sample_count": 55,
+      "sample_proportion_pct": 17.4,
+      "estimated_dataset_count": 440,
+      "confidence": "medium-high"
+    },
+    "clarify": {
+      "sample_count": 37,
+      "sample_proportion_pct": 11.7,
+      "estimated_dataset_count": 296,
+      "confidence": "medium-high"
+    },
+    "agree": {
+      "sample_count": 29,
+      "sample_proportion_pct": 9.1,
+      "estimated_dataset_count": 232,
+      "confidence": "medium-high"
+    },
+    "protect_self": {
+      "sample_count": 26,
+      "sample_proportion_pct": 8.2,
+      "estimated_dataset_count": 208,
+      "confidence": "medium-high"
+    },
+    "disagree": {
+      "sample_count": 22,
+      "sample_proportion_pct": 6.9,
+      "estimated_dataset_count": 176,
+      "confidence": "medium-high"
+    },
+    "deflect": {
+      "sample_count": 21,
+      "sample_proportion_pct": 6.6,
+      "estimated_dataset_count": 168,
+      "confidence": "medium-high"
+    },
+    "express_uncertainty": {
+      "sample_count": 20,
+      "sample_proportion_pct": 6.3,
+      "estimated_dataset_count": 160,
+      "confidence": "medium-high"
+    },
+    "challenge": {
+      "sample_count": 19,
+      "sample_proportion_pct": 6.0,
+      "estimated_dataset_count": 152,
+      "confidence": "medium-high"
+    },
+    "reduce_tension": {
+      "sample_count": 14,
+      "sample_proportion_pct": 4.4,
+      "estimated_dataset_count": 112,
+      "confidence": "medium"
+    },
+    "change_subject": {
+      "sample_count": 13,
+      "sample_proportion_pct": 4.1,
+      "estimated_dataset_count": 104,
+      "confidence": "medium"
+    },
+    "rapport": {
+      "sample_count": 13,
+      "sample_proportion_pct": 4.1,
+      "estimated_dataset_count": 104,
+      "confidence": "medium"
+    },
+    "continue_conversation": {
+      "sample_count": 10,
+      "sample_proportion_pct": 3.2,
+      "estimated_dataset_count": 80,
+      "confidence": "medium"
+    },
+    "reassure": {
+      "sample_count": 10,
+      "sample_proportion_pct": 3.2,
+      "estimated_dataset_count": 80,
+      "confidence": "medium"
+    },
+    "soften": {
+      "sample_count": 9,
+      "sample_proportion_pct": 2.8,
+      "estimated_dataset_count": 72,
+      "confidence": "medium"
+    },
+    "end_conversation": {
+      "sample_count": 7,
+      "sample_proportion_pct": 2.2,
+      "estimated_dataset_count": 56,
+      "confidence": "medium"
+    },
+    "protect_other": {
+      "sample_count": 3,
+      "sample_proportion_pct": 0.9,
+      "estimated_dataset_count": 24,
+      "confidence": "low"
+    },
+    "escalate_humor": {
+      "sample_count": 2,
+      "sample_proportion_pct": 0.6,
+      "estimated_dataset_count": 16,
+      "confidence": "low"
+    },
+    "increase_tension": {
+      "sample_count": 0,
+      "sample_proportion_pct": 0.0,
+      "estimated_dataset_count": 0,
+      "confidence": "not observed in sample"
+    }
+  },
+  "intent_by_response_length_bucket": {
+    "short": {
+      "n_sample": 106,
+      "top_intents_pct": {
+        "acknowledge": 37,
+        "entertain": 28,
+        "clarify": 17,
+        "answer": 16,
+        "agree": 11,
+        "tease": 11
+      }
+    },
+    "medium": {
+      "n_sample": 108,
+      "top_intents_pct": {
+        "entertain": 58,
+        "tease": 25,
+        "answer": 19,
+        "acknowledge": 15,
+        "clarify": 13,
+        "express_uncertainty": 8
+      }
+    },
+    "long": {
+      "n_sample": 103,
+      "top_intents_pct": {
+        "entertain": 78,
+        "tease": 21,
+        "answer": 17,
+        "protect_self": 14,
+        "agree": 11,
+        "disagree": 11
+      }
+    },
+    "interpretation": "INFERRED: 'entertain' intent rises sharply with response length (28% short -> 58% medium -> 78% long), while 'acknowledge' and plain 'answer' dominate short responses. This suggests Chandler's longer responses are disproportionately vehicles for humor/bit-building rather than longer explanations; short responses are more likely to be functional (answer/acknowledge/clarify)."
+  },
+  "intent_by_last_speaker_group": {
+    "note": "last_speaker was grouped into main_cast (Ross/Monica/Rachel/Joey/Phoebe), other/minor (guest characters, love interests, family, coworkers), and none/group (ensemble lines or unattributed). Because the show's Chandler-directed dialogue is overwhelmingly from the five main cast members, the main_cast group dominates the sample (281/317, 88.6%) and other/minor is a small n (32) - treat other/minor splits as low-confidence.",
+    "main_cast": {
+      "n_sample": 281,
+      "top_intents_pct": {
+        "entertain": 53,
+        "tease": 18,
+        "acknowledge": 18,
+        "answer": 18,
+        "clarify": 13,
+        "agree": 10,
+        "protect_self": 9,
+        "deflect": 7
+      }
+    },
+    "other_minor": {
+      "n_sample": 32,
+      "top_intents_pct": {
+        "entertain": 66,
+        "tease": 28,
+        "acknowledge": 28,
+        "answer": 16,
+        "rapport": 12,
+        "disagree": 6,
+        "end_conversation": 6,
+        "agree": 6
+      }
+    }
+  },
+  "intent_vs_distress_context_cross_tab": {
+    "method": "HYPOTHESIS-to-INFERRED bridge: within the same 317-row sample, context_raw (the line(s) Chandler is responding to) was scanned with a keyword heuristic for distress/vulnerability markers (e.g. sorry, upset, cry, hate, scared, worried, hurt, sad, afraid, nervous, can't believe, freak out, angry, devastated, not okay). This is a coarse proxy, not a semantic distress classifier, so treat as lower confidence than the main category tabulation.",
+    "distress_context_n": 39,
+    "mundane_context_n": 278,
+    "intent_rate_pct": {
+      "reassure": {
+        "distress_context": 10.3,
+        "mundane_context": 2.2
+      },
+      "soften": {
+        "distress_context": 2.6,
+        "mundane_context": 2.9
+      },
+      "reduce_tension": {
+        "distress_context": 7.7,
+        "mundane_context": 4.0
+      },
+      "protect_other": {
+        "distress_context": 5.1,
+        "mundane_context": 0.4
+      },
+      "protect_self": {
+        "distress_context": 7.7,
+        "mundane_context": 8.3
+      },
+      "acknowledge": {
+        "distress_context": 15.4,
+        "mundane_context": 19.8
+      },
+      "entertain": {
+        "distress_context": 69.2,
+        "mundane_context": 52.5
+      },
+      "deflect": {
+        "distress_context": 7.7,
+        "mundane_context": 6.5
+      }
+    },
+    "finding": "INFERRED (low-medium confidence, n=39 distress rows): 'reassure' intent is roughly 4-5x more frequent when the immediately preceding line signals distress or vulnerability (10.3% vs 2.2%), and 'protect_other' is over 10x more frequent (5.1% vs 0.4%). However, 'entertain' remains the single most common intent even in distress contexts (69.2%) and is in fact somewhat *higher* than in mundane contexts (52.5%) - consistent with the show's characterization of Chandler using humor as his primary response to emotionally charged moments rather than switching to straight reassurance. 'protect_self' does not spike with distress context specifically; it appears more tied to Chandler's own embarrassment/vulnerability regardless of who is distressed."
+  },
+  "relationship_notes": {
+    "entertain_dominance": "OBSERVED from tabulation: 'entertain' is present in 54.6% of sampled responses, by far the most frequent intent, consistent with Chandler's core characterization as the group's joke-maker.",
+    "protect_self_vs_length": "INFERRED: protect_self is more common in long responses (14%) than short (implicitly low, not in short top-6), suggesting self-protective humor requires more setup/room (e.g., self-deprecating anecdotes) than a single-line response allows.",
+    "reassure_scarcity": "INFERRED: reassure is a low-frequency intent overall (3.2%) but is context-sensitive, concentrating around distress cues per the cross-tab above rather than being evenly distributed.",
+    "increase_tension_absence": "OBSERVED (sample-level): no sampled response was classified with primary intent 'increase_tension' - Chandler's responses in this sample never appear designed to escalate conflict as a goal in itself (he may increase tension as a side effect of a joke, but it is not classified as his aim); treat as INFERRED near-zero base rate rather than a hard zero given sample size."
+  },
+  "top_5_by_frequency": [
+    "entertain",
+    "tease",
+    "acknowledge",
+    "answer",
+    "clarify"
+  ]
+}

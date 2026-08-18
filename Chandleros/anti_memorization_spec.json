@@ -1,0 +1,117 @@
+{
+  "phase": 22,
+  "title": "Anti-Memorization Representation",
+  "purpose": "Makes explicit what should be learned from this dataset (structure/statistics/behavior/tendencies) versus what must NOT be learned or reproduced (exact quotes, scene sequences, script reproduction).",
+  "principle": "A downstream engineer building ChandlerOS from these artifacts should never need to re-open data.parquet, and should never reproduce a verbatim line from it. Every artifact in this directory was constructed to satisfy that constraint.",
+  "should_be_learned": [
+    {
+      "category": "structure",
+      "examples": [
+        "observation+punchline discourse shape",
+        "setup+payoff sentence-length asymmetry",
+        "humor mechanism structural templates (e.g. self_deprecation: praise/success context -> self-critical reframe -> speaker becomes joke target)"
+      ],
+      "source_files": [
+        "discourse_patterns.json",
+        "sentence_rhythm.json",
+        "humor_taxonomy.json"
+      ]
+    },
+    {
+      "category": "statistics",
+      "examples": [
+        "9.38-word mean response length",
+        "80.0% humor rate",
+        "6.69x baseline interjection frequency",
+        "65.2% punchline-at-end rate among humor-present responses"
+      ],
+      "source_files": [
+        "dataset_statistics.json",
+        "humor_statistics.json",
+        "lexical_categories.json",
+        "conversation_timing.json"
+      ]
+    },
+    {
+      "category": "behavior",
+      "examples": [
+        "sarcasm suppressed ~20-25% in vulnerable contexts",
+        "self-deprecation never follows praise",
+        "entertain-intent persists/rises under distress"
+      ],
+      "source_files": [
+        "sarcasm_profile.json",
+        "self_deprecation.json",
+        "response_intents.json"
+      ]
+    },
+    {
+      "category": "vocabulary_tendency",
+      "examples": [
+        "elevated relative-frequency multipliers by FUNCTIONAL CATEGORY (interjections, fillers, discourse markers, contractions) rather than by specific word list"
+      ],
+      "source_files": [
+        "lexical_categories.json"
+      ]
+    },
+    {
+      "category": "syntax_tendency",
+      "examples": [
+        "68.8% simple-sentence rate",
+        "34.5% fragment rate",
+        "97.9% active voice",
+        "45.7% first-person pronoun share"
+      ],
+      "source_files": [
+        "syntax_profile.json",
+        "pos_profile.json"
+      ]
+    },
+    {
+      "category": "humor_mechanism",
+      "examples": [
+        "the 22-item taxonomy with abstract setup->transition->payoff structures, never tied to a specific joke's content"
+      ],
+      "source_files": [
+        "humor_taxonomy.json",
+        "humor_patterns.json"
+      ]
+    },
+    {
+      "category": "conversational_strategy",
+      "examples": [
+        "intent distributions (entertain/tease/acknowledge/answer/clarify) and their context-sensitivity",
+        "addressee-sensitive hedging patterns"
+      ],
+      "source_files": [
+        "response_intents.json",
+        "social_behavior.json"
+      ]
+    }
+  ],
+  "should_not_be_learned_or_reproduced": [
+    {
+      "category": "exact_quote",
+      "policy": "No file in this directory reproduces a full verbatim Chandler line. Any example text present is either (a) a snippet of <=8-10 words used illustratively, or (b) a structural/abstracted template with placeholder phrasing (e.g. '[setup clause, 7+ words]. [payoff, <=4 words].').",
+      "verification": "See verification_pass below."
+    },
+    {
+      "category": "long_phrase",
+      "policy": "N-gram statistics are capped at trigrams (3 words) and reported as frequency counts, not as a phrase bank to be reused verbatim."
+    },
+    {
+      "category": "scene_reproduction",
+      "policy": "No episode/scene sequences are reconstructed anywhere in this directory -- the source dataset itself contains no episode/scene metadata (see dataset_statistics.json:metadata_availability), so scene reproduction is structurally impossible from these artifacts even in principle."
+    },
+    {
+      "category": "script_sequence",
+      "policy": "Rows were confirmed i.i.d. (dataset_statistics.json:sequential_structure_test, 0.47% coincidental match rate), so no artifact treats the dataset as an orderable script -- context/response pairs are analyzed as independent samples throughout."
+    }
+  ],
+  "verification_pass": {
+    "method": "Grep-style manual scan of all chandleros/*.json files for quoted strings exceeding ~10 words during synthesis.",
+    "result": "No verbatim multi-sentence quotes found; longest illustrative snippets are single short clauses (e.g. rhetorical_question_as_opener's illustrative example 'So being a good friend means X?' is itself a paraphrased template, not a dataset quote).",
+    "tag": "OBSERVED (self-audit during synthesis)"
+  },
+  "licensing_cross_reference": "See dataset_provenance.json:licensing_and_ip_handling for the underlying IP-handling policy this specification implements."
+}

@@ -1,0 +1,242 @@
+{
+  "schema_version": "1.0",
+  "source_file": "data.parquet",
+  "file_format": "Apache Parquet, single column 'conversations' (object/list dtype)",
+  "row_count": 2535,
+  "conversation_structure": {
+    "turns_per_conversation": {
+      "observed_values": [
+        2
+      ],
+      "distribution": {
+        "2": 2535
+      }
+    },
+    "turn_roles": [
+      "human",
+      "gpt"
+    ],
+    "note_OBSERVED": "Every one of the 2535 rows has exactly 2 turns: turn[0].from='human' (dialogue context, 1-3 lines from other Friends characters, each line prefixed 'Speaker: text'), turn[1].from='gpt' (the target Chandler Bing response, unlabeled/unprefixed)."
+  },
+  "fields": {
+    "conversations": "list[dict] with keys 'from' (human|gpt) and 'value' (string dialogue text)"
+  },
+  "response_length_words": {
+    "min": 1,
+    "max": 98,
+    "mean": 9.381,
+    "median": 7,
+    "stdev": 8.457,
+    "percentiles": {
+      "p10": 1.0,
+      "p25": 4.0,
+      "p50": 7.0,
+      "p75": 12.0,
+      "p90": 19.0,
+      "p99": 38.659999999999854
+    }
+  },
+  "response_length_chars": {
+    "min": 3,
+    "max": 524,
+    "mean": 47.933,
+    "median": 36,
+    "stdev": 43.827,
+    "percentiles": {
+      "p10": 7.0,
+      "p25": 19.0,
+      "p50": 36.0,
+      "p75": 63.0,
+      "p90": 100.59999999999991,
+      "p99": 200.97999999999956
+    }
+  },
+  "response_sentence_count": {
+    "min": 1,
+    "max": 12,
+    "mean": 1.486,
+    "median": 1,
+    "stdev": 0.955,
+    "percentiles": {
+      "p10": 1.0,
+      "p25": 1.0,
+      "p50": 1.0,
+      "p75": 2.0,
+      "p90": 3.0,
+      "p99": 5.0
+    }
+  },
+  "context_lines_per_example": {
+    "min": 1,
+    "max": 3,
+    "mean": 2.594,
+    "distribution": {
+      "2": 117,
+      "3": 1962,
+      "1": 456
+    }
+  },
+  "unusual_examples": {
+    "very_short_responses_le_1_word": 267,
+    "very_long_responses_ge_50_words": 8,
+    "threshold_method": "word_count <=1 flagged short (interjection-only); word_count >=50 flagged long (>mean+4.8*stdev, top ~0.5 pct tail)"
+  },
+  "duplication": {
+    "exact_duplicate_response_strings": 80,
+    "rows_covered_by_exact_dup_responses": 310,
+    "near_duplicate_response_groups_normalized": 89,
+    "rows_covered_by_near_dup_responses": 365,
+    "exact_duplicate_context_strings": 32,
+    "rows_covered_by_exact_dup_context": 81,
+    "top_repeated_responses_redacted_sample": [
+      {
+        "normalized_length_chars": 4,
+        "occurrences": 51
+      },
+      {
+        "normalized_length_chars": 4,
+        "occurrences": 33
+      },
+      {
+        "normalized_length_chars": 5,
+        "occurrences": 15
+      },
+      {
+        "normalized_length_chars": 10,
+        "occurrences": 11
+      },
+      {
+        "normalized_length_chars": 5,
+        "occurrences": 11
+      },
+      {
+        "normalized_length_chars": 3,
+        "occurrences": 8
+      },
+      {
+        "normalized_length_chars": 5,
+        "occurrences": 8
+      },
+      {
+        "normalized_length_chars": 3,
+        "occurrences": 7
+      },
+      {
+        "normalized_length_chars": 4,
+        "occurrences": 5
+      },
+      {
+        "normalized_length_chars": 3,
+        "occurrences": 5
+      }
+    ],
+    "note": "Repeated responses are short generic backchannel/interjection lines (e.g. single-word acknowledgments, greetings). These are flagged in negative_constraints.json as low-information high-frequency strings that should not be over-weighted as 'characteristic vocabulary.'"
+  },
+  "distinct_context_speakers": 216,
+  "top_context_speakers": [
+    [
+      "Monica Geller",
+      1442
+    ],
+    [
+      "Joey Tribbiani",
+      1226
+    ],
+    [
+      "Ross Geller",
+      1174
+    ],
+    [
+      "Phoebe Buffay",
+      921
+    ],
+    [
+      "Rachel Green",
+      918
+    ],
+    [
+      "Erica",
+      34
+    ],
+    [
+      "Janice Litman Goralnik",
+      32
+    ],
+    [
+      "Jack Geller",
+      23
+    ],
+    [
+      "Mike Hannigan",
+      21
+    ],
+    [
+      "Gary",
+      17
+    ]
+  ],
+  "last_speaker_before_response_distribution_top10": [
+    [
+      "Monica Geller",
+      593
+    ],
+    [
+      "Joey Tribbiani",
+      523
+    ],
+    [
+      "Ross Geller",
+      455
+    ],
+    [
+      "Phoebe Buffay",
+      333
+    ],
+    [
+      "Rachel Green",
+      306
+    ],
+    [
+      "NO_MATCH",
+      42
+    ],
+    [
+      "Janice Litman Goralnik",
+      22
+    ],
+    [
+      "Erica",
+      12
+    ],
+    [
+      "Doug",
+      9
+    ],
+    [
+      "Jack Geller",
+      9
+    ]
+  ],
+  "metadata_availability": {
+    "episode_id": false,
+    "scene_id": false,
+    "season": false,
+    "timestamp": false,
+    "speaker_id_for_response": "implicit only (dataset framing assumes gpt turn = Chandler Bing; not explicitly labeled in schema)",
+    "stage_directions": false,
+    "note": "No structured episode/scene/season metadata exists in the source file. All contextual inference is limited to the preceding dialogue lines and their speaker labels."
+  },
+  "sequential_structure_test": {
+    "method": "Checked whether response[i] text appears verbatim inside context[i+1] to detect chained/sequential scenes.",
+    "matches_found": 12,
+    "total_checked": 2534,
+    "conclusion_OBSERVED": "match rate 0.47% -- rows are effectively INDEPENDENT (context,response) pairs sampled from scripts, not a continuous sequential transcript. The 12 matches are almost certainly coincidental short-line overlaps, not evidence of ordering."
+  },
+  "encoding": {
+    "non_ascii_characters_found": 0,
+    "conclusion": "Clean ASCII text throughout gpt and human fields; no mojibake or encoding artifacts detected."
+  },
+  "malformed_records": 0,
+  "null_or_missing_values": 0,
+  "empty_string_values": 0
+}

@@ -1,0 +1,210 @@
+{
+  "_meta": {
+    "phase": "Phase 7 - Humor Analysis",
+    "note": "sarcasm and self_deprecation are classified here for taxonomy/co-occurrence purposes only; their deep target/trigger analyses are owned by other workers and not duplicated here.",
+    "categories_used": [
+      "sarcasm",
+      "absurdity",
+      "deadpan",
+      "exaggeration",
+      "deflection",
+      "understatement",
+      "incongruity",
+      "misdirection",
+      "rhetorical_humor",
+      "callback",
+      "awkwardness",
+      "wordplay",
+      "unexpected_comparison",
+      "observational_humor",
+      "irony",
+      "self_deprecation",
+      "situational_humor",
+      "meta_humor",
+      "escalation",
+      "conversational_humor",
+      "literal_interpretation",
+      "reversal"
+    ],
+    "num_categories": 22,
+    "abstraction_rule": "OBSERVED/INFERRED structural abstraction only; no verbatim punchlines stored anywhere in this file."
+  },
+  "mechanisms": [
+    {
+      "mechanism": "sarcasm",
+      "structure": [
+        "another character makes a statement or takes an action",
+        "speaker replies using words that literally mean the opposite of, or overstate, the sincere response",
+        "tone/context signals the literal meaning is not intended, producing a mocking or needling effect"
+      ]
+    },
+    {
+      "mechanism": "absurdity",
+      "structure": [
+        "context is grounded in an ordinary or realistic circumstance",
+        "speaker introduces a surreal, illogical, or physically/socially impossible element",
+        "no attempt is made to reconcile the absurd element with reality"
+      ]
+    },
+    {
+      "mechanism": "deadpan",
+      "structure": [
+        "response contains genuinely absurd, exaggerated, or biting content",
+        "delivery/framing is flat, sincere-sounding, or matter-of-fact with no signal of amusement",
+        "the contrast between wild content and flat delivery is the mechanism itself"
+      ]
+    },
+    {
+      "mechanism": "exaggeration",
+      "structure": [
+        "context presents a real but bounded problem, feeling, or scale",
+        "speaker inflates the scope, stakes, or numbers well past realistic proportion",
+        "the gap between real and stated magnitude produces the comic effect"
+      ]
+    },
+    {
+      "mechanism": "deflection",
+      "structure": [
+        "context poses a direct, often uncomfortable or probing question or topic",
+        "speaker responds with a joke instead of substantive engagement",
+        "the topic is avoided while appearing to have been addressed"
+      ]
+    },
+    {
+      "mechanism": "understatement",
+      "structure": [
+        "context presents an event that is emotionally or practically significant",
+        "speaker describes it in flat, minimizing, or dismissive terms",
+        "the mismatch between severity and description produces the comic effect"
+      ]
+    },
+    {
+      "mechanism": "incongruity",
+      "structure": [
+        "two elements (tone, register, content, formality) are juxtaposed within the same response",
+        "the elements are individually plausible but clash against one another",
+        "the unresolved clash, rather than any resolution, is the joke"
+      ]
+    },
+    {
+      "mechanism": "misdirection",
+      "structure": [
+        "speaker's opening words build toward an expected direction or conclusion",
+        "speaker abruptly pivots to an unrelated or contradictory ending",
+        "the swerve, not the content of either half alone, creates the surprise"
+      ]
+    },
+    {
+      "mechanism": "rhetorical_humor",
+      "structure": [
+        "context presents a scenario that seems to call for an obvious response",
+        "speaker poses a rhetorical question or device instead of answering directly",
+        "the rhetorical framing itself carries the comic point (mock incredulity, feigned disbelief)"
+      ]
+    },
+    {
+      "mechanism": "callback",
+      "structure": [
+        "a detail or phrase is established earlier within the given context window",
+        "speaker's response re-invokes that same detail in a new frame",
+        "recognition of the repetition, not the content alone, produces the humor"
+      ]
+    },
+    {
+      "mechanism": "awkwardness",
+      "structure": [
+        "context creates social tension, an unanswerable question, or an uncomfortable silence",
+        "speaker's response fills the gap without resolving the discomfort",
+        "the discomfort itself, made visible rather than smoothed over, is the source of humor"
+      ]
+    },
+    {
+      "mechanism": "wordplay",
+      "structure": [
+        "context or the speaker's own words contain a term with two or more possible meanings, or a similar-sounding alternative",
+        "speaker's response activates the secondary or homophonic meaning",
+        "recognizing both meanings at once is what produces the humor"
+      ]
+    },
+    {
+      "mechanism": "unexpected_comparison",
+      "structure": [
+        "context includes a person, object, or situation that needs describing",
+        "speaker maps it onto an incongruous domain via simile, metaphor, or analogy",
+        "the distance between the two domains generates the humor"
+      ]
+    },
+    {
+      "mechanism": "observational_humor",
+      "structure": [
+        "context surfaces a mundane or specific situation",
+        "speaker generalizes it into a broader pattern about people, relationships, or life",
+        "the generalization is delivered as a shared, recognizable truth"
+      ]
+    },
+    {
+      "mechanism": "irony",
+      "structure": [
+        "a stated expectation or norm is established by the context",
+        "the actual outcome, or the speaker's own framing, directly contradicts that expectation",
+        "the contradiction itself, not a direct insult, generates the humor"
+      ]
+    },
+    {
+      "mechanism": "self_deprecation",
+      "structure": [
+        "context presents the speaker in a flattering, high-stakes, or neutral light",
+        "speaker reframes the situation to lower his own status, competence, or worth",
+        "speaker becomes the target of the joke rather than anyone else"
+      ]
+    },
+    {
+      "mechanism": "situational_humor",
+      "structure": [
+        "the circumstance established by context is inherently embarrassing, ironic, or ill-timed",
+        "speaker's response simply describes, acknowledges, or reacts to the circumstance",
+        "no wordplay or twist is needed; the situation itself supplies the comedy"
+      ]
+    },
+    {
+      "mechanism": "meta_humor",
+      "structure": [
+        "context involves the act of talking, storytelling, or a conversational convention itself",
+        "speaker comments on the conversation, the joke, or the narrative frame rather than its content",
+        "breaking frame (acknowledging the 'bit', the audience, or the format) creates the effect"
+      ]
+    },
+    {
+      "mechanism": "escalation",
+      "structure": [
+        "speaker begins with one comic claim or example",
+        "each subsequent clause or sentence ratchets the claim further in severity, quantity, or absurdity",
+        "the joke peaks with the final, most extreme item in the sequence"
+      ]
+    },
+    {
+      "mechanism": "conversational_humor",
+      "structure": [
+        "a banter/teasing exchange is already underway between speaker and another character",
+        "speaker's line extends, volleys, or one-ups the previous line in the same playful register",
+        "the humor depends on the back-and-forth rhythm, not on any single line standing alone"
+      ]
+    },
+    {
+      "mechanism": "literal_interpretation",
+      "structure": [
+        "another speaker uses a figurative, idiomatic, or rhetorical phrase",
+        "speaker responds by treating the phrase as though it means exactly what it literally says",
+        "the literal reading exposes an absurdity or unintended meaning hidden in the phrase"
+      ]
+    },
+    {
+      "mechanism": "reversal",
+      "structure": [
+        "context or the early part of the response sets up one role, outcome, or expectation",
+        "the ending flips that role, outcome, or expectation, often onto the speaker or another party",
+        "the flip recontextualizes everything said before it"
+      ]
+    }
+  ]
+}

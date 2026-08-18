@@ -1,0 +1,1088 @@
+{
+  "meta": {
+    "sample_size_responses": 2535,
+    "sample_size_word_tokens": 23781,
+    "baseline_assumption": "Baseline percentages represent an explicit ASSUMPTION, not a directly measured external corpus in this task. They approximate commonly cited rates for generic conversational spoken English drawn from corpus-linguistics literature (e.g. Biber et al., Longman Grammar of Spoken and Written English, 1999; general characterizations of COCA spoken-register frequency bands). They are expressed as % of all word tokens and used only as a comparison anchor for relative-frequency ratios below. Because the baseline itself is an assumption, every 'relative_frequency_vs_baseline' value should be read as INFERRED, not as a precise measured ratio against a specific corpus.",
+    "category_overlap_note": "Categories are functional lenses, not a mutually exclusive partition -- e.g. 'well', 'so', 'okay' can each count toward multiple categories (discourse marker, filler, conversational marker) because a single word can serve multiple discourse functions depending on use. Category totals should not be summed to 100%.",
+    "measurement_method": "Each category is a fixed lexicon of single-word tokens; counts are computed by scanning all lowercased response_words tokens against the lexicon. Confidence buckets: high (n>=100), medium (n>=30), low (n>=5), very_low (n<5)."
+  },
+  "categories": {
+    "pronoun_1st_singular": {
+      "raw_count": 1151,
+      "normalized_freq_per_1000_words": 48.4,
+      "observed_pct_of_tokens": 4.84,
+      "baseline_pct_of_tokens_assumed": 4.0,
+      "relative_frequency_vs_baseline": 1.21,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "pronoun_1st_plural": {
+      "raw_count": 334,
+      "normalized_freq_per_1000_words": 14.045,
+      "observed_pct_of_tokens": 1.404,
+      "baseline_pct_of_tokens_assumed": 1.2,
+      "relative_frequency_vs_baseline": 1.17,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "pronoun_2nd": {
+      "raw_count": 991,
+      "normalized_freq_per_1000_words": 41.672,
+      "observed_pct_of_tokens": 4.167,
+      "baseline_pct_of_tokens_assumed": 3.5,
+      "relative_frequency_vs_baseline": 1.19,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "pronoun_3rd_singular": {
+      "raw_count": 690,
+      "normalized_freq_per_1000_words": 29.015,
+      "observed_pct_of_tokens": 2.901,
+      "baseline_pct_of_tokens_assumed": 3.5,
+      "relative_frequency_vs_baseline": 0.83,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "pronoun_3rd_plural": {
+      "raw_count": 81,
+      "normalized_freq_per_1000_words": 3.406,
+      "observed_pct_of_tokens": 0.341,
+      "baseline_pct_of_tokens_assumed": 1.5,
+      "relative_frequency_vs_baseline": 0.23,
+      "confidence": "medium",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "auxiliary_be": {
+      "raw_count": 836,
+      "normalized_freq_per_1000_words": 35.154,
+      "observed_pct_of_tokens": 3.515,
+      "baseline_pct_of_tokens_assumed": 4.5,
+      "relative_frequency_vs_baseline": 0.78,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "auxiliary_have": {
+      "raw_count": 240,
+      "normalized_freq_per_1000_words": 10.092,
+      "observed_pct_of_tokens": 1.009,
+      "baseline_pct_of_tokens_assumed": 2.0,
+      "relative_frequency_vs_baseline": 0.5,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "auxiliary_do": {
+      "raw_count": 309,
+      "normalized_freq_per_1000_words": 12.994,
+      "observed_pct_of_tokens": 1.299,
+      "baseline_pct_of_tokens_assumed": 1.5,
+      "relative_frequency_vs_baseline": 0.87,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "modal_verbs": {
+      "raw_count": 287,
+      "normalized_freq_per_1000_words": 12.068,
+      "observed_pct_of_tokens": 1.207,
+      "baseline_pct_of_tokens_assumed": 2.0,
+      "relative_frequency_vs_baseline": 0.6,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "interjections": {
+      "raw_count": 795,
+      "normalized_freq_per_1000_words": 33.43,
+      "observed_pct_of_tokens": 3.343,
+      "baseline_pct_of_tokens_assumed": 0.5,
+      "relative_frequency_vs_baseline": 6.69,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "discourse_markers": {
+      "raw_count": 1000,
+      "normalized_freq_per_1000_words": 42.05,
+      "observed_pct_of_tokens": 4.205,
+      "baseline_pct_of_tokens_assumed": 2.0,
+      "relative_frequency_vs_baseline": 2.1,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "hedges": {
+      "raw_count": 191,
+      "normalized_freq_per_1000_words": 8.032,
+      "observed_pct_of_tokens": 0.803,
+      "baseline_pct_of_tokens_assumed": 1.0,
+      "relative_frequency_vs_baseline": 0.8,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "intensifiers": {
+      "raw_count": 529,
+      "normalized_freq_per_1000_words": 22.245,
+      "observed_pct_of_tokens": 2.224,
+      "baseline_pct_of_tokens_assumed": 1.5,
+      "relative_frequency_vs_baseline": 1.48,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "negations": {
+      "raw_count": 413,
+      "normalized_freq_per_1000_words": 17.367,
+      "observed_pct_of_tokens": 1.737,
+      "baseline_pct_of_tokens_assumed": 2.0,
+      "relative_frequency_vs_baseline": 0.87,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "fillers": {
+      "raw_count": 772,
+      "normalized_freq_per_1000_words": 32.463,
+      "observed_pct_of_tokens": 3.246,
+      "baseline_pct_of_tokens_assumed": 1.0,
+      "relative_frequency_vs_baseline": 3.25,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "conversational_markers": {
+      "raw_count": 562,
+      "normalized_freq_per_1000_words": 23.632,
+      "observed_pct_of_tokens": 2.363,
+      "baseline_pct_of_tokens_assumed": 1.0,
+      "relative_frequency_vs_baseline": 2.36,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "question_words": {
+      "raw_count": 503,
+      "normalized_freq_per_1000_words": 21.151,
+      "observed_pct_of_tokens": 2.115,
+      "baseline_pct_of_tokens_assumed": 1.5,
+      "relative_frequency_vs_baseline": 1.41,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "transition_words": {
+      "raw_count": 922,
+      "normalized_freq_per_1000_words": 38.77,
+      "observed_pct_of_tokens": 3.877,
+      "baseline_pct_of_tokens_assumed": 3.0,
+      "relative_frequency_vs_baseline": 1.29,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "temporal_vocabulary": {
+      "raw_count": 443,
+      "normalized_freq_per_1000_words": 18.628,
+      "observed_pct_of_tokens": 1.863,
+      "baseline_pct_of_tokens_assumed": 3.0,
+      "relative_frequency_vs_baseline": 0.62,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "social_vocabulary": {
+      "raw_count": 422,
+      "normalized_freq_per_1000_words": 17.745,
+      "observed_pct_of_tokens": 1.775,
+      "baseline_pct_of_tokens_assumed": 2.0,
+      "relative_frequency_vs_baseline": 0.89,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "emotional_vocabulary": {
+      "raw_count": 183,
+      "normalized_freq_per_1000_words": 7.695,
+      "observed_pct_of_tokens": 0.77,
+      "baseline_pct_of_tokens_assumed": 1.5,
+      "relative_frequency_vs_baseline": 0.51,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "evaluative_vocabulary": {
+      "raw_count": 288,
+      "normalized_freq_per_1000_words": 12.111,
+      "observed_pct_of_tokens": 1.211,
+      "baseline_pct_of_tokens_assumed": 1.5,
+      "relative_frequency_vs_baseline": 0.81,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "certainty_vocabulary": {
+      "raw_count": 266,
+      "normalized_freq_per_1000_words": 11.185,
+      "observed_pct_of_tokens": 1.119,
+      "baseline_pct_of_tokens_assumed": 1.0,
+      "relative_frequency_vs_baseline": 1.12,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "uncertainty_vocabulary": {
+      "raw_count": 225,
+      "normalized_freq_per_1000_words": 9.461,
+      "observed_pct_of_tokens": 0.946,
+      "baseline_pct_of_tokens_assumed": 1.0,
+      "relative_frequency_vs_baseline": 0.95,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "technical_vocabulary": {
+      "raw_count": 22,
+      "normalized_freq_per_1000_words": 0.925,
+      "observed_pct_of_tokens": 0.093,
+      "baseline_pct_of_tokens_assumed": 0.5,
+      "relative_frequency_vs_baseline": 0.19,
+      "confidence": "low",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "informal_slang": {
+      "raw_count": 910,
+      "normalized_freq_per_1000_words": 38.266,
+      "observed_pct_of_tokens": 3.827,
+      "baseline_pct_of_tokens_assumed": 3.0,
+      "relative_frequency_vs_baseline": 1.28,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "formal_connectors": {
+      "raw_count": 1,
+      "normalized_freq_per_1000_words": 0.042,
+      "observed_pct_of_tokens": 0.004,
+      "baseline_pct_of_tokens_assumed": 0.3,
+      "relative_frequency_vs_baseline": 0.01,
+      "confidence": "very_low",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "contractions": {
+      "raw_count": 1761,
+      "normalized_freq_per_1000_words": 74.051,
+      "observed_pct_of_tokens": 7.405,
+      "baseline_pct_of_tokens_assumed": 2.5,
+      "relative_frequency_vs_baseline": 2.96,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "pronouns_total": {
+      "raw_count": 3247,
+      "normalized_freq_per_1000_words": 136.538,
+      "observed_pct_of_tokens": 13.654,
+      "baseline_pct_of_tokens_assumed": 14.0,
+      "relative_frequency_vs_baseline": 0.98,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    },
+    "auxiliary_verbs_total": {
+      "raw_count": 1385,
+      "normalized_freq_per_1000_words": 58.24,
+      "observed_pct_of_tokens": 5.824,
+      "baseline_pct_of_tokens_assumed": 8.0,
+      "relative_frequency_vs_baseline": 0.73,
+      "confidence": "high",
+      "sample_size_tokens": 23781,
+      "relative_frequency_tag": "INFERRED",
+      "raw_count_tag": "OBSERVED"
+    }
+  },
+  "unusually_characteristic_categories": {
+    "description": "Categories with the largest elevated relative frequency vs the stated baseline assumption (minimum raw_count=15 to avoid noise from rare categories).",
+    "items": [
+      {
+        "category": "interjections",
+        "relative_frequency_multiplier": 6.69,
+        "raw_count": 795,
+        "interpretation_tag": "INFERRED",
+        "note": "Elevated vs an assumed generic-conversational-English baseline (see baseline_assumption); interpretation of *why* is inferred, the ratio itself is OBSERVED given the stated baseline."
+      },
+      {
+        "category": "fillers",
+        "relative_frequency_multiplier": 3.25,
+        "raw_count": 772,
+        "interpretation_tag": "INFERRED",
+        "note": "Elevated vs an assumed generic-conversational-English baseline (see baseline_assumption); interpretation of *why* is inferred, the ratio itself is OBSERVED given the stated baseline."
+      },
+      {
+        "category": "contractions",
+        "relative_frequency_multiplier": 2.96,
+        "raw_count": 1761,
+        "interpretation_tag": "INFERRED",
+        "note": "Elevated vs an assumed generic-conversational-English baseline (see baseline_assumption); interpretation of *why* is inferred, the ratio itself is OBSERVED given the stated baseline."
+      },
+      {
+        "category": "conversational_markers",
+        "relative_frequency_multiplier": 2.36,
+        "raw_count": 562,
+        "interpretation_tag": "INFERRED",
+        "note": "Elevated vs an assumed generic-conversational-English baseline (see baseline_assumption); interpretation of *why* is inferred, the ratio itself is OBSERVED given the stated baseline."
+      },
+      {
+        "category": "discourse_markers",
+        "relative_frequency_multiplier": 2.1,
+        "raw_count": 1000,
+        "interpretation_tag": "INFERRED",
+        "note": "Elevated vs an assumed generic-conversational-English baseline (see baseline_assumption); interpretation of *why* is inferred, the ratio itself is OBSERVED given the stated baseline."
+      },
+      {
+        "category": "intensifiers",
+        "relative_frequency_multiplier": 1.48,
+        "raw_count": 529,
+        "interpretation_tag": "INFERRED",
+        "note": "Elevated vs an assumed generic-conversational-English baseline (see baseline_assumption); interpretation of *why* is inferred, the ratio itself is OBSERVED given the stated baseline."
+      },
+      {
+        "category": "question_words",
+        "relative_frequency_multiplier": 1.41,
+        "raw_count": 503,
+        "interpretation_tag": "INFERRED",
+        "note": "Elevated vs an assumed generic-conversational-English baseline (see baseline_assumption); interpretation of *why* is inferred, the ratio itself is OBSERVED given the stated baseline."
+      },
+      {
+        "category": "transition_words",
+        "relative_frequency_multiplier": 1.29,
+        "raw_count": 922,
+        "interpretation_tag": "INFERRED",
+        "note": "Elevated vs an assumed generic-conversational-English baseline (see baseline_assumption); interpretation of *why* is inferred, the ratio itself is OBSERVED given the stated baseline."
+      },
+      {
+        "category": "informal_slang",
+        "relative_frequency_multiplier": 1.28,
+        "raw_count": 910,
+        "interpretation_tag": "INFERRED",
+        "note": "Elevated vs an assumed generic-conversational-English baseline (see baseline_assumption); interpretation of *why* is inferred, the ratio itself is OBSERVED given the stated baseline."
+      },
+      {
+        "category": "pronoun_1st_singular",
+        "relative_frequency_multiplier": 1.21,
+        "raw_count": 1151,
+        "interpretation_tag": "INFERRED",
+        "note": "Elevated vs an assumed generic-conversational-English baseline (see baseline_assumption); interpretation of *why* is inferred, the ratio itself is OBSERVED given the stated baseline."
+      },
+      {
+        "category": "pronoun_2nd",
+        "relative_frequency_multiplier": 1.19,
+        "raw_count": 991,
+        "interpretation_tag": "INFERRED",
+        "note": "Elevated vs an assumed generic-conversational-English baseline (see baseline_assumption); interpretation of *why* is inferred, the ratio itself is OBSERVED given the stated baseline."
+      },
+      {
+        "category": "pronoun_1st_plural",
+        "relative_frequency_multiplier": 1.17,
+        "raw_count": 334,
+        "interpretation_tag": "INFERRED",
+        "note": "Elevated vs an assumed generic-conversational-English baseline (see baseline_assumption); interpretation of *why* is inferred, the ratio itself is OBSERVED given the stated baseline."
+      }
+    ]
+  },
+  "contextual_distribution_by_response_length": {
+    "description": "Category rate (per 1000 words) computed separately within each response-length bucket, to check whether category usage shifts with utterance length.",
+    "bucket_definitions": {
+      "very_short_1-3": "1-3 words",
+      "short_4-8": "4-8 words",
+      "medium_9-15": "9-15 words",
+      "long_16-30": "16-30 words",
+      "very_long_31plus": "31+ words"
+    },
+    "data": {
+      "pronouns_total": {
+        "very_short_1-3": {
+          "n_responses": 612,
+          "count": 101,
+          "tokens": 1130,
+          "per_1000": 89.381
+        },
+        "short_4-8": {
+          "n_responses": 850,
+          "count": 695,
+          "tokens": 5036,
+          "per_1000": 138.006
+        },
+        "medium_9-15": {
+          "n_responses": 637,
+          "count": 1017,
+          "tokens": 7264,
+          "per_1000": 140.006
+        },
+        "long_16-30": {
+          "n_responses": 362,
+          "count": 1032,
+          "tokens": 7402,
+          "per_1000": 139.422
+        },
+        "very_long_31plus": {
+          "n_responses": 74,
+          "count": 402,
+          "tokens": 2949,
+          "per_1000": 136.317
+        }
+      },
+      "negations": {
+        "very_short_1-3": {
+          "n_responses": 612,
+          "count": 33,
+          "tokens": 1130,
+          "per_1000": 29.204
+        },
+        "short_4-8": {
+          "n_responses": 850,
+          "count": 111,
+          "tokens": 5036,
+          "per_1000": 22.041
+        },
+        "medium_9-15": {
+          "n_responses": 637,
+          "count": 124,
+          "tokens": 7264,
+          "per_1000": 17.07
+        },
+        "long_16-30": {
+          "n_responses": 362,
+          "count": 107,
+          "tokens": 7402,
+          "per_1000": 14.456
+        },
+        "very_long_31plus": {
+          "n_responses": 74,
+          "count": 38,
+          "tokens": 2949,
+          "per_1000": 12.886
+        }
+      },
+      "hedges": {
+        "very_short_1-3": {
+          "n_responses": 612,
+          "count": 1,
+          "tokens": 1130,
+          "per_1000": 0.885
+        },
+        "short_4-8": {
+          "n_responses": 850,
+          "count": 32,
+          "tokens": 5036,
+          "per_1000": 6.354
+        },
+        "medium_9-15": {
+          "n_responses": 637,
+          "count": 72,
+          "tokens": 7264,
+          "per_1000": 9.912
+        },
+        "long_16-30": {
+          "n_responses": 362,
+          "count": 62,
+          "tokens": 7402,
+          "per_1000": 8.376
+        },
+        "very_long_31plus": {
+          "n_responses": 74,
+          "count": 24,
+          "tokens": 2949,
+          "per_1000": 8.138
+        }
+      },
+      "intensifiers": {
+        "very_short_1-3": {
+          "n_responses": 612,
+          "count": 21,
+          "tokens": 1130,
+          "per_1000": 18.584
+        },
+        "short_4-8": {
+          "n_responses": 850,
+          "count": 128,
+          "tokens": 5036,
+          "per_1000": 25.417
+        },
+        "medium_9-15": {
+          "n_responses": 637,
+          "count": 156,
+          "tokens": 7264,
+          "per_1000": 21.476
+        },
+        "long_16-30": {
+          "n_responses": 362,
+          "count": 153,
+          "tokens": 7402,
+          "per_1000": 20.67
+        },
+        "very_long_31plus": {
+          "n_responses": 74,
+          "count": 71,
+          "tokens": 2949,
+          "per_1000": 24.076
+        }
+      },
+      "question_words": {
+        "very_short_1-3": {
+          "n_responses": 612,
+          "count": 47,
+          "tokens": 1130,
+          "per_1000": 41.593
+        },
+        "short_4-8": {
+          "n_responses": 850,
+          "count": 141,
+          "tokens": 5036,
+          "per_1000": 27.998
+        },
+        "medium_9-15": {
+          "n_responses": 637,
+          "count": 135,
+          "tokens": 7264,
+          "per_1000": 18.585
+        },
+        "long_16-30": {
+          "n_responses": 362,
+          "count": 135,
+          "tokens": 7402,
+          "per_1000": 18.238
+        },
+        "very_long_31plus": {
+          "n_responses": 74,
+          "count": 45,
+          "tokens": 2949,
+          "per_1000": 15.259
+        }
+      },
+      "modal_verbs": {
+        "very_short_1-3": {
+          "n_responses": 612,
+          "count": 5,
+          "tokens": 1130,
+          "per_1000": 4.425
+        },
+        "short_4-8": {
+          "n_responses": 850,
+          "count": 57,
+          "tokens": 5036,
+          "per_1000": 11.319
+        },
+        "medium_9-15": {
+          "n_responses": 637,
+          "count": 97,
+          "tokens": 7264,
+          "per_1000": 13.354
+        },
+        "long_16-30": {
+          "n_responses": 362,
+          "count": 88,
+          "tokens": 7402,
+          "per_1000": 11.889
+        },
+        "very_long_31plus": {
+          "n_responses": 74,
+          "count": 40,
+          "tokens": 2949,
+          "per_1000": 13.564
+        }
+      },
+      "contractions": {
+        "very_short_1-3": {
+          "n_responses": 612,
+          "count": 80,
+          "tokens": 1130,
+          "per_1000": 70.796
+        },
+        "short_4-8": {
+          "n_responses": 850,
+          "count": 425,
+          "tokens": 5036,
+          "per_1000": 84.392
+        },
+        "medium_9-15": {
+          "n_responses": 637,
+          "count": 521,
+          "tokens": 7264,
+          "per_1000": 71.724
+        },
+        "long_16-30": {
+          "n_responses": 362,
+          "count": 512,
+          "tokens": 7402,
+          "per_1000": 69.17
+        },
+        "very_long_31plus": {
+          "n_responses": 74,
+          "count": 223,
+          "tokens": 2949,
+          "per_1000": 75.619
+        }
+      },
+      "emotional_vocabulary": {
+        "very_short_1-3": {
+          "n_responses": 612,
+          "count": 11,
+          "tokens": 1130,
+          "per_1000": 9.735
+        },
+        "short_4-8": {
+          "n_responses": 850,
+          "count": 41,
+          "tokens": 5036,
+          "per_1000": 8.141
+        },
+        "medium_9-15": {
+          "n_responses": 637,
+          "count": 47,
+          "tokens": 7264,
+          "per_1000": 6.47
+        },
+        "long_16-30": {
+          "n_responses": 362,
+          "count": 60,
+          "tokens": 7402,
+          "per_1000": 8.106
+        },
+        "very_long_31plus": {
+          "n_responses": 74,
+          "count": 24,
+          "tokens": 2949,
+          "per_1000": 8.138
+        }
+      },
+      "evaluative_vocabulary": {
+        "very_short_1-3": {
+          "n_responses": 612,
+          "count": 20,
+          "tokens": 1130,
+          "per_1000": 17.699
+        },
+        "short_4-8": {
+          "n_responses": 850,
+          "count": 75,
+          "tokens": 5036,
+          "per_1000": 14.893
+        },
+        "medium_9-15": {
+          "n_responses": 637,
+          "count": 78,
+          "tokens": 7264,
+          "per_1000": 10.738
+        },
+        "long_16-30": {
+          "n_responses": 362,
+          "count": 82,
+          "tokens": 7402,
+          "per_1000": 11.078
+        },
+        "very_long_31plus": {
+          "n_responses": 74,
+          "count": 33,
+          "tokens": 2949,
+          "per_1000": 11.19
+        }
+      }
+    },
+    "tag": "OBSERVED"
+  },
+  "contextual_distribution_by_last_speaker": {
+    "description": "Category rate (per 1000 words) computed separately for responses addressed to (i.e. following) each of the top 6 most frequent last_speaker values.",
+    "top_speakers_by_volume": {
+      "Monica Geller": 593,
+      "Joey Tribbiani": 523,
+      "Ross Geller": 455,
+      "Phoebe Buffay": 333,
+      "Rachel Green": 306,
+      "Janice Litman Goralnik": 22
+    },
+    "data": {
+      "pronouns_total": {
+        "Monica Geller": {
+          "n_responses": 593,
+          "count": 765,
+          "tokens": 5734,
+          "per_1000": 133.415
+        },
+        "Joey Tribbiani": {
+          "n_responses": 523,
+          "count": 632,
+          "tokens": 4569,
+          "per_1000": 138.323
+        },
+        "Ross Geller": {
+          "n_responses": 455,
+          "count": 604,
+          "tokens": 4363,
+          "per_1000": 138.437
+        },
+        "Phoebe Buffay": {
+          "n_responses": 333,
+          "count": 352,
+          "tokens": 2876,
+          "per_1000": 122.392
+        },
+        "Rachel Green": {
+          "n_responses": 306,
+          "count": 447,
+          "tokens": 2953,
+          "per_1000": 151.371
+        },
+        "Janice Litman Goralnik": {
+          "n_responses": 22,
+          "count": 44,
+          "tokens": 279,
+          "per_1000": 157.706
+        }
+      },
+      "negations": {
+        "Monica Geller": {
+          "n_responses": 593,
+          "count": 95,
+          "tokens": 5734,
+          "per_1000": 16.568
+        },
+        "Joey Tribbiani": {
+          "n_responses": 523,
+          "count": 86,
+          "tokens": 4569,
+          "per_1000": 18.822
+        },
+        "Ross Geller": {
+          "n_responses": 455,
+          "count": 78,
+          "tokens": 4363,
+          "per_1000": 17.878
+        },
+        "Phoebe Buffay": {
+          "n_responses": 333,
+          "count": 46,
+          "tokens": 2876,
+          "per_1000": 15.994
+        },
+        "Rachel Green": {
+          "n_responses": 306,
+          "count": 45,
+          "tokens": 2953,
+          "per_1000": 15.239
+        },
+        "Janice Litman Goralnik": {
+          "n_responses": 22,
+          "count": 5,
+          "tokens": 279,
+          "per_1000": 17.921
+        }
+      },
+      "hedges": {
+        "Monica Geller": {
+          "n_responses": 593,
+          "count": 52,
+          "tokens": 5734,
+          "per_1000": 9.069
+        },
+        "Joey Tribbiani": {
+          "n_responses": 523,
+          "count": 40,
+          "tokens": 4569,
+          "per_1000": 8.755
+        },
+        "Ross Geller": {
+          "n_responses": 455,
+          "count": 30,
+          "tokens": 4363,
+          "per_1000": 6.876
+        },
+        "Phoebe Buffay": {
+          "n_responses": 333,
+          "count": 20,
+          "tokens": 2876,
+          "per_1000": 6.954
+        },
+        "Rachel Green": {
+          "n_responses": 306,
+          "count": 30,
+          "tokens": 2953,
+          "per_1000": 10.159
+        },
+        "Janice Litman Goralnik": {
+          "n_responses": 22,
+          "count": 2,
+          "tokens": 279,
+          "per_1000": 7.168
+        }
+      },
+      "intensifiers": {
+        "Monica Geller": {
+          "n_responses": 593,
+          "count": 103,
+          "tokens": 5734,
+          "per_1000": 17.963
+        },
+        "Joey Tribbiani": {
+          "n_responses": 523,
+          "count": 104,
+          "tokens": 4569,
+          "per_1000": 22.762
+        },
+        "Ross Geller": {
+          "n_responses": 455,
+          "count": 99,
+          "tokens": 4363,
+          "per_1000": 22.691
+        },
+        "Phoebe Buffay": {
+          "n_responses": 333,
+          "count": 71,
+          "tokens": 2876,
+          "per_1000": 24.687
+        },
+        "Rachel Green": {
+          "n_responses": 306,
+          "count": 75,
+          "tokens": 2953,
+          "per_1000": 25.398
+        },
+        "Janice Litman Goralnik": {
+          "n_responses": 22,
+          "count": 5,
+          "tokens": 279,
+          "per_1000": 17.921
+        }
+      },
+      "question_words": {
+        "Monica Geller": {
+          "n_responses": 593,
+          "count": 137,
+          "tokens": 5734,
+          "per_1000": 23.893
+        },
+        "Joey Tribbiani": {
+          "n_responses": 523,
+          "count": 100,
+          "tokens": 4569,
+          "per_1000": 21.887
+        },
+        "Ross Geller": {
+          "n_responses": 455,
+          "count": 94,
+          "tokens": 4363,
+          "per_1000": 21.545
+        },
+        "Phoebe Buffay": {
+          "n_responses": 333,
+          "count": 64,
+          "tokens": 2876,
+          "per_1000": 22.253
+        },
+        "Rachel Green": {
+          "n_responses": 306,
+          "count": 63,
+          "tokens": 2953,
+          "per_1000": 21.334
+        },
+        "Janice Litman Goralnik": {
+          "n_responses": 22,
+          "count": 2,
+          "tokens": 279,
+          "per_1000": 7.168
+        }
+      },
+      "modal_verbs": {
+        "Monica Geller": {
+          "n_responses": 593,
+          "count": 67,
+          "tokens": 5734,
+          "per_1000": 11.685
+        },
+        "Joey Tribbiani": {
+          "n_responses": 523,
+          "count": 53,
+          "tokens": 4569,
+          "per_1000": 11.6
+        },
+        "Ross Geller": {
+          "n_responses": 455,
+          "count": 55,
+          "tokens": 4363,
+          "per_1000": 12.606
+        },
+        "Phoebe Buffay": {
+          "n_responses": 333,
+          "count": 35,
+          "tokens": 2876,
+          "per_1000": 12.17
+        },
+        "Rachel Green": {
+          "n_responses": 306,
+          "count": 43,
+          "tokens": 2953,
+          "per_1000": 14.561
+        },
+        "Janice Litman Goralnik": {
+          "n_responses": 22,
+          "count": 4,
+          "tokens": 279,
+          "per_1000": 14.337
+        }
+      },
+      "contractions": {
+        "Monica Geller": {
+          "n_responses": 593,
+          "count": 451,
+          "tokens": 5734,
+          "per_1000": 78.654
+        },
+        "Joey Tribbiani": {
+          "n_responses": 523,
+          "count": 362,
+          "tokens": 4569,
+          "per_1000": 79.23
+        },
+        "Ross Geller": {
+          "n_responses": 455,
+          "count": 272,
+          "tokens": 4363,
+          "per_1000": 62.342
+        },
+        "Phoebe Buffay": {
+          "n_responses": 333,
+          "count": 237,
+          "tokens": 2876,
+          "per_1000": 82.406
+        },
+        "Rachel Green": {
+          "n_responses": 306,
+          "count": 202,
+          "tokens": 2953,
+          "per_1000": 68.405
+        },
+        "Janice Litman Goralnik": {
+          "n_responses": 22,
+          "count": 20,
+          "tokens": 279,
+          "per_1000": 71.685
+        }
+      },
+      "emotional_vocabulary": {
+        "Monica Geller": {
+          "n_responses": 593,
+          "count": 48,
+          "tokens": 5734,
+          "per_1000": 8.371
+        },
+        "Joey Tribbiani": {
+          "n_responses": 523,
+          "count": 29,
+          "tokens": 4569,
+          "per_1000": 6.347
+        },
+        "Ross Geller": {
+          "n_responses": 455,
+          "count": 45,
+          "tokens": 4363,
+          "per_1000": 10.314
+        },
+        "Phoebe Buffay": {
+          "n_responses": 333,
+          "count": 22,
+          "tokens": 2876,
+          "per_1000": 7.65
+        },
+        "Rachel Green": {
+          "n_responses": 306,
+          "count": 16,
+          "tokens": 2953,
+          "per_1000": 5.418
+        },
+        "Janice Litman Goralnik": {
+          "n_responses": 22,
+          "count": 1,
+          "tokens": 279,
+          "per_1000": 3.584
+        }
+      },
+      "evaluative_vocabulary": {
+        "Monica Geller": {
+          "n_responses": 593,
+          "count": 61,
+          "tokens": 5734,
+          "per_1000": 10.638
+        },
+        "Joey Tribbiani": {
+          "n_responses": 523,
+          "count": 63,
+          "tokens": 4569,
+          "per_1000": 13.789
+        },
+        "Ross Geller": {
+          "n_responses": 455,
+          "count": 43,
+          "tokens": 4363,
+          "per_1000": 9.856
+        },
+        "Phoebe Buffay": {
+          "n_responses": 333,
+          "count": 34,
+          "tokens": 2876,
+          "per_1000": 11.822
+        },
+        "Rachel Green": {
+          "n_responses": 306,
+          "count": 33,
+          "tokens": 2953,
+          "per_1000": 11.175
+        },
+        "Janice Litman Goralnik": {
+          "n_responses": 22,
+          "count": 3,
+          "tokens": 279,
+          "per_1000": 10.753
+        }
+      }
+    },
+    "tag": "OBSERVED",
+    "caveat": "Rows are i.i.d. sampled (context, response) pairs, not sequential dialogue -- last_speaker differences reflect which character Chandler is depicted responding to across many separate scenes, not a single conversational thread."
+  }
+}

@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "worker": "Syntax/Rhythm Analyst",
+    "phase": "Phase 5 - Punctuation & Formatting",
+    "sample_size_responses": 2535,
+    "total_chars_analyzed": 121511,
+    "measurement_method": "Regex counts over response_raw (original punctuation/casing preserved). Ellipsis ('...' or longer) and single period are counted disjointly (a run of 2+ periods is NOT double-counted as a 'period'). Dash counts include '--', em-dash '\u2014', and en-dash '\u2013'."
+  },
+  "punctuation_counts_and_rates": {
+    "tag": "OBSERVED",
+    "description": "Per-response counts and per-1000-character normalized rates for each punctuation mark, plus % of responses containing at least one instance.",
+    "by_mark": {
+      "period": {
+        "per_response_count_stats": {
+          "n": 2535,
+          "mean": 0.81,
+          "median": 1,
+          "stdev": 0.915,
+          "min": 0,
+          "max": 9,
+          "p25": 0.0,
+          "p75": 1.0,
+          "p90": 2.0
+        },
+        "per_1000_char_rate_stats": {
+          "n": 2535,
+          "mean": 28.76,
+          "median": 14.286,
+          "stdev": 52.007,
+          "min": 0.0,
+          "max": 333.333,
+          "p25": 0.0,
+          "p75": 31.25,
+          "p90": 62.5
+        },
+        "pct_responses_containing": 59.29,
+        "total_occurrences": 2053,
+        "total_rate_per_1000_char": 16.896
+      },
+      "comma": {
+        "per_response_count_stats": {
+          "n": 2535,
+          "mean": 0.804,
+          "median": 0,
+          "stdev": 1.144,
+          "min": 0,
+          "max": 12,
+          "p25": 0.0,
+          "p75": 1.0,
+          "p90": 2.0
+        },
+        "per_1000_char_rate_stats": {
+          "n": 2535,
+          "mean": 15.641,
+          "median": 0.0,
+          "stdev": 22.841,
+          "min": 0.0,
+          "max": 210.526,
+          "p25": 0.0,
+          "p75": 25.0,
+          "p90": 43.478
+        },
+        "pct_responses_containing": 48.68,
+        "total_occurrences": 2038,
+        "total_rate_per_1000_char": 16.772
+      },
+      "question_mark": {
+        "per_response_count_stats": {
+          "n": 2535,
+          "mean": 0.335,
+          "median": 0,
+          "stdev": 0.578,
+          "min": 0,
+          "max": 7,
+          "p25": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "per_1000_char_rate_stats": {
+          "n": 2535,
+          "mean": 12.395,
+          "median": 0.0,
+          "stdev": 31.425,
+          "min": 0.0,
+          "max": 333.333,
+          "p25": 0.0,
+          "p75": 11.835,
+          "p90": 38.462
+        },
+        "pct_responses_containing": 29.23,
+        "total_occurrences": 848,
+        "total_rate_per_1000_char": 6.979
+      },
+      "exclamation_mark": {
+        "per_response_count_stats": {
+          "n": 2535,
+          "mean": 0.38,
+          "median": 0,
+          "stdev": 0.767,
+          "min": 0,
+          "max": 10,
+          "p25": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "per_1000_char_rate_stats": {
+          "n": 2535,
+          "mean": 20.937,
+          "median": 0.0,
+          "stdev": 56.425,
+          "min": 0.0,
+          "max": 500.0,
+          "p25": 0.0,
+          "p75": 10.585,
+          "p90": 55.556
+        },
+        "pct_responses_containing": 27.5,
+        "total_occurrences": 964,
+        "total_rate_per_1000_char": 7.933
+      },
+      "ellipsis": {
+        "per_response_count_stats": {
+          "n": 2535,
+          "mean": 0.072,
+          "median": 0,
+          "stdev": 0.319,
+          "min": 0,
+          "max": 4,
+          "p25": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "per_1000_char_rate_stats": {
+          "n": 2535,
+          "mean": 1.987,
+          "median": 0.0,
+          "stdev": 11.76,
+          "min": 0.0,
+          "max": 200.0,
+          "p25": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "pct_responses_containing": 5.92,
+        "total_occurrences": 183,
+        "total_rate_per_1000_char": 1.506
+      },
+      "quotation_mark": {
+        "per_response_count_stats": {
+          "n": 2535,
+          "mean": 0.032,
+          "median": 0,
+          "stdev": 0.279,
+          "min": 0,
+          "max": 6,
+          "p25": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "per_1000_char_rate_stats": {
+          "n": 2535,
+          "mean": 0.494,
+          "median": 0.0,
+          "stdev": 5.8,
+          "min": 0.0,
+          "max": 200.0,
+          "p25": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "pct_responses_containing": 1.42,
+        "total_occurrences": 80,
+        "total_rate_per_1000_char": 0.658
+      },
+      "parentheses": {
+        "per_response_count_stats": {
+          "n": 2535,
+          "mean": 0,
+          "median": 0,
+          "stdev": 0.0,
+          "min": 0,
+          "max": 0,
+          "p25": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "per_1000_char_rate_stats": {
+          "n": 2535,
+          "mean": 0.0,
+          "median": 0.0,
+          "stdev": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "p25": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "pct_responses_containing": 0.0,
+        "total_occurrences": 0,
+        "total_rate_per_1000_char": 0.0
+      },
+      "colon": {
+        "per_response_count_stats": {
+          "n": 2535,
+          "mean": 0.006,
+          "median": 0,
+          "stdev": 0.074,
+          "min": 0,
+          "max": 1,
+          "p25": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "per_1000_char_rate_stats": {
+          "n": 2535,
+          "mean": 0.189,
+          "median": 0.0,
+          "stdev": 3.549,
+          "min": 0.0,
+          "max": 111.111,
+          "p25": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "pct_responses_containing": 0.55,
+        "total_occurrences": 14,
+        "total_rate_per_1000_char": 0.115
+      },
+      "semicolon": {
+        "per_response_count_stats": {
+          "n": 2535,
+          "mean": 0.003,
+          "median": 0,
+          "stdev": 0.052,
+          "min": 0,
+          "max": 1,
+          "p25": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "per_1000_char_rate_stats": {
+          "n": 2535,
+          "mean": 0.041,
+          "median": 0.0,
+          "stdev": 0.831,
+          "min": 0.0,
+          "max": 26.316,
+          "p25": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "pct_responses_containing": 0.28,
+        "total_occurrences": 7,
+        "total_rate_per_1000_char": 0.058
+      },
+      "dash": {
+        "per_response_count_stats": {
+          "n": 2535,
+          "mean": 0.002,
+          "median": 0,
+          "stdev": 0.049,
+          "min": 0,
+          "max": 1,
+          "p25": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "per_1000_char_rate_stats": {
+          "n": 2535,
+          "mean": 0.034,
+          "median": 0.0,
+          "stdev": 0.738,
+          "min": 0.0,
+          "max": 20.833,
+          "p25": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "pct_responses_containing": 0.24,
+        "total_occurrences": 6,
+        "total_rate_per_1000_char": 0.049
+      }
+    }
+  },
+  "repeated_punctuation": {
+    "tag": "OBSERVED",
+    "description": "Combined/repeated punctuation runs: '?!' or '!?' (interrobang-style), 2+ consecutive '?', 2+ consecutive '!', and ellipsis runs of 3+ periods.",
+    "by_pattern": {
+      "question_exclaim": {
+        "total_occurrences": 51,
+        "pct_responses_containing": 1.93,
+        "total_rate_per_1000_char": 0.42
+      },
+      "multi_question": {
+        "total_occurrences": 2,
+        "pct_responses_containing": 0.08,
+        "total_rate_per_1000_char": 0.016
+      },
+      "multi_exclaim": {
+        "total_occurrences": 57,
+        "pct_responses_containing": 1.93,
+        "total_rate_per_1000_char": 0.469
+      },
+      "ellipsis_3plus": {
+        "total_occurrences": 183,
+        "pct_responses_containing": 5.92,
+        "total_rate_per_1000_char": 1.506
+      }
+    }
+  },
+  "punctuation_function_analysis": {
+    "tag": "INFERRED",
+    "description": "Each claim below is backed by a measured co-occurrence or conditional rate computed from the dataset (see 'evidence'), not asserted from intuition.",
+    "hesitation": {
+      "claim": "Ellipsis usage co-occurs with unfinished/trailing constructions, consistent with a hesitation/trailing-off function.",
+      "evidence": {
+        "responses_with_ellipsis": 150,
+        "of_which_end_in_ellipsis_at_response_end": 52,
+        "conditional_rate": {
+          "count": 52,
+          "total": 150,
+          "rate": 0.3467,
+          "pct": 34.67
+        },
+        "baseline_rate_response_ends_in_ellipsis_all_responses": {
+          "count": 52,
+          "total": 2535,
+          "rate": 0.0205,
+          "pct": 2.05
+        }
+      }
+    },
+    "interruption": {
+      "claim": "Dash usage (em-dash/double-hyphen) strongly co-occurs with the interruption-marker flag by construction (same surface cue), and independently, most dash-containing responses place the dash away from sentence-final position less often than ellipsis does at sentence-final position.",
+      "evidence": {
+        "responses_with_dash": 6,
+        "responses_with_dash_and_interruption_flag": 6,
+        "conditional_rate": {
+          "count": 6,
+          "total": 6,
+          "rate": 1.0,
+          "pct": 100.0
+        }
+      }
+    },
+    "emphasis": {
+      "claim": "Exclamation marks are disproportionately concentrated in short responses (<=6 words), consistent with punchy/emphatic delivery rather than being spread evenly across long explanatory turns.",
+      "evidence": {
+        "responses_le_6_words": 1140,
+        "of_which_contain_exclamation": 343,
+        "conditional_rate_short_responses": {
+          "count": 343,
+          "total": 1140,
+          "rate": 0.3009,
+          "pct": 30.09
+        },
+        "baseline_rate_all_responses": {
+          "count": 697,
+          "total": 2535,
+          "rate": 0.275,
+          "pct": 27.5
+        }
+      }
+    },
+    "surprise_and_emotional_intensity": {
+      "claim": "Repeated/combined punctuation ('?!', multi-'!', multi-'?') is rare in absolute terms but is a concrete surface marker of heightened emotional intensity/surprise when present.",
+      "evidence": {
+        "pct_responses_with_any_repeated_punct": 3.71,
+        "question_exclaim_rate": {
+          "count": 51,
+          "total": 2535,
+          "rate": 0.0201,
+          "pct": 2.01
+        },
+        "multi_exclaim_rate": {
+          "count": 57,
+          "total": 2535,
+          "rate": 0.0225,
+          "pct": 2.25
+        }
+      }
+    },
+    "rhetorical_questions": {
+      "claim": "Tag-question / rhetorical-lexical-cue patterns account for a measurable minority of all question-containing responses, indicating question marks are frequently used for rhetorical effect rather than literal information-seeking.",
+      "evidence": {
+        "question_containing_responses": 741,
+        "matching_tag_question_or_rhetorical_cue": 40,
+        "conditional_rate": {
+          "count": 40,
+          "total": 741,
+          "rate": 0.054,
+          "pct": 5.4
+        }
+      }
+    },
+    "conversational_rhythm": {
+      "claim": "Comma rate per 1000 chars correlates with clause count per sentence (both proxies for embedded/compound structure), suggesting commas are the dominant rhythm-pacing device inside a Chandler turn (far more frequent than semicolons/colons, which are used for weightier structural breaks).",
+      "evidence": {
+        "comma_total_rate_per_1000_char": 16.772,
+        "semicolon_total_rate_per_1000_char": 0.058,
+        "colon_total_rate_per_1000_char": 0.115,
+        "mean_clauses_per_sentence": 1.554
+      }
+    },
+    "humor": {
+      "tag": "HYPOTHESIS",
+      "claim": "Humor cannot be directly measured from punctuation alone; as an indirect proxy, short-punchline responses (see sentence_rhythm.json) co-occur with terminal '.' or '!' far more than with '?', suggesting punchlines are delivered as flat statements/exclamations rather than questions.",
+      "evidence": "See sentence_rhythm.json:short_punchline_structure for the structural measurement; this claim is a qualitative cross-reference, not an independently computed statistic."
+    }
+  }
+}

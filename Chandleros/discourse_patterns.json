@@ -1,0 +1,309 @@
+{
+  "phase": 6,
+  "title": "Discourse structure classification",
+  "measurement_method": "Systematic stratified sample drawn every ~6-9th row by id within word-count terciles (short/medium/long), read context_raw + response_raw manually, multi-label classified against a predefined category list, then tabulated with Python (collections.Counter) and extrapolated to the full dataset by proportion.",
+  "sample_size": 317,
+  "full_dataset_size": 2535,
+  "categories_used": [
+    "direct_answer",
+    "answer_joke",
+    "setup_punchline",
+    "question_answer",
+    "question_question",
+    "statement_rhetorical_q",
+    "observation_punchline",
+    "agreement_escalation",
+    "disagreement_humor",
+    "clarification",
+    "correction",
+    "deflection",
+    "emotional_response",
+    "reassurance",
+    "teasing",
+    "callback",
+    "topic_shift",
+    "conversational_continuation",
+    "conversational_repair",
+    "self_correction",
+    "refusal",
+    "uncertainty",
+    "qualification"
+  ],
+  "claim_type": "INFERRED (sampled and extrapolated; not a full-dataset count)",
+  "confidence_note": "Confidence is medium-high for categories with sample_count >= 15 (stable proportions), medium for 6-14, low for < 6 (subject to sampling noise; a systematic 317-row sample gives roughly +/-5pp margin at 95% CI for a 20% proportion, wider for rarer categories).",
+  "discourse_structure_frequencies": {
+    "direct_answer": {
+      "sample_count": 93,
+      "sample_proportion_pct": 29.3,
+      "estimated_dataset_count": 744,
+      "confidence": "medium-high"
+    },
+    "observation_punchline": {
+      "sample_count": 73,
+      "sample_proportion_pct": 23.0,
+      "estimated_dataset_count": 584,
+      "confidence": "medium-high"
+    },
+    "question_question": {
+      "sample_count": 56,
+      "sample_proportion_pct": 17.7,
+      "estimated_dataset_count": 448,
+      "confidence": "medium-high"
+    },
+    "emotional_response": {
+      "sample_count": 43,
+      "sample_proportion_pct": 13.6,
+      "estimated_dataset_count": 344,
+      "confidence": "medium-high"
+    },
+    "teasing": {
+      "sample_count": 33,
+      "sample_proportion_pct": 10.4,
+      "estimated_dataset_count": 264,
+      "confidence": "medium-high"
+    },
+    "agreement_escalation": {
+      "sample_count": 28,
+      "sample_proportion_pct": 8.8,
+      "estimated_dataset_count": 224,
+      "confidence": "medium-high"
+    },
+    "disagreement_humor": {
+      "sample_count": 25,
+      "sample_proportion_pct": 7.9,
+      "estimated_dataset_count": 200,
+      "confidence": "medium-high"
+    },
+    "topic_shift": {
+      "sample_count": 21,
+      "sample_proportion_pct": 6.6,
+      "estimated_dataset_count": 168,
+      "confidence": "medium-high"
+    },
+    "setup_punchline": {
+      "sample_count": 21,
+      "sample_proportion_pct": 6.6,
+      "estimated_dataset_count": 168,
+      "confidence": "medium-high"
+    },
+    "statement_rhetorical_q": {
+      "sample_count": 17,
+      "sample_proportion_pct": 5.4,
+      "estimated_dataset_count": 136,
+      "confidence": "medium-high"
+    },
+    "clarification": {
+      "sample_count": 16,
+      "sample_proportion_pct": 5.0,
+      "estimated_dataset_count": 128,
+      "confidence": "medium-high"
+    },
+    "answer_joke": {
+      "sample_count": 16,
+      "sample_proportion_pct": 5.0,
+      "estimated_dataset_count": 128,
+      "confidence": "medium-high"
+    },
+    "deflection": {
+      "sample_count": 13,
+      "sample_proportion_pct": 4.1,
+      "estimated_dataset_count": 104,
+      "confidence": "medium"
+    },
+    "callback": {
+      "sample_count": 12,
+      "sample_proportion_pct": 3.8,
+      "estimated_dataset_count": 96,
+      "confidence": "medium"
+    },
+    "reassurance": {
+      "sample_count": 12,
+      "sample_proportion_pct": 3.8,
+      "estimated_dataset_count": 96,
+      "confidence": "medium"
+    },
+    "conversational_continuation": {
+      "sample_count": 11,
+      "sample_proportion_pct": 3.5,
+      "estimated_dataset_count": 88,
+      "confidence": "medium"
+    },
+    "conversational_repair": {
+      "sample_count": 6,
+      "sample_proportion_pct": 1.9,
+      "estimated_dataset_count": 48,
+      "confidence": "medium"
+    },
+    "acknowledge": {
+      "sample_count": 6,
+      "sample_proportion_pct": 1.9,
+      "estimated_dataset_count": 48,
+      "confidence": "medium"
+    },
+    "qualification": {
+      "sample_count": 6,
+      "sample_proportion_pct": 1.9,
+      "estimated_dataset_count": 48,
+      "confidence": "medium"
+    },
+    "question_answer": {
+      "sample_count": 5,
+      "sample_proportion_pct": 1.6,
+      "estimated_dataset_count": 40,
+      "confidence": "low"
+    },
+    "correction": {
+      "sample_count": 5,
+      "sample_proportion_pct": 1.6,
+      "estimated_dataset_count": 40,
+      "confidence": "low"
+    },
+    "self_correction": {
+      "sample_count": 4,
+      "sample_proportion_pct": 1.3,
+      "estimated_dataset_count": 32,
+      "confidence": "low"
+    },
+    "refusal": {
+      "sample_count": 4,
+      "sample_proportion_pct": 1.3,
+      "estimated_dataset_count": 32,
+      "confidence": "low"
+    },
+    "uncertainty": {
+      "sample_count": 4,
+      "sample_proportion_pct": 1.3,
+      "estimated_dataset_count": 32,
+      "confidence": "low"
+    }
+  },
+  "discourse_by_response_length_bucket": {
+    "note": "Rows were stratified into terciles by response_word_count: short (<=5 words), medium (6-10 words), long (>10 words). Each bucket ~103-108 rows in the sample.",
+    "short": {
+      "n_sample": 106,
+      "top_structures_pct": {
+        "direct_answer": 44,
+        "question_question": 22,
+        "emotional_response": 18,
+        "observation_punchline": 15,
+        "deflection": 6,
+        "clarification": 6
+      }
+    },
+    "medium": {
+      "n_sample": 108,
+      "top_structures_pct": {
+        "observation_punchline": 31,
+        "direct_answer": 21,
+        "question_question": 21,
+        "emotional_response": 15,
+        "teasing": 14,
+        "agreement_escalation": 10
+      }
+    },
+    "long": {
+      "n_sample": 103,
+      "top_structures_pct": {
+        "observation_punchline": 22,
+        "direct_answer": 22,
+        "setup_punchline": 18,
+        "disagreement_humor": 15,
+        "agreement_escalation": 14,
+        "teasing": 13
+      }
+    },
+    "interpretation": "INFERRED: as response length increases, share of pure direct_answer responses stays roughly flat to declining in relative rank while multi-part comic structures (setup_punchline, disagreement_humor, agreement_escalation) become proportionally more common. Short responses skew toward direct_answer/question_question/emotional_response (single-beat reactions); long responses skew toward layered comic or argumentative structures with a setup and payoff."
+  },
+  "typical_context_by_structure": {
+    "direct_answer": "OBSERVED (from sample reading): dominant when last_speaker asks a concrete factual or logistical question (trivia, whereabouts, confirmations); most common in short responses.",
+    "observation_punchline": "INFERRED: the single most common *comic* structure overall; triggered by an absurd, awkward, or emotionally loaded situation Chandler comments on with a one-line ironic tag, often standalone (single sentence).",
+    "question_question": "INFERRED: frequent when Chandler is deflecting, clarifying, or reacting with disbelief/surprise to the prior line; common opener style even in short responses.",
+    "setup_punchline": "INFERRED: concentrated in long responses (18% of long bucket vs 7% overall); typically an anecdote, hypothetical, or extended riff building to a twist in the final clause/sentence.",
+    "disagreement_humor": "INFERRED: skews toward long responses and toward emotionally charged or accusatory prior lines; Chandler contradicts the premise while making it funny rather than confrontational.",
+    "agreement_escalation": "INFERRED: appears across all buckets; Chandler nominally agrees with or extends the prior speaker's point/bit, then pushes it further for comic effect.",
+    "teasing": "INFERRED: rises with response length (10% short -> 14% medium -> 13% long); usually targets a friend's stated flaw, romantic situation, or vanity.",
+    "callback": "INFERRED: low frequency (3.8%) but structurally distinct - references a running gag or earlier established fact from context/backstory rather than the immediate prior line; cannot be fully verified without episode metadata, so confidence is lower.",
+    "reassurance": "INFERRED: clusters around contexts where last_speaker expresses distress or vulnerability (see cross-tab with intent data); often paired with an undercutting joke rather than delivered straight.",
+    "emotional_response": "INFERRED: common in short responses (18%); a direct affective reaction (surprise, hurt, alarm) without much elaboration.",
+    "topic_shift": "INFERRED: frequently used as an avoidance/comfort mechanism after an uncomfortable or emotionally exposed line from another speaker.",
+    "deflection": "INFERRED: appears with self-protective or awkward personal topics (being caught in a lie, accusations, embarrassing questions).",
+    "clarification": "INFERRED: short, low-word-count responses; genuine requests for missing information rather than rhetorical.",
+    "correction": "INFERRED: low frequency; used to fix a factual error in what was just said, sometimes combined with mild challenge.",
+    "conversational_continuation": "INFERRED: minimal-content responses (greetings, filler acknowledgments) that keep the exchange going without adding new material.",
+    "conversational_repair": "INFERRED: rare; self-interruption or trailing off mid-thought, often when a topic becomes emotionally difficult or a joke is abandoned.",
+    "self_correction": "INFERRED: rare (1.3%); Chandler revises or undercuts his own preceding statement, often for a second comic beat.",
+    "refusal": "INFERRED: rare; direct non-compliance, sometimes softened with humor.",
+    "uncertainty": "INFERRED: rare as a *structure* (distinct from the intent 'express_uncertainty', which is more common); appears as hedged, unresolved phrasing.",
+    "qualification": "INFERRED: rare; adds a conditional or caveat to an otherwise plain statement, frequently to set up an ironic undercut.",
+    "answer_joke": "INFERRED: a direct answer immediately extended with a joke clause in the same response; concentrated in short/medium responses.",
+    "question_answer": "INFERRED: low count in this tagging pass because most Q+A cases were tagged under direct_answer/question_question instead; treat as a lower-confidence, likely-undercounted category.",
+    "statement_rhetorical_q": "INFERRED: a declarative frame collapses into a rhetorical question, frequently used to tease or challenge; associated with rhetorical-question-opener timing pattern (see Phase 13 file)."
+  },
+  "structural_templates": [
+    {
+      "pattern": "observation + punchline",
+      "structure": [
+        "speaker states an observation about the situation",
+        "speaker appends a short ironic or deflating tag"
+      ]
+    },
+    {
+      "pattern": "setup + punchline",
+      "structure": [
+        "speaker opens an anecdote or hypothetical",
+        "speaker elaborates with rising detail",
+        "final clause delivers an unexpected comic twist"
+      ]
+    },
+    {
+      "pattern": "agreement + escalation",
+      "structure": [
+        "speaker nominally agrees with prior point",
+        "speaker extends the idea further than intended for comic effect"
+      ]
+    },
+    {
+      "pattern": "disagreement + humor",
+      "structure": [
+        "speaker contradicts the premise of the prior line",
+        "contradiction is phrased as a joke rather than a straight rebuttal"
+      ]
+    },
+    {
+      "pattern": "direct answer + joke",
+      "structure": [
+        "speaker gives a literal answer to the question",
+        "speaker appends a short humorous aside in the same response"
+      ]
+    },
+    {
+      "pattern": "question + question",
+      "structure": [
+        "speaker responds to a statement or question with a new question",
+        "new question redirects, deflects, or expresses disbelief"
+      ]
+    },
+    {
+      "pattern": "topic shift as avoidance",
+      "structure": [
+        "prior line raises an uncomfortable or emotional topic",
+        "speaker responds with an unrelated, lower-stakes topic or request"
+      ]
+    },
+    {
+      "pattern": "reassurance undercut by joke",
+      "structure": [
+        "speaker opens with a sincere reassuring statement",
+        "speaker closes with a joke that partially undercuts the sincerity"
+      ]
+    }
+  ],
+  "multi_label_note": "OBSERVED: responses frequently exhibit 2 discourse structures simultaneously (e.g. teasing + observation_punchline, or direct_answer + answer_joke); percentages above are per-category incidence, not mutually exclusive shares, so they sum to well over 100%.",
+  "top_5_by_frequency": [
+    "direct_answer",
+    "observation_punchline",
+    "question_question",
+    "emotional_response",
+    "teasing"
+  ]
+}

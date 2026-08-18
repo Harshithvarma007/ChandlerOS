@@ -1,0 +1,128 @@
+{
+  "phase": 13,
+  "title": "Conversational timing and response-position patterns",
+  "measurement_method": "Same 317-row stratified sample as Phases 6 and 12. For each response, response_sentences was used to locate where (if anywhere) comic/ironic content occurs: 'start' (first sentence only), 'middle', 'end' (final sentence/clause), 'whole' (single-sentence response where the entire line is the comic unit), or 'none' (no humor detected). Rhetorical-question-opener and punchline-at-end were tagged as booleans per row. Sub-patterns requiring closer semantic judgment (self-deprecation-after-praise, sarcasm-after-obvious-statement, clarification-before-joke) were only spot-checked, not exhaustively tagged, and are flagged HYPOTHESIS rather than INFERRED.",
+  "sample_size": 317,
+  "full_dataset_size": 2535,
+  "categories_used": [
+    "humor_position: start/middle/end/whole/none",
+    "rhetorical_question_opener: bool",
+    "punchline_at_end: bool",
+    "self_deprecation_after_praise (spot-check)",
+    "sarcasm_after_obvious_statement (spot-check)",
+    "clarification_before_joke",
+    "direct_answer_then_humor"
+  ],
+  "claim_type": "INFERRED for humor_position/punchline_end/rhetorical_opener/direct_answer_then_humor (systematically tagged on every sampled row); HYPOTHESIS for self_deprecation_after_praise, sarcasm_after_obvious, and clarification_before_joke (only spot-checked, insufficient systematic tagging in this pass).",
+  "humor_position_distribution": {
+    "whole": {
+      "sample_count": 123,
+      "sample_proportion_pct": 38.8,
+      "estimated_dataset_count": 984
+    },
+    "none": {
+      "sample_count": 116,
+      "sample_proportion_pct": 36.6,
+      "estimated_dataset_count": 928
+    },
+    "end": {
+      "sample_count": 73,
+      "sample_proportion_pct": 23.0,
+      "estimated_dataset_count": 584
+    },
+    "start": {
+      "sample_count": 4,
+      "sample_proportion_pct": 1.3,
+      "estimated_dataset_count": 32
+    },
+    "middle": {
+      "sample_count": 1,
+      "sample_proportion_pct": 0.3,
+      "estimated_dataset_count": 8
+    }
+  },
+  "humor_position_multi_sentence_only": {
+    "note": "Restricting to the 101/317 (31.9%) sampled responses with >1 sentence, where 'position within the response' is a meaningful question (single-sentence responses are coded 'whole' or 'none').",
+    "n_multi_sentence": 101,
+    "distribution_pct": {
+      "end": 55.4,
+      "none": 21.8,
+      "whole": 17.8,
+      "start": 4.0,
+      "middle": 1.0
+    },
+    "finding": "INFERRED: among multi-sentence responses, humor lands at the END of the response 55.4% of the time, versus only 4.0% at the START and ~1% in the MIDDLE. This is a strong, fairly high-confidence signal (n=101) that Chandler's multi-sentence responses are structurally built to deliver a punchline last -- i.e. setup-then-punch is the dominant multi-sentence shape, not punch-then-explain."
+  },
+  "punchline_at_end": {
+    "sample_count": 131,
+    "sample_proportion_pct_of_all_sample": 41.3,
+    "sample_proportion_pct_of_humor_present_rows": 65.2,
+    "humor_present_rows_n": 201,
+    "humor_present_rate_pct_of_all_sample": 63.4,
+    "estimated_dataset_count": 1048,
+    "finding": "INFERRED: 63.4% of sampled responses contain some form of humor/comic framing; of those, 65.2% place the punchline/comic payoff at the final clause or sentence. Punchline-at-end is therefore the modal comic timing pattern, consistent with standard joke construction (setup precedes payoff)."
+  },
+  "rhetorical_question_as_opener": {
+    "sample_count": 17,
+    "sample_proportion_pct": 5.4,
+    "estimated_dataset_count": 136,
+    "confidence": "low-medium (small n)",
+    "finding": "INFERRED: rhetorical questions used as the response's opening or organizing move appear in roughly 5.4% of sampled responses. These cluster heavily in the 'statement_rhetorical_q' and 'disagreement_humor'/'teasing' discourse categories -- Chandler frequently opens a challenge or tease with a rhetorical question ('So being a good friend means X?') rather than a flat assertion.",
+    "structural_template": {
+      "pattern": "rhetorical question as challenge opener",
+      "structure": [
+        "speaker rephrases the prior claim as an incredulous question",
+        "phrasing itself implies the answer is obviously no/absurd"
+      ]
+    }
+  },
+  "direct_answer_followed_by_humor": {
+    "sample_count": 17,
+    "direct_answer_rows_n": 93,
+    "sample_proportion_pct_of_direct_answer_rows": 18.3,
+    "sample_proportion_pct_of_all_sample": 5.4,
+    "estimated_dataset_count": 136,
+    "finding": "INFERRED: of the 93 sampled responses classified as containing a direct_answer, 18.3% extend that answer with a humorous clause/tag in the same response (i.e. answer-then-humor), while the remaining ~82% deliver the answer plain or extend it with something other than humor (clarification, reassurance, further factual detail). Direct-answer-then-humor is therefore a real but secondary pattern layered onto answers, not the default."
+  },
+  "clarification_before_joke": {
+    "sample_count": 1,
+    "sample_proportion_pct": 0.3,
+    "confidence": "low (n=1 in this sample)",
+    "finding": "HYPOTHESIS: clarification-before-joke (a genuine clarifying question or statement followed by a comic turn within the same response) was found only once in the 317-row sample. This suggests it is a real but rare compound structure, notably rarer than joke-before-clarification or standalone clarification; not enough sampled instances to estimate a reliable dataset-wide rate beyond 'rare, plausibly 1-3% of responses'."
+  },
+  "self_deprecation_after_praise": {
+    "method_caveat": "This pattern requires detecting a 'praise cue' in context_raw immediately before the response, which is a narrower semantic judgment than the primary category tags; only spot-checked rather than tagged on every sampled row, so this is HYPOTHESIS-level, not INFERRED-with-confidence like the categories above.",
+    "spot_check_n": 2,
+    "spot_check_examples_found": 0,
+    "finding": "HYPOTHESIS (low confidence, insufficient sample): the two rows spot-checked for explicit self-deprecation immediately following a compliment/praise line did not show the pattern in this sample; self-deprecating humor was frequently observed (~26 rows carried a 'protect_self' intent alongside humor, 8.2% of sample), but it was typically triggered by an awkward/vulnerable topic rather than specifically by praise. Recommend a larger, targeted re-sample filtering context_raw for praise-language (e.g. 'you're great', 'I'm proud', 'amazing') before drawing a confident conclusion on this specific sub-pattern."
+  },
+  "sarcasm_after_obvious_statement": {
+    "method_caveat": "Distinguishing 'sarcasm following an obvious/redundant statement' from general observational humor requires close reading of the immediately preceding line's informational content; only tagged explicitly on 1 sampled row, with several more plausible but not systematically flagged.",
+    "explicitly_tagged_n": 1,
+    "plausible_additional_examples_in_sample": "roughly 5-10 observation_punchline rows read as reactions to a redundant/over-explained prior statement, but this was not tagged as a first-class field during classification",
+    "finding": "HYPOTHESIS (low confidence): sarcasm-after-obvious-statement appears to be a real but minority sub-type of the broader observation_punchline category (23.0% of sample), rather than its own dominant pattern. A dedicated re-pass explicitly flagging 'is the prior line stating something redundant/self-evident' would be needed to quantify this reliably."
+  },
+  "opener_vs_closer_summary": {
+    "rhetorical_question_as_opener_pct": 5.4,
+    "punchline_as_closer_pct_of_humor_present": 65.2,
+    "finding": "INFERRED: response openers are dominated by direct statements or direct answers rather than rhetorical questions (rhetorical openers are a minority pattern at 5.4%), whereas response *closers*, when humor is present at all, are dominated by the punchline (65.2%). This asymmetry supports a general 'plain-start, punchy-finish' shape for Chandler's comic responses."
+  },
+  "length_position_interaction": {
+    "note": "Cross-referencing humor position with the word-count bucket used in Phase 6/12.",
+    "finding": "INFERRED: 'end'-positioned humor is disproportionately a multi-sentence phenomenon (56/73 end-positioned rows, i.e. ~77%, come from multi-sentence responses), while 'whole'-positioned humor (the entire single-sentence response functions as the joke) is the modal pattern for short single-sentence responses. This is consistent with Phase 6's finding that long responses skew toward setup_punchline/disagreement_humor (multi-beat structures) while short responses skew toward direct_answer/single-beat reactions."
+  },
+  "clearest_findings_ranked": [
+    {
+      "finding": "Punchline-at-end is the dominant multi-sentence humor shape: 55.4% of multi-sentence responses place the joke in the final sentence, vs ~4% at the start.",
+      "confidence": "medium-high"
+    },
+    {
+      "finding": "Of responses containing any humor (63.4% of sample), 65.2% deliver the punchline at the very end of the response.",
+      "confidence": "medium-high"
+    },
+    {
+      "finding": "Rhetorical questions as an opening/organizing move are a real but minority pattern (5.4% of sample), concentrated in challenge/tease responses.",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "phase": "Phase 8 - Sarcasm Analysis",
+  "methodology": {
+    "method": "Systematic stratified sample by id (every 7th row from id-sorted full dataset of 2535 records), stratified approximately across response-length terciles (word count <=5 / 6-10 / >10). Each sampled row's context_raw + response_raw read and classified by human-in-the-loop semantic judgment against fixed category definitions (defined below) before classification began.",
+    "sample_size": 363,
+    "full_dataset_size": 2535,
+    "sampling_fraction": 0.1432,
+    "categories_used": {
+      "sarcasm_target": [
+        "self",
+        "situation",
+        "technology-or-object",
+        "abstract concept",
+        "another character (other_char)",
+        "group",
+        "user",
+        "circumstance"
+      ],
+      "sarcasm_intensity": {
+        "1": "mild",
+        "2": "moderate",
+        "3": "strong"
+      },
+      "context_tone": [
+        "light",
+        "neutral",
+        "awkward",
+        "serious"
+      ],
+      "definition_sarcasm": "An utterance is coded sarcastic if its literal semantic content diverges from its evidently intended meaning (irony/reversal), OR it uses exaggeration/mock-enthusiasm/mock-praise/deadpan flatness to mock, deflect, or comment on a situation, statement, or person, in a way a reasonable viewer would read as pointed rather than sincere. Genuine questions, sincere requests, sincere emotional statements, and plain absurdist non-sequiturs with no mocking/ironic charge were coded non-sarcastic."
+    },
+    "measurement_method": "Binary sarcasm flag + intensity + target + rhetorical-type tag assigned per sampled response; counts tabulated programmatically from the tag set; proportions extrapolated linearly to the full dataset of 2535 records. All extrapolated figures are tagged INFERRED; all sample counts/proportions are tagged OBSERVED.",
+    "limitations": "Single-annotator judgment on short, context-thin snippets (no episode metadata, rows i.i.d.); intensity and rhetorical-type boundaries are inherently fuzzy; 'technology-or-object' and 'user' targets did not occur in this sample and may be genuinely rare or simply below sampling resolution."
+  },
+  "sarcasm_frequency": {
+    "observed_sample_rate": {
+      "value": 0.5923,
+      "sample_size": 363,
+      "sarcastic_count": 215,
+      "tag": "OBSERVED"
+    },
+    "inferred_full_dataset": {
+      "estimated_sarcastic_responses": 1501,
+      "of_total": 2535,
+      "tag": "INFERRED"
+    }
+  },
+  "sarcasm_intensity_distribution": {
+    "tag": "OBSERVED",
+    "sample_size_sarcastic": 215,
+    "mild": {
+      "count": 96,
+      "proportion": 0.4465
+    },
+    "moderate": {
+      "count": 111,
+      "proportion": 0.5163
+    },
+    "strong": {
+      "count": 8,
+      "proportion": 0.0372
+    }
+  },
+  "sarcasm_markers": {
+    "tag": "OBSERVED",
+    "sample_size_sarcastic": 215,
+    "deadpan_delivery": {
+      "count": 92,
+      "proportion": 0.4279,
+      "description": "Flat, unemotional statement of fact or reaction immediately following an absurd, awkward, or emotionally loaded situation; the flatness itself signals the ironic distance."
+    },
+    "exaggeration_general": {
+      "count": 9,
+      "proportion": 0.0419,
+      "description": "Overstated claims/comparisons used to mock a situation or person by inflating it past plausibility."
+    },
+    "mock_enthusiasm_or_mock_seriousness": {
+      "count": 7,
+      "proportion": 0.0326
+    },
+    "mock_praise_or_backhanded_compliment": {
+      "count": 7,
+      "proportion": 0.0326
+    },
+    "rhetorical_or_sarcastic_question_tone": {
+      "count": 28,
+      "proportion": 0.1302
+    }
+  },
+  "rhetorical_structures": {
+    "tag": "OBSERVED",
+    "sample_size_sarcastic": 215,
+    "description": "Frequency of the dominant rhetorical mechanism tagged per sarcastic instance (abstract structural categories, not verbatim types).",
+    "top_structures": [
+      {
+        "structure": "deadpan",
+        "count": 25,
+        "proportion": 0.1163
+      },
+      {
+        "structure": "sarcastic_question",
+        "count": 16,
+        "proportion": 0.0744
+      },
+      {
+        "structure": "ironic_statement",
+        "count": 15,
+        "proportion": 0.0698
+      },
+      {
+        "structure": "deadpan_absurd",
+        "count": 13,
+        "proportion": 0.0605
+      },
+      {
+        "structure": "deadpan_deflection",
+        "count": 7,
+        "proportion": 0.0326
+      },
+      {
+        "structure": "deadpan_joke",
+        "count": 6,
+        "proportion": 0.0279
+      },
+      {
+        "structure": "teasing_question",
+        "count": 5,
+        "proportion": 0.0233
+      },
+      {
+        "structure": "ironic_agreement",
+        "count": 4,
+        "proportion": 0.0186
+      },
+      {
+        "structure": "mock_enthusiasm",
+        "count": 4,
+        "proportion": 0.0186
+      },
+      {
+        "structure": "semantic_reversal",
+        "count": 4,
+        "proportion": 0.0186
+      },
+      {
+        "structure": "rhetorical_question",
+        "count": 4,
+        "proportion": 0.0186
+      },
+      {
+        "structure": "mock_praise",
+        "count": 4,
+        "proportion": 0.0186
+      },
+      {
+        "structure": "deadpan_insult",
+        "count": 3,
+        "proportion": 0.014
+      },
+      {
+        "structure": "deadpan_correction",
+        "count": 3,
+        "proportion": 0.014
+      },
+      {
+        "structure": "deadpan_blunt",
+        "count": 3,
+        "proportion": 0.014
+      }
+    ],
+    "semantic_reversal_family": {
+      "count": 27,
+      "proportion": 0.1256,
+      "description": "Instances where the literal statement is the opposite (or a mocking inversion) of the evidently intended meaning -- includes ironic_statement, semantic_reversal, ironic_agreement, ironic_rebuttal, ironic_understatement, ironic_complaint subtypes."
+    }
+  },
+  "semantic_reversal": {
+    "count": 27,
+    "proportion_of_sarcastic": 0.1256,
+    "tag": "OBSERVED"
+  },
+  "exaggerated_agreement": {
+    "count": 5,
+    "proportion_of_sarcastic": 0.0233,
+    "tag": "OBSERVED"
+  },
+  "exaggerated_disbelief": {
+    "count": 2,
+    "proportion_of_sarcastic": 0.0093,
+    "tag": "OBSERVED"
+  },
+  "ironic_agreement": {
+    "count": 4,
+    "proportion_of_sarcastic": 0.0186,
+    "tag": "OBSERVED"
+  },
+  "ironic_disagreement": {
+    "count": 1,
+    "proportion_of_sarcastic": 0.0047,
+    "tag": "OBSERVED",
+    "note": "Rare relative to ironic_agreement in this sample -- Chandler's sarcasm more often ironically AGREES with / amplifies a bad premise than ironically disagrees with a good one."
+  },
+  "deadpan_delivery": {
+    "count": 92,
+    "proportion_of_sarcastic": 0.4279,
+    "tag": "OBSERVED",
+    "note": "The single most common sarcasm marker in the sample -- a flat, literal-sounding statement delivered right after (or about) an emotionally charged or absurd moment."
+  },
+  "sarcastic_questions_vs_statements": {
+    "tag": "OBSERVED",
+    "sample_size_sarcastic": 215,
+    "question_form": {
+      "count": 28,
+      "proportion": 0.1302
+    },
+    "statement_form": {
+      "count": 187,
+      "proportion": 0.8698
+    },
+    "note": "Chandler's sarcasm is overwhelmingly delivered as a declarative statement (deadpan aside, mock-enthusiastic claim, ironic comment) rather than as a rhetorical question; sarcastic/rhetorical questions are a real but minority structure."
+  },
+  "sarcasm_target_distribution": {
+    "tag": "OBSERVED",
+    "sample_size_sarcastic": 215,
+    "distribution": [
+      {
+        "target": "other_char",
+        "count": 97,
+        "proportion": 0.4512
+      },
+      {
+        "target": "situation",
+        "count": 66,
+        "proportion": 0.307
+      },
+      {
+        "target": "self",
+        "count": 37,
+        "proportion": 0.1721
+      },
+      {
+        "target": "abstract",
+        "count": 7,
+        "proportion": 0.0326
+      },
+      {
+        "target": "circumstance",
+        "count": 4,
+        "proportion": 0.0186
+      },
+      {
+        "target": "group",
+        "count": 4,
+        "proportion": 0.0186
+      }
+    ],
+    "targets_not_observed_in_sample": [
+      "technology-or-object",
+      "user"
+    ],
+    "note_on_user_target": "The 'user' target category is structurally near-inapplicable to this corpus: these are scripted multi-character sitcom exchanges, not a chatbot/assistant transcript with a single addressed 'user'. No instance targeted a generic 'you, the audience/user' construct; sarcasm always targets an in-scene character, group, situation, or abstract idea.",
+    "inferred_full_dataset_counts": {
+      "other_char": 677,
+      "circumstance": 28,
+      "self": 258,
+      "situation": 461,
+      "abstract": 49,
+      "group": 28
+    },
+    "inferred_tag": "INFERRED (extrapolated from OBSERVED sample proportions applied to the INFERRED total sarcastic-response count)"
+  },
+  "context_dependency": {
+    "tag": "OBSERVED",
+    "description": "Sarcasm rate computed separately for context_raw preceding lines coded as lighthearted/mundane ('light'), neutral/informational ('neutral'), socially awkward/embarrassing ('awkward'), and emotionally serious/vulnerable ('serious'), based on the tone of the last_speaker's preceding line(s).",
+    "sample_sizes_by_context_tone": {
+      "light": 190,
+      "neutral": 86,
+      "serious": 53,
+      "awkward": 34
+    },
+    "sarcasm_rate_by_context_tone": {
+      "light": {
+        "sarcastic": 124,
+        "total": 190,
+        "rate": 0.6526
+      },
+      "neutral": {
+        "sarcastic": 44,
+        "total": 86,
+        "rate": 0.5116
+      },
+      "serious": {
+        "sarcastic": 26,
+        "total": 53,
+        "rate": 0.4906
+      },
+      "awkward": {
+        "sarcastic": 21,
+        "total": 34,
+        "rate": 0.6176
+      }
+    },
+    "finding": "Sarcasm rate is highest when the preceding context is lighthearted/mundane (65.3%) or socially awkward (61.8%), and lowest when the preceding context is emotionally serious/vulnerable (49.1%) or neutrally informational (51.2%). Chandler does not suppress sarcasm in awkward moments -- he appears to deploy it defensively there almost as often as in genuinely light banter -- but does measurably dial it back (roughly 16 percentage points / ~25% relative drop) when the preceding line is earnest emotional vulnerability (e.g. a friend's fear, grief, or a heartfelt declaration).",
+    "relationship_context_dependency": "Sarcasm target skews toward 'another_char' (45%) and 'situation' (31%) regardless of context tone; self-targeted sarcasm (17%) appears somewhat more concentrated in awkward/serious contexts (deflecting his own embarrassment or vulnerability) than in purely light banter, consistent with sarcasm-at-self functioning as a defense mechanism rather than pure comedic play."
+  },
+  "sarcasm_self_deprecation_cooccurrence": {
+    "tag": "OBSERVED",
+    "sample_size": 363,
+    "cooccurring_count": 8,
+    "cooccurrence_rate_of_full_sample": 0.022,
+    "cooccurrence_rate_within_sarcastic_instances": 0.0372,
+    "cooccurrence_rate_within_selfdep_instances": 0.8889,
+    "note": "Nearly all self-deprecating instances (8 of 9, 89%) are simultaneously coded sarcastic -- self-deprecation in this corpus is almost always delivered THROUGH a sarcastic/ironic/deadpan register rather than as sincere self-criticism."
+  }
+}

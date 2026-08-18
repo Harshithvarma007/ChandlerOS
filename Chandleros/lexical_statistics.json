@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "sample_size_responses": 2535,
+    "sample_size_word_tokens": 23781,
+    "note": "Dataset-level forensics (response_word_count mean/median/stdev) already established upstream; this file covers token/vocabulary/category-level statistics only."
+  },
+  "token_counts": {
+    "total_word_tokens": 23781,
+    "distinct_word_types": 3141,
+    "measurement_method": "Pooled across all response_words fields; tokens lowercased for type counting.",
+    "tag": "OBSERVED"
+  },
+  "type_token_ratio": 0.13208,
+  "guiraud_root_ttr": 20.368,
+  "herdan_log_ttr_C": 0.7991,
+  "hapax_legomena_count": 1803,
+  "hapax_legomena_pct_of_vocab": 57.4,
+  "hapax_legomena_pct_of_tokens": 7.58,
+  "contraction_rate_per_1000_words": 74.051,
+  "informal_to_formal_ratio": 2671.0,
+  "category_frequency_table": {
+    "pronoun_1st_singular": {
+      "raw_count": 1151,
+      "per_1000_words": 48.4,
+      "pct_of_tokens": 4.84,
+      "confidence": "high"
+    },
+    "pronoun_1st_plural": {
+      "raw_count": 334,
+      "per_1000_words": 14.045,
+      "pct_of_tokens": 1.404,
+      "confidence": "high"
+    },
+    "pronoun_2nd": {
+      "raw_count": 991,
+      "per_1000_words": 41.672,
+      "pct_of_tokens": 4.167,
+      "confidence": "high"
+    },
+    "pronoun_3rd_singular": {
+      "raw_count": 690,
+      "per_1000_words": 29.015,
+      "pct_of_tokens": 2.901,
+      "confidence": "high"
+    },
+    "pronoun_3rd_plural": {
+      "raw_count": 81,
+      "per_1000_words": 3.406,
+      "pct_of_tokens": 0.341,
+      "confidence": "medium"
+    },
+    "auxiliary_be": {
+      "raw_count": 836,
+      "per_1000_words": 35.154,
+      "pct_of_tokens": 3.515,
+      "confidence": "high"
+    },
+    "auxiliary_have": {
+      "raw_count": 240,
+      "per_1000_words": 10.092,
+      "pct_of_tokens": 1.009,
+      "confidence": "high"
+    },
+    "auxiliary_do": {
+      "raw_count": 309,
+      "per_1000_words": 12.994,
+      "pct_of_tokens": 1.299,
+      "confidence": "high"
+    },
+    "modal_verbs": {
+      "raw_count": 287,
+      "per_1000_words": 12.068,
+      "pct_of_tokens": 1.207,
+      "confidence": "high"
+    },
+    "interjections": {
+      "raw_count": 795,
+      "per_1000_words": 33.43,
+      "pct_of_tokens": 3.343,
+      "confidence": "high"
+    },
+    "discourse_markers": {
+      "raw_count": 1000,
+      "per_1000_words": 42.05,
+      "pct_of_tokens": 4.205,
+      "confidence": "high"
+    },
+    "hedges": {
+      "raw_count": 191,
+      "per_1000_words": 8.032,
+      "pct_of_tokens": 0.803,
+      "confidence": "high"
+    },
+    "intensifiers": {
+      "raw_count": 529,
+      "per_1000_words": 22.245,
+      "pct_of_tokens": 2.224,
+      "confidence": "high"
+    },
+    "negations": {
+      "raw_count": 413,
+      "per_1000_words": 17.367,
+      "pct_of_tokens": 1.737,
+      "confidence": "high"
+    },
+    "fillers": {
+      "raw_count": 772,
+      "per_1000_words": 32.463,
+      "pct_of_tokens": 3.246,
+      "confidence": "high"
+    },
+    "conversational_markers": {
+      "raw_count": 562,
+      "per_1000_words": 23.632,
+      "pct_of_tokens": 2.363,
+      "confidence": "high"
+    },
+    "question_words": {
+      "raw_count": 503,
+      "per_1000_words": 21.151,
+      "pct_of_tokens": 2.115,
+      "confidence": "high"
+    },
+    "transition_words": {
+      "raw_count": 922,
+      "per_1000_words": 38.77,
+      "pct_of_tokens": 3.877,
+      "confidence": "high"
+    },
+    "temporal_vocabulary": {
+      "raw_count": 443,
+      "per_1000_words": 18.628,
+      "pct_of_tokens": 1.863,
+      "confidence": "high"
+    },
+    "social_vocabulary": {
+      "raw_count": 422,
+      "per_1000_words": 17.745,
+      "pct_of_tokens": 1.775,
+      "confidence": "high"
+    },
+    "emotional_vocabulary": {
+      "raw_count": 183,
+      "per_1000_words": 7.695,
+      "pct_of_tokens": 0.77,
+      "confidence": "high"
+    },
+    "evaluative_vocabulary": {
+      "raw_count": 288,
+      "per_1000_words": 12.111,
+      "pct_of_tokens": 1.211,
+      "confidence": "high"
+    },
+    "certainty_vocabulary": {
+      "raw_count": 266,
+      "per_1000_words": 11.185,
+      "pct_of_tokens": 1.119,
+      "confidence": "high"
+    },
+    "uncertainty_vocabulary": {
+      "raw_count": 225,
+      "per_1000_words": 9.461,
+      "pct_of_tokens": 0.946,
+      "confidence": "high"
+    },
+    "technical_vocabulary": {
+      "raw_count": 22,
+      "per_1000_words": 0.925,
+      "pct_of_tokens": 0.093,
+      "confidence": "low"
+    },
+    "informal_slang": {
+      "raw_count": 910,
+      "per_1000_words": 38.266,
+      "pct_of_tokens": 3.827,
+      "confidence": "high"
+    },
+    "formal_connectors": {
+      "raw_count": 1,
+      "per_1000_words": 0.042,
+      "pct_of_tokens": 0.004,
+      "confidence": "very_low"
+    },
+    "contractions": {
+      "raw_count": 1761,
+      "per_1000_words": 74.051,
+      "pct_of_tokens": 7.405,
+      "confidence": "high"
+    },
+    "pronouns_total": {
+      "raw_count": 3247,
+      "per_1000_words": 136.538,
+      "pct_of_tokens": 13.654,
+      "confidence": "high"
+    },
+    "auxiliary_verbs_total": {
+      "raw_count": 1385,
+      "per_1000_words": 58.24,
+      "pct_of_tokens": 5.824,
+      "confidence": "high"
+    }
+  },
+  "methodology_notes": [
+    "All counts computed programmatically over response_words (regex alpha-tokenized, apostrophes retained); no manual/eyeballed figures.",
+    "N-gram counts computed within-response only (no cross-response concatenation), so bigrams/trigrams never span two different responses.",
+    "Category lexicons are hand-curated word lists judged by function (hedge, intensifier, discourse marker, etc.) where POS tags alone are insufficient to determine pragmatic function; this curation step is a semantic judgment call, flagged wherever used.",
+    "Baseline percentages used for relative-frequency comparison are an explicit literature-informed assumption, not an independently measured external corpus -- see lexical_categories.json meta.baseline_assumption."
+  ],
+  "confidence_tag_legend": {
+    "OBSERVED": "Directly computed from the dataset with no interpretive step.",
+    "INFERRED": "A confident interpretation drawn from combining multiple OBSERVED numbers (e.g. relative-frequency ratios against an assumed baseline, or narrative interpretation of a rate).",
+    "HYPOTHESIS": "A plausible but underdetermined claim not fully verifiable from this dataset alone."
+  }
+}

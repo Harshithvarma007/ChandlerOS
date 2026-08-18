@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "source_file": "data.parquet",
+  "local_path_at_analysis_time": "/Users/harshithvarma/Desktop/upskill/data.parquet",
+  "row_count": 2535,
+  "content_origin": {
+    "description": "Dialogue lines drawn from the television sitcom 'Friends' (Warner Bros. Television / NBC), attributed to the character Chandler Bing and 187 other named cast members (dominant: Monica Geller, Joey Tribbiani, Ross Geller, Phoebe Buffay, Rachel Green; remainder are minor/guest characters).",
+    "underlying_ip_owner_HYPOTHESIS": "Warner Bros. Entertainment / NBCUniversal (original series copyright holders). Not independently verified from the parquet file, which carries no license or copyright field.",
+    "dataset_construction_format": "ShareGPT-style instruction-tuning pair format: each row is a 2-turn conversation object with turn[0].from='human' (short multi-line dialogue excerpt providing scene context, each line prefixed 'CharacterName: text') and turn[1].from='gpt' (the response line, presumed to be Chandler Bing's next line in the scene, per dataset framing).",
+    "structured_metadata_present_in_file": "None beyond the 'conversations' column itself -- no episode/season/scene identifiers, no license field, no author/curator field, no collection-date field."
+  },
+  "licensing_and_ip_handling": {
+    "policy_applied_in_this_transformation": "This transformation deliberately AVOIDS reproducing the source dialogue. No quote database, no long verbatim phrase bank, and no scene/script reproduction is included in any chandleros/* artifact. Only short (<=~12 word) illustrative snippets appear where strictly necessary for a structural annotation, and abstracted paraphrase/templates are preferred throughout. All statistical/structural findings (frequencies, distributions, structural templates, rule sets) are treated as facts ABOUT the dataset's language patterns, not as republished creative content.",
+    "recommendation_for_downstream_engineers": "Treat original dialogue as copyrighted, unlicensed input. Do not redistribute data.parquet itself as part of any derived product; only the abstracted/statistical chandleros/* artifacts are intended for downstream reuse."
+  },
+  "collection_provenance": "Unknown / not recorded in file. Presumed to be a community-assembled fine-tuning dataset (naming and structure match publicly known 'Friends character chatbot' fine-tuning corpora), but no verifiable source URL, author, or date-of-collection metadata is embedded in the parquet file itself.",
+  "data_integrity_hash_note": "No checksum/hash was embedded in the source file; treat data.parquet as the single immutable reference copy for any future re-derivation of these artifacts."
+}

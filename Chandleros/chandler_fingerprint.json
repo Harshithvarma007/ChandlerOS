@@ -1,0 +1,432 @@
+{
+  "phase": 16,
+  "title": "Consolidated Character Fingerprint",
+  "schema_note": "One consolidated machine-readable representation drawing on all Phase 1-15 artifacts. Every quantitative value includes value/unit/sample_size/confidence/measurement_method where applicable. This file is a DIGEST/INDEX into the full per-phase files, not a replacement for them -- see chandleros_dataset.json for the full queryable schema and chandleros_index.md for a file-by-file guide.",
+  "dataset_scale": {
+    "total_responses": 2535,
+    "total_word_tokens": 23781,
+    "vocabulary_size": 3141
+  },
+  "lexical": {
+    "vocabulary_size": {
+      "value": 3141,
+      "unit": "distinct_word_types",
+      "sample_size": 23781,
+      "confidence": "high",
+      "measurement_method": "pooled type count, response_words field"
+    },
+    "type_token_ratio": {
+      "value": 0.132,
+      "unit": "ratio",
+      "sample_size": 23781,
+      "confidence": "high",
+      "measurement_method": "vocab_size/total_tokens, pooled corpus"
+    },
+    "hapax_legomena_pct_of_vocab": {
+      "value": 57.4,
+      "unit": "pct",
+      "sample_size": 3141,
+      "confidence": "high"
+    },
+    "contraction_rate": {
+      "value": 74.05,
+      "unit": "per_1000_words",
+      "sample_size": 23781,
+      "confidence": "high"
+    },
+    "most_elevated_categories_vs_baseline": [
+      {
+        "category": "interjections",
+        "relative_frequency_multiplier": 6.69,
+        "confidence": "high (INFERRED ratio vs stated literature baseline)"
+      },
+      {
+        "category": "fillers",
+        "relative_frequency_multiplier": 3.25,
+        "confidence": "high"
+      },
+      {
+        "category": "contractions",
+        "relative_frequency_multiplier": 2.96,
+        "confidence": "high"
+      },
+      {
+        "category": "conversational_markers",
+        "relative_frequency_multiplier": 2.36,
+        "confidence": "high"
+      },
+      {
+        "category": "discourse_markers",
+        "relative_frequency_multiplier": 2.1,
+        "confidence": "high"
+      }
+    ],
+    "source_files": [
+      "lexical_profile.json",
+      "lexical_categories.json",
+      "lexical_statistics.json"
+    ]
+  },
+  "syntax": {
+    "pos_distribution": {
+      "noun_pct": 26.48,
+      "verb_pct": 20.36,
+      "pronoun_pct": 14.68,
+      "adverb_pct": 6.99,
+      "adjective_pct": 6.03,
+      "unit": "pct_of_pos_tags",
+      "sample_size": 23781,
+      "confidence": "high",
+      "measurement_method": "nltk.pos_tag on alpha tokens"
+    },
+    "sentence_classification": {
+      "simple_pct": 68.82,
+      "compound_pct": 13.43,
+      "complex_pct": 12.26,
+      "compound_complex_pct": 5.49,
+      "sample_size": 3768,
+      "confidence": "medium (lexical heuristic, not full parse)"
+    },
+    "fragment_rate": {
+      "value": 34.45,
+      "unit": "pct_of_sentences",
+      "sample_size": 3768,
+      "confidence": "medium (heuristic definition)"
+    },
+    "active_voice_pct": {
+      "value": 97.91,
+      "sample_size": 2535,
+      "confidence": "high (pattern-heuristic estimate)"
+    },
+    "first_person_pronoun_share": {
+      "value": 45.73,
+      "unit": "pct_of_all_pronoun_tokens",
+      "sample_size": 3490,
+      "confidence": "high"
+    },
+    "source_files": [
+      "pos_profile.json",
+      "syntax_profile.json"
+    ]
+  },
+  "rhythm": {
+    "mean_sentence_length_words": {
+      "value": 6.31,
+      "sample_size": 3768,
+      "confidence": "high"
+    },
+    "mean_response_word_count": {
+      "value": 9.381,
+      "median": 7,
+      "stdev": 8.457,
+      "sample_size": 2535,
+      "confidence": "high"
+    },
+    "short_punchline_structure_rate": {
+      "value": 3.71,
+      "unit": "pct_of_all_responses",
+      "eligible_rate_pct": 12.08,
+      "sample_size": 2535,
+      "confidence": "medium (surface heuristic)"
+    },
+    "repetition_within_response_rate": {
+      "value": 15.62,
+      "unit": "pct",
+      "sample_size": 2535,
+      "confidence": "high"
+    },
+    "self_correction_rate": {
+      "value": 3.08,
+      "unit": "pct",
+      "sample_size": 2535,
+      "confidence": "high"
+    },
+    "source_files": [
+      "sentence_rhythm.json",
+      "syntax_profile.json"
+    ]
+  },
+  "punctuation": {
+    "period_rate_per_1000_char": 16.9,
+    "comma_rate_per_1000_char": 16.77,
+    "exclamation_rate_per_1000_char": 7.93,
+    "question_mark_rate_per_1000_char": 6.98,
+    "pct_responses_with_exclamation": {
+      "value": 27.5,
+      "elevated_in_short_responses_pct": 30.09,
+      "sample_size": 2535,
+      "confidence": "high"
+    },
+    "pct_responses_with_question": {
+      "value": 29.23,
+      "sample_size": 2535,
+      "confidence": "high"
+    },
+    "dash_usage": {
+      "value": "near-zero (0.24% of responses)",
+      "confidence": "high",
+      "caveat": "likely a transcription-convention artifact, not evidence of absent interruption style"
+    },
+    "source_files": [
+      "punctuation_profile.json"
+    ]
+  },
+  "discourse": {
+    "top_structures": [
+      {
+        "structure": "direct_answer",
+        "pct": 29.3,
+        "confidence": "medium-high"
+      },
+      {
+        "structure": "observation_punchline",
+        "pct": 23.0,
+        "confidence": "medium-high"
+      },
+      {
+        "structure": "question_question",
+        "pct": 17.7,
+        "confidence": "medium-high"
+      },
+      {
+        "structure": "emotional_response",
+        "pct": 13.6,
+        "confidence": "medium-high"
+      },
+      {
+        "structure": "teasing",
+        "pct": 10.4,
+        "confidence": "medium-high"
+      }
+    ],
+    "sample_size": 317,
+    "confidence": "medium-high (sampled+extrapolated, INFERRED)",
+    "length_dependence": "short responses skew direct_answer/question_question/emotional_response; long responses skew observation_punchline/setup_punchline/disagreement_humor/agreement_escalation",
+    "source_files": [
+      "discourse_patterns.json"
+    ]
+  },
+  "humor": {
+    "overall_humor_rate": {
+      "value": 80.0,
+      "unit": "pct_of_responses",
+      "sample_size": 425,
+      "confidence": "high (INFERRED extrapolation)"
+    },
+    "humor_rate_by_length": {
+      "short": 59.5,
+      "medium": 91.2,
+      "long": 94.2,
+      "sample_size": 425
+    },
+    "top_mechanisms": [
+      {
+        "mechanism": "absurdity",
+        "pct_of_humorous": 26.8
+      },
+      {
+        "mechanism": "deadpan",
+        "pct_of_humorous": 24.7
+      },
+      {
+        "mechanism": "sarcasm",
+        "pct_of_humorous": 23.8
+      },
+      {
+        "mechanism": "exaggeration",
+        "pct_of_humorous": 17.4
+      },
+      {
+        "mechanism": "irony",
+        "pct_of_humorous": 14.1
+      }
+    ],
+    "mean_mechanisms_per_humorous_response": {
+      "value": 2.49,
+      "multi_mechanism_pct": 90.9
+    },
+    "punchline_position": {
+      "end_pct_of_multi_sentence": 55.4,
+      "end_pct_of_humor_present": 65.2,
+      "sample_size": 317,
+      "confidence": "medium-high"
+    },
+    "confidence": "high for overall rate and top mechanisms (4-chunk semantic classification, n=425); medium for individual rare mechanisms",
+    "source_files": [
+      "humor_taxonomy.json",
+      "humor_patterns.json",
+      "humor_statistics.json",
+      "conversation_timing.json"
+    ]
+  },
+  "sarcasm": {
+    "overall_rate": {
+      "value": 59.2,
+      "unit": "pct_of_responses",
+      "sample_size": 363,
+      "confidence": "high (INFERRED extrapolation)"
+    },
+    "intensity_distribution": {
+      "mild": 44.65,
+      "moderate": 51.63,
+      "strong": 3.72
+    },
+    "dominant_marker": {
+      "marker": "deadpan_delivery",
+      "pct_of_sarcastic": 42.79
+    },
+    "form": {
+      "statement_pct": 86.98,
+      "question_pct": 13.02
+    },
+    "target_distribution": {
+      "other_character": 45.12,
+      "situation": 30.7,
+      "self": 17.21,
+      "abstract_or_group_or_circumstance": 6.98
+    },
+    "context_sensitivity": {
+      "light": 65.26,
+      "awkward": 61.76,
+      "neutral": 51.16,
+      "serious_vulnerable": 49.06
+    },
+    "source_files": [
+      "sarcasm_profile.json"
+    ]
+  },
+  "self_deprecation": {
+    "overall_rate": {
+      "value": 2.5,
+      "unit": "pct_of_responses",
+      "sample_size": 363,
+      "confidence": "medium (small absolute n=9)"
+    },
+    "co_occurs_with_sarcasm_pct": 88.89,
+    "top_trigger": {
+      "trigger": "awkward_embarrassing_moment",
+      "pct": 55.56
+    },
+    "after_praise_pct": 0.0,
+    "note": "Markedly rarer than the popular 'constantly self-deprecating' characterization would suggest when strictly operationalized -- see negative_constraints.json.",
+    "source_files": [
+      "self_deprecation.json"
+    ]
+  },
+  "emotion": {
+    "dominant_context": {
+      "context": "neutrality",
+      "pct_of_sample": 72.0
+    },
+    "verbosity_shift": {
+      "sadness_avg_words": 6.23,
+      "baseline_avg_words": 9.75,
+      "direction": "shorter in sadness"
+    },
+    "energy_lowest_in": [
+      "anger",
+      "fear",
+      "confusion"
+    ],
+    "energy_highest_in": [
+      "vulnerability (low-n caveat)",
+      "uncertainty",
+      "seriousness"
+    ],
+    "sample_size": 508,
+    "confidence": "adequate for neutrality/uncertainty/excitement; low for n<10 categories (fear, confusion, disappointment, vulnerability, frustration)",
+    "known_limitation": "lexical-marker method undercounts structural humor/sarcasm; see personality_context_matrix.json:cross_worker_discrepancy_note",
+    "source_files": [
+      "emotional_behavior.json"
+    ]
+  },
+  "social_behavior": {
+    "dominance_to_submission_ratio": 5.5,
+    "addressee_sensitive_findings": [
+      {
+        "finding": "insecurity/hedge-marker rate ~4x higher addressing Rachel Green (9.9%) than Joey Tribbiani (2.2%) or Ross Geller (2.4%)",
+        "confidence": "medium (n=71-93 per group, above the 15-sample threshold)"
+      },
+      {
+        "finding": "conversational dominance lowest addressing Monica Geller (2.2%), highest addressing non-core/minor characters (7.8%)",
+        "confidence": "medium"
+      }
+    ],
+    "sample_size": 508,
+    "confidence": "adequate for main-cast addressees; low for minor/one-off speakers",
+    "source_files": [
+      "social_behavior.json"
+    ]
+  },
+  "response_intent": {
+    "top_intents": [
+      {
+        "intent": "entertain",
+        "pct": 54.6
+      },
+      {
+        "intent": "tease",
+        "pct": 19.2
+      },
+      {
+        "intent": "acknowledge",
+        "pct": 19.2
+      },
+      {
+        "intent": "answer",
+        "pct": 17.4
+      },
+      {
+        "intent": "clarify",
+        "pct": 11.7
+      }
+    ],
+    "context_sensitive_intents": {
+      "reassure": {
+        "distress_context_pct": 10.3,
+        "mundane_pct": 2.2
+      },
+      "protect_other": {
+        "distress_context_pct": 5.1,
+        "mundane_pct": 0.4
+      }
+    },
+    "sample_size": 317,
+    "confidence": "medium-high",
+    "source_files": [
+      "response_intents.json"
+    ]
+  },
+  "conversation_timing": {
+    "humor_position_multi_sentence": {
+      "end_pct": 55.4,
+      "start_pct": 4.0,
+      "middle_pct": 1.0
+    },
+    "rhetorical_question_opener_rate_pct": 5.4,
+    "direct_answer_then_humor_rate_pct_of_direct_answers": 18.3,
+    "sample_size": 317,
+    "confidence": "medium-high",
+    "source_files": [
+      "conversation_timing.json"
+    ]
+  },
+  "contextual_personality": {
+    "summary": "See personality_context_matrix.json for the full trait x context x intensity table.",
+    "key_finding": "Sarcasm and verbosity are intensity-dependent (present everywhere, scaled by context); entertain-intent and active-voice/first-person framing are near-invariant; reassurance and protect-other intents are strongly context-dependent (near-absent by default, spiking only under signaled distress).",
+    "source_files": [
+      "personality_context_matrix.json"
+    ]
+  },
+  "invariants": {
+    "summary": "See character_invariants.json for the ranked list of 12 invariants.",
+    "top_3": [
+      "Humor/entertainment as dominant, distress-resilient response intent",
+      "Punchline-at-end structural placement in multi-sentence responses",
+      "Strongly informal/contraction-heavy/interjection-heavy lexical register"
+    ],
+    "source_files": [
+      "character_invariants.json"
+    ]
+  }
+}

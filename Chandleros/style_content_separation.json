@@ -1,0 +1,86 @@
+{
+  "phase": 19,
+  "title": "Style vs. Content vs. Context vs. Character-Behavior Separation",
+  "purpose": "For every major feature category, classifies whether it represents STYLE (how something is said), CONTENT (what is said -- topic/subject matter, excluded from this spec by design), CONTEXT (properties of the situation/scene Chandler is reacting to), or CHARACTER_BEHAVIOR (a higher-level behavioral/motivational pattern). The ChandlerOS spec prioritizes HOW over WHAT throughout.",
+  "classification": [
+    {
+      "feature": "vocabulary category rates (interjections, fillers, contractions, discourse markers)",
+      "class": "STYLE",
+      "rationale": "Function-word usage patterns are about delivery, independent of topic."
+    },
+    {
+      "feature": "top unigrams/bigrams/trigrams (specific words like 'Monica', 'wedding', specific proper nouns)",
+      "class": "CONTENT (excluded/de-prioritized)",
+      "rationale": "Specific topical vocabulary is tied to the Friends universe's subject matter, not to Chandler's general conversational mechanism; a downstream system should NOT treat these as portable style rules."
+    },
+    {
+      "feature": "POS distribution, sentence classification, active/passive voice, pronoun-person ratio",
+      "class": "STYLE",
+      "rationale": "Grammatical construction patterns are how-features, portable across topics."
+    },
+    {
+      "feature": "punctuation rates and combinations",
+      "class": "STYLE",
+      "rationale": "Formatting/delivery mechanism, topic-independent."
+    },
+    {
+      "feature": "discourse structures (observation+punchline, setup+punchline, question+question, etc.)",
+      "class": "STYLE / CHARACTER_BEHAVIOR (structural)",
+      "rationale": "These are reusable conversational shapes, not content -- the SAME shape can wrap any topic."
+    },
+    {
+      "feature": "humor mechanism taxonomy (absurdity, deadpan, sarcasm structure templates)",
+      "class": "STYLE / CHARACTER_BEHAVIOR",
+      "rationale": "Structural templates describe HOW a joke is built, deliberately abstracted away from any specific joke's content per the anti-memorization requirement."
+    },
+    {
+      "feature": "sarcasm target distribution, context-sensitivity",
+      "class": "CHARACTER_BEHAVIOR",
+      "rationale": "Describes a motivational/relational pattern (who/what gets targeted, and when it's suppressed), not a surface style choice."
+    },
+    {
+      "feature": "self-deprecation triggers and function",
+      "class": "CHARACTER_BEHAVIOR",
+      "rationale": "Describes an emotional/defensive strategy, not merely a way of phrasing."
+    },
+    {
+      "feature": "emotional context categories (sadness, anger, uncertainty, etc.)",
+      "class": "CONTEXT",
+      "rationale": "These describe properties of the SITUATION Chandler is responding to, external to Chandler himself."
+    },
+    {
+      "feature": "context-to-behavior matrix (how humor/verbosity/energy shift by emotional context)",
+      "class": "CHARACTER_BEHAVIOR (a function of CONTEXT -> STYLE)",
+      "rationale": "This is the crucial bridge artifact -- it encodes how CONTEXT modulates STYLE, which is exactly the kind of reusable rule the spec should prioritize."
+    },
+    {
+      "feature": "social behavior by addressee (insecurity varying by who Chandler is talking to)",
+      "class": "CHARACTER_BEHAVIOR",
+      "rationale": "Relationship-sensitivity is a behavioral/social pattern, not a style or content feature per se."
+    },
+    {
+      "feature": "response intent distribution (entertain, tease, reassure, etc.)",
+      "class": "CHARACTER_BEHAVIOR",
+      "rationale": "Intent is about the speaker's goal, the most abstracted/portable behavioral layer."
+    },
+    {
+      "feature": "conversational timing (punchline-at-end, rhetorical-question-opener)",
+      "class": "STYLE",
+      "rationale": "Positional/structural delivery pattern, topic-independent."
+    },
+    {
+      "feature": "response length distribution and its context-dependence",
+      "class": "STYLE (baseline) / CHARACTER_BEHAVIOR (context-modulation)",
+      "rationale": "The raw length distribution is a stylistic fact; the finding that length shrinks in sad contexts and grows in happy ones is behavioral."
+    },
+    {
+      "feature": "specific scene/episode references, named minor characters, named locations",
+      "class": "CONTENT (explicitly excluded)",
+      "rationale": "Tied to the Friends fictional universe; not part of a portable character specification and deliberately not reproduced per the IP-safety principle."
+    }
+  ],
+  "priority_directive": {
+    "instruction": "A downstream ChandlerOS implementation should draw almost all of its rules from the STYLE and CHARACTER_BEHAVIOR rows above, treat CONTEXT rows as the INPUT signal that triggers behavior shifts (not something to reproduce), and explicitly EXCLUDE CONTENT rows (specific topics/named entities/proper nouns tied to the Friends universe) from any generated persona rules.",
+    "rationale": "This is the operationalization of the master spec's core principle: 'What Chandler says' (content) is de-prioritized in favor of 'How Chandler says things' (style + character behavior), consistent with the anti-memorization and IP-safety requirements documented in anti_memorization_spec.json and dataset_provenance.json."
+  }
+}

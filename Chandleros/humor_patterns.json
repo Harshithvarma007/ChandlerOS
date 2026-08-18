@@ -1,0 +1,1686 @@
+{
+  "_meta": {
+    "sample_size": 425,
+    "humorous_in_sample": 340,
+    "measurement_method": "systematic stratified sample (every ~6th row within each response-length tercile, ordered by id), classified via semantic LLM judgment across 4 independent raters (chunked), aggregated programmatically",
+    "confidence_tiers": "high: n>=50 humorous instances in sample; medium: 20-49; low: <20 (exploratory, directional only)",
+    "field_status": "all frequencies/splits below are INFERRED from the sample, tagged sample_n per mechanism"
+  },
+  "mechanisms": {
+    "sarcasm": {
+      "sample_n": 81,
+      "confidence": "high",
+      "setup_structure": "another character makes a statement or takes an action",
+      "transition_structure": "speaker replies using words that literally mean the opposite of, or overstate, the sincere response",
+      "payoff_structure": "tone/context signals the literal meaning is not intended, producing a mocking or needling effect",
+      "typical_target": {
+        "distribution": {
+          "other": 56,
+          "situation": 14,
+          "self": 8,
+          "object": 3
+        },
+        "dominant": "other"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 79,
+          "tag_end": 2
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "moderate": 42,
+          "mild": 21,
+          "strong": 18
+        },
+        "dominant": "moderate"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 68,
+          "implicit": 13
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "long": 36,
+          "medium": 31,
+          "short": 14
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "amused",
+          7
+        ],
+        [
+          "dry",
+          7
+        ],
+        [
+          "sarcastic",
+          6
+        ],
+        [
+          "annoyed",
+          5
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Monica Geller",
+          21
+        ],
+        [
+          "Joey Tribbiani",
+          15
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "absurdity": {
+      "sample_n": 91,
+      "confidence": "high",
+      "setup_structure": "context is grounded in an ordinary or realistic circumstance",
+      "transition_structure": "speaker introduces a surreal, illogical, or physically/socially impossible element",
+      "payoff_structure": "no attempt is made to reconcile the absurd element with reality",
+      "typical_target": {
+        "distribution": {
+          "situation": 41,
+          "object": 3,
+          "other": 19,
+          "self": 14,
+          "abstract": 14
+        },
+        "dominant": "situation"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 86,
+          "embedded": 1,
+          "tag_end": 4
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "moderate": 37,
+          "mild": 9,
+          "strong": 45
+        },
+        "dominant": "strong"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 83,
+          "implicit": 8
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "short": 18,
+          "long": 46,
+          "medium": 27
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "deadpan",
+          15
+        ],
+        [
+          "playful",
+          11
+        ],
+        [
+          "amused",
+          9
+        ],
+        [
+          "deflecting",
+          4
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Ross Geller",
+          24
+        ],
+        [
+          "Monica Geller",
+          23
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "deadpan": {
+      "sample_n": 84,
+      "confidence": "high",
+      "setup_structure": "response contains genuinely absurd, exaggerated, or biting content",
+      "transition_structure": "delivery/framing is flat, sincere-sounding, or matter-of-fact with no signal of amusement",
+      "payoff_structure": "the contrast between wild content and flat delivery is the mechanism itself",
+      "typical_target": {
+        "distribution": {
+          "situation": 36,
+          "other": 29,
+          "self": 10,
+          "abstract": 7,
+          "object": 2
+        },
+        "dominant": "situation"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 82,
+          "embedded": 1,
+          "tag_end": 1
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "mild": 38,
+          "moderate": 38,
+          "strong": 8
+        },
+        "dominant": "mild"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 52,
+          "implicit": 32
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "medium": 27,
+          "short": 36,
+          "long": 21
+        },
+        "dominant": "short"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "deadpan",
+          22
+        ],
+        [
+          "resigned",
+          6
+        ],
+        [
+          "flat",
+          5
+        ],
+        [
+          "awkward",
+          4
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Monica Geller",
+          16
+        ],
+        [
+          "Joey Tribbiani",
+          16
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "exaggeration": {
+      "sample_n": 59,
+      "confidence": "high",
+      "setup_structure": "context presents a real but bounded problem, feeling, or scale",
+      "transition_structure": "speaker inflates the scope, stakes, or numbers well past realistic proportion",
+      "payoff_structure": "the gap between real and stated magnitude produces the comic effect",
+      "typical_target": {
+        "distribution": {
+          "other": 26,
+          "situation": 17,
+          "self": 14,
+          "object": 2
+        },
+        "dominant": "other"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 54,
+          "tag_end": 5
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "moderate": 19,
+          "mild": 12,
+          "strong": 28
+        },
+        "dominant": "strong"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 55,
+          "implicit": 4
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "long": 33,
+          "medium": 17,
+          "short": 9
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "anxious",
+          5
+        ],
+        [
+          "exasperated",
+          5
+        ],
+        [
+          "amused",
+          4
+        ],
+        [
+          "wry",
+          4
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Monica Geller",
+          15
+        ],
+        [
+          "Ross Geller",
+          13
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "deflection": {
+      "sample_n": 30,
+      "confidence": "medium",
+      "setup_structure": "context poses a direct, often uncomfortable or probing question or topic",
+      "transition_structure": "speaker responds with a joke instead of substantive engagement",
+      "payoff_structure": "the topic is avoided while appearing to have been addressed",
+      "typical_target": {
+        "distribution": {
+          "situation": 13,
+          "object": 1,
+          "self": 8,
+          "other": 6,
+          "abstract": 2
+        },
+        "dominant": "situation"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 28,
+          "embedded": 1,
+          "tag_end": 1
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "moderate": 17,
+          "strong": 8,
+          "mild": 5
+        },
+        "dominant": "moderate"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 22,
+          "implicit": 8
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "short": 5,
+          "medium": 9,
+          "long": 16
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "deflecting",
+          3
+        ],
+        [
+          "awkward",
+          3
+        ],
+        [
+          "nervous",
+          3
+        ],
+        [
+          "evasive",
+          3
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Joey Tribbiani",
+          8
+        ],
+        [
+          "Monica Geller",
+          8
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "understatement": {
+      "sample_n": 43,
+      "confidence": "medium",
+      "setup_structure": "context presents an event that is emotionally or practically significant",
+      "transition_structure": "speaker describes it in flat, minimizing, or dismissive terms",
+      "payoff_structure": "the mismatch between severity and description produces the comic effect",
+      "typical_target": {
+        "distribution": {
+          "situation": 20,
+          "other": 10,
+          "self": 12,
+          "abstract": 1
+        },
+        "dominant": "situation"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 41,
+          "tag_end": 2
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "moderate": 17,
+          "mild": 24,
+          "strong": 2
+        },
+        "dominant": "mild"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 19,
+          "implicit": 24
+        },
+        "dominant": "implicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "short": 19,
+          "long": 15,
+          "medium": 9
+        },
+        "dominant": "short"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "deadpan",
+          9
+        ],
+        [
+          "resigned",
+          3
+        ],
+        [
+          "sheepish",
+          2
+        ],
+        [
+          "nervous",
+          2
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Monica Geller",
+          12
+        ],
+        [
+          "other_character",
+          10
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "incongruity": {
+      "sample_n": 43,
+      "confidence": "medium",
+      "setup_structure": "two elements (tone, register, content, formality) are juxtaposed within the same response",
+      "transition_structure": "the elements are individually plausible but clash against one another",
+      "payoff_structure": "the unresolved clash, rather than any resolution, is the joke",
+      "typical_target": {
+        "distribution": {
+          "situation": 24,
+          "other": 10,
+          "self": 5,
+          "abstract": 2,
+          "object": 2
+        },
+        "dominant": "situation"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 39,
+          "embedded": 1,
+          "tag_end": 3
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "moderate": 23,
+          "strong": 8,
+          "mild": 12
+        },
+        "dominant": "moderate"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 35,
+          "implicit": 8
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "short": 13,
+          "long": 17,
+          "medium": 13
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "awkward",
+          6
+        ],
+        [
+          "deadpan",
+          4
+        ],
+        [
+          "amused",
+          3
+        ],
+        [
+          "playful",
+          2
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Monica Geller",
+          14
+        ],
+        [
+          "Ross Geller",
+          7
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "misdirection": {
+      "sample_n": 36,
+      "confidence": "medium",
+      "setup_structure": "speaker's opening words build toward an expected direction or conclusion",
+      "transition_structure": "speaker abruptly pivots to an unrelated or contradictory ending",
+      "payoff_structure": "the swerve, not the content of either half alone, creates the surprise",
+      "typical_target": {
+        "distribution": {
+          "situation": 21,
+          "object": 2,
+          "other": 4,
+          "self": 7,
+          "abstract": 2
+        },
+        "dominant": "situation"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 33,
+          "embedded": 1,
+          "tag_end": 2
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "mild": 7,
+          "strong": 14,
+          "moderate": 15
+        },
+        "dominant": "moderate"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "implicit": 9,
+          "explicit": 27
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "medium": 13,
+          "long": 18,
+          "short": 5
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "playful",
+          3
+        ],
+        [
+          "deflecting",
+          3
+        ],
+        [
+          "nervous",
+          2
+        ],
+        [
+          "awkward",
+          2
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Rachel Green",
+          10
+        ],
+        [
+          "Joey Tribbiani",
+          7
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "rhetorical_humor": {
+      "sample_n": 46,
+      "confidence": "medium",
+      "setup_structure": "context presents a scenario that seems to call for an obvious response",
+      "transition_structure": "speaker poses a rhetorical question or device instead of answering directly",
+      "payoff_structure": "the rhetorical framing itself carries the comic point (mock incredulity, feigned disbelief)",
+      "typical_target": {
+        "distribution": {
+          "other": 22,
+          "self": 7,
+          "situation": 13,
+          "abstract": 3,
+          "object": 1
+        },
+        "dominant": "other"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 44,
+          "tag_end": 2
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "mild": 18,
+          "strong": 7,
+          "moderate": 21
+        },
+        "dominant": "moderate"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 38,
+          "implicit": 8
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "medium": 21,
+          "long": 18,
+          "short": 7
+        },
+        "dominant": "medium"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "dry",
+          6
+        ],
+        [
+          "amused",
+          4
+        ],
+        [
+          "incredulous",
+          4
+        ],
+        [
+          "wry",
+          3
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Ross Geller",
+          15
+        ],
+        [
+          "Monica Geller",
+          13
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "callback": {
+      "sample_n": 33,
+      "confidence": "medium",
+      "setup_structure": "a detail or phrase is established earlier within the given context window",
+      "transition_structure": "speaker's response re-invokes that same detail in a new frame",
+      "payoff_structure": "recognition of the repetition, not the content alone, produces the humor",
+      "typical_target": {
+        "distribution": {
+          "abstract": 3,
+          "self": 8,
+          "other": 15,
+          "situation": 6,
+          "object": 1
+        },
+        "dominant": "other"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 33
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "mild": 11,
+          "moderate": 11,
+          "strong": 11
+        },
+        "dominant": "mild"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 28,
+          "implicit": 5
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "medium": 8,
+          "short": 13,
+          "long": 12
+        },
+        "dominant": "short"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "wry",
+          3
+        ],
+        [
+          "gleeful",
+          2
+        ],
+        [
+          "resigned",
+          2
+        ],
+        [
+          "sheepish",
+          2
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Monica Geller",
+          11
+        ],
+        [
+          "Ross Geller",
+          7
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "awkwardness": {
+      "sample_n": 27,
+      "confidence": "medium",
+      "setup_structure": "context creates social tension, an unanswerable question, or an uncomfortable silence",
+      "transition_structure": "speaker's response fills the gap without resolving the discomfort",
+      "payoff_structure": "the discomfort itself, made visible rather than smoothed over, is the source of humor",
+      "typical_target": {
+        "distribution": {
+          "other": 4,
+          "self": 16,
+          "situation": 7
+        },
+        "dominant": "self"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 24,
+          "tag_end": 2,
+          "embedded": 1
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "strong": 3,
+          "mild": 12,
+          "moderate": 12
+        },
+        "dominant": "mild"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 14,
+          "implicit": 13
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "long": 14,
+          "medium": 6,
+          "short": 7
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "awkward",
+          8
+        ],
+        [
+          "anxious",
+          3
+        ],
+        [
+          "nervous",
+          3
+        ],
+        [
+          "panicked",
+          2
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Joey Tribbiani",
+          6
+        ],
+        [
+          "Ross Geller",
+          6
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "wordplay": {
+      "sample_n": 33,
+      "confidence": "medium",
+      "setup_structure": "context or the speaker's own words contain a term with two or more possible meanings, or a similar-sounding alternative",
+      "transition_structure": "speaker's response activates the secondary or homophonic meaning",
+      "payoff_structure": "recognizing both meanings at once is what produces the humor",
+      "typical_target": {
+        "distribution": {
+          "other": 11,
+          "situation": 6,
+          "self": 6,
+          "abstract": 9,
+          "object": 1
+        },
+        "dominant": "other"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 33
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "strong": 10,
+          "moderate": 17,
+          "mild": 6
+        },
+        "dominant": "moderate"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 31,
+          "implicit": 2
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "long": 14,
+          "medium": 10,
+          "short": 9
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "amused",
+          6
+        ],
+        [
+          "dry",
+          4
+        ],
+        [
+          "deadpan",
+          4
+        ],
+        [
+          "wry",
+          3
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Monica Geller",
+          11
+        ],
+        [
+          "Joey Tribbiani",
+          7
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "unexpected_comparison": {
+      "sample_n": 34,
+      "confidence": "medium",
+      "setup_structure": "context includes a person, object, or situation that needs describing",
+      "transition_structure": "speaker maps it onto an incongruous domain via simile, metaphor, or analogy",
+      "payoff_structure": "the distance between the two domains generates the humor",
+      "typical_target": {
+        "distribution": {
+          "object": 3,
+          "situation": 8,
+          "self": 9,
+          "abstract": 3,
+          "other": 11
+        },
+        "dominant": "other"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 32,
+          "tag_end": 2
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "strong": 21,
+          "moderate": 13
+        },
+        "dominant": "strong"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 34
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "medium": 10,
+          "long": 23,
+          "short": 1
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "deadpan",
+          6
+        ],
+        [
+          "playful",
+          4
+        ],
+        [
+          "amused",
+          3
+        ],
+        [
+          "wry",
+          2
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Monica Geller",
+          12
+        ],
+        [
+          "Joey Tribbiani",
+          7
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "observational_humor": {
+      "sample_n": 15,
+      "confidence": "low",
+      "setup_structure": "context surfaces a mundane or specific situation",
+      "transition_structure": "speaker generalizes it into a broader pattern about people, relationships, or life",
+      "payoff_structure": "the generalization is delivered as a shared, recognizable truth",
+      "typical_target": {
+        "distribution": {
+          "other": 10,
+          "abstract": 2,
+          "self": 1,
+          "situation": 2
+        },
+        "dominant": "other"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 15
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "moderate": 8,
+          "strong": 5,
+          "mild": 2
+        },
+        "dominant": "moderate"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 14,
+          "implicit": 1
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "long": 10,
+          "medium": 5
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "wry",
+          3
+        ],
+        [
+          "incredulous",
+          3
+        ],
+        [
+          "amused",
+          3
+        ],
+        [
+          "deflecting",
+          1
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Rachel Green",
+          4
+        ],
+        [
+          "Monica Geller",
+          4
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "irony": {
+      "sample_n": 48,
+      "confidence": "medium",
+      "setup_structure": "a stated expectation or norm is established by the context",
+      "transition_structure": "the actual outcome, or the speaker's own framing, directly contradicts that expectation",
+      "payoff_structure": "the contradiction itself, not a direct insult, generates the humor",
+      "typical_target": {
+        "distribution": {
+          "other": 14,
+          "situation": 15,
+          "self": 17,
+          "abstract": 1,
+          "object": 1
+        },
+        "dominant": "self"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 44,
+          "tag_end": 4
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "mild": 19,
+          "moderate": 23,
+          "strong": 6
+        },
+        "dominant": "moderate"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 37,
+          "implicit": 11
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "medium": 16,
+          "long": 20,
+          "short": 12
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "wry",
+          9
+        ],
+        [
+          "deadpan",
+          5
+        ],
+        [
+          "amused",
+          5
+        ],
+        [
+          "sheepish",
+          4
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Monica Geller",
+          12
+        ],
+        [
+          "Joey Tribbiani",
+          11
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "self_deprecation": {
+      "sample_n": 24,
+      "confidence": "medium",
+      "setup_structure": "context presents the speaker in a flattering, high-stakes, or neutral light",
+      "transition_structure": "speaker reframes the situation to lower his own status, competence, or worth",
+      "payoff_structure": "speaker becomes the target of the joke rather than anyone else",
+      "typical_target": {
+        "distribution": {
+          "self": 23,
+          "situation": 1
+        },
+        "dominant": "self"
+      },
+      "conversational_position": {
+        "distribution": {
+          "tag_end": 3,
+          "whole_response": 21
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "strong": 8,
+          "mild": 6,
+          "moderate": 10
+        },
+        "dominant": "moderate"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 19,
+          "implicit": 5
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "long": 17,
+          "medium": 6,
+          "short": 1
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "wry",
+          4
+        ],
+        [
+          "sheepish",
+          3
+        ],
+        [
+          "dry",
+          2
+        ],
+        [
+          "nervous",
+          2
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Rachel Green",
+          6
+        ],
+        [
+          "Monica Geller",
+          6
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "situational_humor": {
+      "sample_n": 19,
+      "confidence": "low",
+      "setup_structure": "the circumstance established by context is inherently embarrassing, ironic, or ill-timed",
+      "transition_structure": "speaker's response simply describes, acknowledges, or reacts to the circumstance",
+      "payoff_structure": "no wordplay or twist is needed; the situation itself supplies the comedy",
+      "typical_target": {
+        "distribution": {
+          "situation": 13,
+          "self": 5,
+          "other": 1
+        },
+        "dominant": "situation"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 18,
+          "embedded": 1
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "mild": 14,
+          "strong": 1,
+          "moderate": 4
+        },
+        "dominant": "mild"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "implicit": 14,
+          "explicit": 5
+        },
+        "dominant": "implicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "medium": 8,
+          "long": 3,
+          "short": 8
+        },
+        "dominant": "medium"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "panicked",
+          2
+        ],
+        [
+          "awkward",
+          2
+        ],
+        [
+          "amused",
+          2
+        ],
+        [
+          "playful",
+          1
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Rachel Green",
+          5
+        ],
+        [
+          "Monica Geller",
+          4
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "meta_humor": {
+      "sample_n": 17,
+      "confidence": "low",
+      "setup_structure": "context involves the act of talking, storytelling, or a conversational convention itself",
+      "transition_structure": "speaker comments on the conversation, the joke, or the narrative frame rather than its content",
+      "payoff_structure": "breaking frame (acknowledging the 'bit', the audience, or the format) creates the effect",
+      "typical_target": {
+        "distribution": {
+          "self": 6,
+          "situation": 5,
+          "other": 5,
+          "abstract": 1
+        },
+        "dominant": "self"
+      },
+      "conversational_position": {
+        "distribution": {
+          "tag_end": 1,
+          "whole_response": 15,
+          "embedded": 1
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "strong": 6,
+          "moderate": 4,
+          "mild": 7
+        },
+        "dominant": "mild"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 16,
+          "implicit": 1
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "long": 8,
+          "medium": 4,
+          "short": 5
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "playful",
+          2
+        ],
+        [
+          "nervous",
+          2
+        ],
+        [
+          "anxious",
+          1
+        ],
+        [
+          "mock-desperate",
+          1
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Rachel Green",
+          7
+        ],
+        [
+          "Phoebe Buffay",
+          5
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "escalation": {
+      "sample_n": 31,
+      "confidence": "medium",
+      "setup_structure": "speaker begins with one comic claim or example",
+      "transition_structure": "each subsequent clause or sentence ratchets the claim further in severity, quantity, or absurdity",
+      "payoff_structure": "the joke peaks with the final, most extreme item in the sequence",
+      "typical_target": {
+        "distribution": {
+          "other": 12,
+          "self": 12,
+          "situation": 6,
+          "object": 1
+        },
+        "dominant": "other"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 28,
+          "tag_end": 3
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "moderate": 16,
+          "strong": 13,
+          "mild": 2
+        },
+        "dominant": "moderate"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 27,
+          "implicit": 4
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "long": 22,
+          "medium": 7,
+          "short": 2
+        },
+        "dominant": "long"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "mocking",
+          3
+        ],
+        [
+          "wry",
+          3
+        ],
+        [
+          "anxious",
+          3
+        ],
+        [
+          "exasperated",
+          3
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Joey Tribbiani",
+          9
+        ],
+        [
+          "Ross Geller",
+          7
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "conversational_humor": {
+      "sample_n": 12,
+      "confidence": "low",
+      "setup_structure": "a banter/teasing exchange is already underway between speaker and another character",
+      "transition_structure": "speaker's line extends, volleys, or one-ups the previous line in the same playful register",
+      "payoff_structure": "the humor depends on the back-and-forth rhythm, not on any single line standing alone",
+      "typical_target": {
+        "distribution": {
+          "other": 7,
+          "situation": 3,
+          "self": 2
+        },
+        "dominant": "other"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 12
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "mild": 11,
+          "moderate": 1
+        },
+        "dominant": "mild"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 7,
+          "implicit": 5
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "medium": 5,
+          "short": 7
+        },
+        "dominant": "short"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "playful",
+          3
+        ],
+        [
+          "wry",
+          1
+        ],
+        [
+          "amused",
+          1
+        ],
+        [
+          "teasing",
+          1
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Rachel Green",
+          4
+        ],
+        [
+          "Joey Tribbiani",
+          3
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "literal_interpretation": {
+      "sample_n": 24,
+      "confidence": "medium",
+      "setup_structure": "another speaker uses a figurative, idiomatic, or rhetorical phrase",
+      "transition_structure": "speaker responds by treating the phrase as though it means exactly what it literally says",
+      "payoff_structure": "the literal reading exposes an absurdity or unintended meaning hidden in the phrase",
+      "typical_target": {
+        "distribution": {
+          "situation": 12,
+          "abstract": 4,
+          "self": 4,
+          "object": 2,
+          "other": 2
+        },
+        "dominant": "situation"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 23,
+          "tag_end": 1
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "mild": 8,
+          "moderate": 13,
+          "strong": 3
+        },
+        "dominant": "moderate"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "implicit": 7,
+          "explicit": 17
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "long": 7,
+          "medium": 9,
+          "short": 8
+        },
+        "dominant": "medium"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "deadpan",
+          11
+        ],
+        [
+          "confused",
+          2
+        ],
+        [
+          "dry",
+          2
+        ],
+        [
+          "flat",
+          2
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Joey Tribbiani",
+          6
+        ],
+        [
+          "Rachel Green",
+          5
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    },
+    "reversal": {
+      "sample_n": 18,
+      "confidence": "low",
+      "setup_structure": "context or the early part of the response sets up one role, outcome, or expectation",
+      "transition_structure": "the ending flips that role, outcome, or expectation, often onto the speaker or another party",
+      "payoff_structure": "the flip recontextualizes everything said before it",
+      "typical_target": {
+        "distribution": {
+          "other": 8,
+          "situation": 5,
+          "self": 5
+        },
+        "dominant": "other"
+      },
+      "conversational_position": {
+        "distribution": {
+          "whole_response": 15,
+          "tag_end": 3
+        },
+        "dominant": "whole_response",
+        "note": "whole_response = entire line is the joke; tag_end = sincere lead-in then a zinger; embedded = joke sits mid-response among other content"
+      },
+      "intensity": {
+        "distribution": {
+          "moderate": 9,
+          "mild": 5,
+          "strong": 4
+        },
+        "dominant": "moderate"
+      },
+      "explicit_vs_implicit": {
+        "distribution": {
+          "explicit": 15,
+          "implicit": 3
+        },
+        "dominant": "explicit"
+      },
+      "typical_response_length_tercile": {
+        "distribution": {
+          "long": 5,
+          "medium": 8,
+          "short": 5
+        },
+        "dominant": "medium"
+      },
+      "co-occurring_emotional_state_top": [
+        [
+          "deadpan",
+          3
+        ],
+        [
+          "defensive",
+          2
+        ],
+        [
+          "awkward",
+          1
+        ],
+        [
+          "meek",
+          1
+        ]
+      ],
+      "typical_context_last_speaker_top2": [
+        [
+          "Monica Geller",
+          5
+        ],
+        [
+          "Rachel Green",
+          4
+        ]
+      ],
+      "typical_context_note": "last_speaker distribution largely tracks each character's overall share of context lines in the sample; treat as weak/directional signal, not a strong per-mechanism trigger, except where a mechanism's distribution diverges notably from the overall sampled baseline (Monica Geller 95, Joey Tribbiani 88, Ross Geller 80, Rachel Green 63, other_character 47, Phoebe Buffay 47 out of 425 sampled context lines)."
+    }
+  }
+}

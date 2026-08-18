@@ -1,0 +1,477 @@
+{
+  "_meta": {
+    "phase": "Phase 7 - Humor Analysis (ChandlerOS)",
+    "dataset_total_rows": 2535,
+    "sample_size": 425,
+    "sampling_method": "Systematic stratified sample by id. Full dataset split into three strata by response_word_count terciles (tercile boundaries at word counts <=5 'short', 6-10 'medium', >10 'long', computed on full 2535-row distribution). Within each stratum, rows sorted by id and every 6th row taken systematically.",
+    "stratum_sizes_full_dataset": {
+      "short": 973,
+      "medium": 745,
+      "long": 817
+    },
+    "stratum_sizes_sample": {
+      "short": 163,
+      "medium": 125,
+      "long": 137
+    },
+    "categories_used": [
+      "sarcasm",
+      "absurdity",
+      "deadpan",
+      "exaggeration",
+      "deflection",
+      "understatement",
+      "incongruity",
+      "misdirection",
+      "rhetorical_humor",
+      "callback",
+      "awkwardness",
+      "wordplay",
+      "unexpected_comparison",
+      "observational_humor",
+      "irony",
+      "self_deprecation",
+      "situational_humor",
+      "meta_humor",
+      "escalation",
+      "conversational_humor",
+      "literal_interpretation",
+      "reversal"
+    ],
+    "num_categories": 22,
+    "measurement_method": "Each sampled row's context_raw + response_raw read and semantically judged (not keyword-matched) by 4 independent LLM classification passes (chunked ~107 rows each, same rubric/definitions), multi-label mechanism tagging allowed, then tabulated programmatically with Python/collections. No inter-rater reconciliation pass was run across chunks (each chunk independently but consistently instructed) -- treat cross-chunk consistency as a limitation.",
+    "value_status_legend": "OBSERVED = directly counted in sample; INFERRED = sample-based estimate extrapolated/generalized to the full 2535-row dataset or to sub-populations; HYPOTHESIS = qualitative interpretation not directly counted",
+    "note_on_sarcasm_self_deprecation": "sarcasm and self_deprecation are included here only for taxonomy/co-occurrence completeness; deep target/trigger/intensity analysis for these two mechanisms is owned by dedicated workers elsewhere in the project and is not duplicated here."
+  },
+  "overall_humor_rate": {
+    "humorous_in_sample": 340,
+    "sample_size": 425,
+    "humor_rate_pct_OBSERVED_in_sample": 80.0,
+    "inferred_humorous_rows_full_dataset": 2028,
+    "inferred_humor_rate_pct_full_dataset": 80.0,
+    "status": "sample value OBSERVED; full-dataset count/rate INFERRED"
+  },
+  "humor_rate_by_response_length_tercile": {
+    "short": {
+      "sample_n": 163,
+      "humorous_n": 97,
+      "humor_rate_pct": 59.5
+    },
+    "medium": {
+      "sample_n": 125,
+      "humorous_n": 114,
+      "humor_rate_pct": 91.2
+    },
+    "long": {
+      "sample_n": 137,
+      "humorous_n": 129,
+      "humor_rate_pct": 94.2
+    },
+    "status": "OBSERVED in sample; pattern (longer responses far more likely to carry humor) treated as INFERRED for full dataset",
+    "interpretation_HYPOTHESIS": "very short responses (<=5 words) are disproportionately plain acknowledgments/agreements/questions; humor mechanisms need at least a short clause to establish a setup+payoff contrast, so humor density rises sharply with length up to the medium tier and plateaus in the long tier."
+  },
+  "mechanism_ranking": [
+    {
+      "mechanism": "absurdity",
+      "sample_count": 91,
+      "pct_of_humorous_sample": 26.8,
+      "pct_of_all_sampled_rows": 21.4,
+      "extrapolated_count_full_dataset_2535": 543,
+      "confidence": "high",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "deadpan",
+      "sample_count": 84,
+      "pct_of_humorous_sample": 24.7,
+      "pct_of_all_sampled_rows": 19.8,
+      "extrapolated_count_full_dataset_2535": 501,
+      "confidence": "high",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "sarcasm",
+      "sample_count": 81,
+      "pct_of_humorous_sample": 23.8,
+      "pct_of_all_sampled_rows": 19.1,
+      "extrapolated_count_full_dataset_2535": 483,
+      "confidence": "high",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "exaggeration",
+      "sample_count": 59,
+      "pct_of_humorous_sample": 17.4,
+      "pct_of_all_sampled_rows": 13.9,
+      "extrapolated_count_full_dataset_2535": 352,
+      "confidence": "high",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "irony",
+      "sample_count": 48,
+      "pct_of_humorous_sample": 14.1,
+      "pct_of_all_sampled_rows": 11.3,
+      "extrapolated_count_full_dataset_2535": 286,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "rhetorical_humor",
+      "sample_count": 46,
+      "pct_of_humorous_sample": 13.5,
+      "pct_of_all_sampled_rows": 10.8,
+      "extrapolated_count_full_dataset_2535": 274,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "understatement",
+      "sample_count": 43,
+      "pct_of_humorous_sample": 12.6,
+      "pct_of_all_sampled_rows": 10.1,
+      "extrapolated_count_full_dataset_2535": 256,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "incongruity",
+      "sample_count": 43,
+      "pct_of_humorous_sample": 12.6,
+      "pct_of_all_sampled_rows": 10.1,
+      "extrapolated_count_full_dataset_2535": 256,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "misdirection",
+      "sample_count": 36,
+      "pct_of_humorous_sample": 10.6,
+      "pct_of_all_sampled_rows": 8.5,
+      "extrapolated_count_full_dataset_2535": 215,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "unexpected_comparison",
+      "sample_count": 34,
+      "pct_of_humorous_sample": 10.0,
+      "pct_of_all_sampled_rows": 8.0,
+      "extrapolated_count_full_dataset_2535": 203,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "callback",
+      "sample_count": 33,
+      "pct_of_humorous_sample": 9.7,
+      "pct_of_all_sampled_rows": 7.8,
+      "extrapolated_count_full_dataset_2535": 197,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "wordplay",
+      "sample_count": 33,
+      "pct_of_humorous_sample": 9.7,
+      "pct_of_all_sampled_rows": 7.8,
+      "extrapolated_count_full_dataset_2535": 197,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "escalation",
+      "sample_count": 31,
+      "pct_of_humorous_sample": 9.1,
+      "pct_of_all_sampled_rows": 7.3,
+      "extrapolated_count_full_dataset_2535": 185,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "deflection",
+      "sample_count": 30,
+      "pct_of_humorous_sample": 8.8,
+      "pct_of_all_sampled_rows": 7.1,
+      "extrapolated_count_full_dataset_2535": 179,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "awkwardness",
+      "sample_count": 27,
+      "pct_of_humorous_sample": 7.9,
+      "pct_of_all_sampled_rows": 6.4,
+      "extrapolated_count_full_dataset_2535": 161,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "self_deprecation",
+      "sample_count": 24,
+      "pct_of_humorous_sample": 7.1,
+      "pct_of_all_sampled_rows": 5.6,
+      "extrapolated_count_full_dataset_2535": 143,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "literal_interpretation",
+      "sample_count": 24,
+      "pct_of_humorous_sample": 7.1,
+      "pct_of_all_sampled_rows": 5.6,
+      "extrapolated_count_full_dataset_2535": 143,
+      "confidence": "medium",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "situational_humor",
+      "sample_count": 19,
+      "pct_of_humorous_sample": 5.6,
+      "pct_of_all_sampled_rows": 4.5,
+      "extrapolated_count_full_dataset_2535": 113,
+      "confidence": "low",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "reversal",
+      "sample_count": 18,
+      "pct_of_humorous_sample": 5.3,
+      "pct_of_all_sampled_rows": 4.2,
+      "extrapolated_count_full_dataset_2535": 107,
+      "confidence": "low",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "meta_humor",
+      "sample_count": 17,
+      "pct_of_humorous_sample": 5.0,
+      "pct_of_all_sampled_rows": 4.0,
+      "extrapolated_count_full_dataset_2535": 101,
+      "confidence": "low",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "observational_humor",
+      "sample_count": 15,
+      "pct_of_humorous_sample": 4.4,
+      "pct_of_all_sampled_rows": 3.5,
+      "extrapolated_count_full_dataset_2535": 89,
+      "confidence": "low",
+      "status": "INFERRED"
+    },
+    {
+      "mechanism": "conversational_humor",
+      "sample_count": 12,
+      "pct_of_humorous_sample": 3.5,
+      "pct_of_all_sampled_rows": 2.8,
+      "extrapolated_count_full_dataset_2535": 72,
+      "confidence": "low",
+      "status": "INFERRED"
+    }
+  ],
+  "co_occurrence_pairs_top20": [
+    {
+      "mechanism_a": "deadpan",
+      "mechanism_b": "understatement",
+      "co_occurrence_count": 24,
+      "pct_of_humorous_sample": 7.1
+    },
+    {
+      "mechanism_a": "absurdity",
+      "mechanism_b": "exaggeration",
+      "co_occurrence_count": 20,
+      "pct_of_humorous_sample": 5.9
+    },
+    {
+      "mechanism_a": "deadpan",
+      "mechanism_b": "sarcasm",
+      "co_occurrence_count": 19,
+      "pct_of_humorous_sample": 5.6
+    },
+    {
+      "mechanism_a": "absurdity",
+      "mechanism_b": "misdirection",
+      "co_occurrence_count": 19,
+      "pct_of_humorous_sample": 5.6
+    },
+    {
+      "mechanism_a": "absurdity",
+      "mechanism_b": "unexpected_comparison",
+      "co_occurrence_count": 19,
+      "pct_of_humorous_sample": 5.6
+    },
+    {
+      "mechanism_a": "absurdity",
+      "mechanism_b": "deadpan",
+      "co_occurrence_count": 18,
+      "pct_of_humorous_sample": 5.3
+    },
+    {
+      "mechanism_a": "irony",
+      "mechanism_b": "sarcasm",
+      "co_occurrence_count": 15,
+      "pct_of_humorous_sample": 4.4
+    },
+    {
+      "mechanism_a": "deadpan",
+      "mechanism_b": "literal_interpretation",
+      "co_occurrence_count": 15,
+      "pct_of_humorous_sample": 4.4
+    },
+    {
+      "mechanism_a": "exaggeration",
+      "mechanism_b": "sarcasm",
+      "co_occurrence_count": 14,
+      "pct_of_humorous_sample": 4.1
+    },
+    {
+      "mechanism_a": "absurdity",
+      "mechanism_b": "wordplay",
+      "co_occurrence_count": 14,
+      "pct_of_humorous_sample": 4.1
+    },
+    {
+      "mechanism_a": "rhetorical_humor",
+      "mechanism_b": "sarcasm",
+      "co_occurrence_count": 13,
+      "pct_of_humorous_sample": 3.8
+    },
+    {
+      "mechanism_a": "escalation",
+      "mechanism_b": "exaggeration",
+      "co_occurrence_count": 12,
+      "pct_of_humorous_sample": 3.5
+    },
+    {
+      "mechanism_a": "absurdity",
+      "mechanism_b": "incongruity",
+      "co_occurrence_count": 12,
+      "pct_of_humorous_sample": 3.5
+    },
+    {
+      "mechanism_a": "deadpan",
+      "mechanism_b": "irony",
+      "co_occurrence_count": 12,
+      "pct_of_humorous_sample": 3.5
+    },
+    {
+      "mechanism_a": "absurdity",
+      "mechanism_b": "deflection",
+      "co_occurrence_count": 11,
+      "pct_of_humorous_sample": 3.2
+    },
+    {
+      "mechanism_a": "irony",
+      "mechanism_b": "understatement",
+      "co_occurrence_count": 11,
+      "pct_of_humorous_sample": 3.2
+    },
+    {
+      "mechanism_a": "deadpan",
+      "mechanism_b": "incongruity",
+      "co_occurrence_count": 10,
+      "pct_of_humorous_sample": 2.9
+    },
+    {
+      "mechanism_a": "absurdity",
+      "mechanism_b": "escalation",
+      "co_occurrence_count": 10,
+      "pct_of_humorous_sample": 2.9
+    },
+    {
+      "mechanism_a": "absurdity",
+      "mechanism_b": "sarcasm",
+      "co_occurrence_count": 9,
+      "pct_of_humorous_sample": 2.6
+    },
+    {
+      "mechanism_a": "sarcasm",
+      "mechanism_b": "unexpected_comparison",
+      "co_occurrence_count": 9,
+      "pct_of_humorous_sample": 2.6
+    }
+  ],
+  "co_occurrence_notes_HYPOTHESIS": [
+    "deadpan pairs most often with understatement and sarcasm: flat delivery is the vehicle, understatement/sarcasm the content -- consistent with deadpan being a delivery-mode tag that layers onto a content-mechanism rather than a standalone joke type.",
+    "absurdity pairs most often with misdirection and exaggeration: absurd content is frequently reached via a swerve (misdirection) or via inflating a real premise past the point of realism (exaggeration), suggesting absurdity is often the *result* of one of those two setup techniques rather than an independent structure.",
+    "sarcasm pairs with exaggeration, irony, and rhetorical_humor at above-baseline rates, suggesting sarcasm in this corpus is usually delivered *through* one of these adjacent techniques rather than as bare tonal negation alone."
+  ],
+  "multi_label_structure": {
+    "mean_mechanisms_per_humorous_response": 2.49,
+    "max_mechanisms_in_single_response": 5,
+    "responses_with_more_than_one_mechanism_pct": 90.9,
+    "interpretation_HYPOTHESIS": "Chandler's humor is rarely a single clean mechanism; the modal humorous line stacks 2-3 mechanisms (e.g. a delivery-mode tag like deadpan layered onto a content mechanism like exaggeration or absurdity, aimed at a target)."
+  },
+  "overall_distributions_humorous_rows": {
+    "target": {
+      "other": 117,
+      "situation": 117,
+      "self": 76,
+      "abstract": 20,
+      "object": 10
+    },
+    "conversational_position": {
+      "whole_response": 324,
+      "tag_end": 14,
+      "embedded": 2
+    },
+    "intensity": {
+      "moderate": 141,
+      "mild": 127,
+      "strong": 72
+    },
+    "explicit_vs_implicit": {
+      "explicit": 248,
+      "implicit": 92
+    },
+    "top_emotional_states": [
+      [
+        "deadpan",
+        34
+      ],
+      [
+        "amused",
+        23
+      ],
+      [
+        "playful",
+        18
+      ],
+      [
+        "wry",
+        15
+      ],
+      [
+        "awkward",
+        15
+      ],
+      [
+        "dry",
+        11
+      ],
+      [
+        "nervous",
+        9
+      ],
+      [
+        "anxious",
+        8
+      ],
+      [
+        "exasperated",
+        8
+      ],
+      [
+        "annoyed",
+        7
+      ]
+    ],
+    "status": "OBSERVED in sample, one dominant value tallied per humorous row"
+  },
+  "response_length_signal": {
+    "avg_word_count_humorous_rows": 10.76,
+    "avg_word_count_non_humorous_rows": 4.62,
+    "status": "OBSERVED in sample"
+  }
+}

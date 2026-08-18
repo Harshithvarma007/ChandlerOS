@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "worker": "Syntax/Rhythm Analyst",
+    "phase": "Phase 4 - Sentence Structure",
+    "sample_size_responses": 2535,
+    "sample_size_sentences": 3768,
+    "measurement_method": "Computed programmatically from parsed_dataset.json using regex word/punctuation tokenization plus nltk pos_tag/word_tokenize for POS-based heuristics (finite-verb and clause detection). All rule-based classifications are heuristic, not a syntactic parse.",
+    "iid_note": "Records are i.i.d. (not sequential); all 'response' stats are within a single Chandler turn, not across turns.",
+    "quartile_definition": "Responses bucketed into quartiles by response_word_count over the full dataset (Q1<=4.0, Q2<=7.0, Q3<=12.0, Q4>12.0 words)."
+  },
+  "sentence_length": {
+    "tag": "OBSERVED",
+    "description": "Words per sentence (using response_sentences, re-tokenized on [A-Za-z'] word boundaries).",
+    "overall": {
+      "n": 3768,
+      "mean": 6.311,
+      "median": 5.0,
+      "stdev": 5.042,
+      "min": 0,
+      "max": 37,
+      "p25": 3.0,
+      "p75": 9.0,
+      "p90": 13.0
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "n": 831,
+        "mean": 2.178,
+        "median": 2,
+        "stdev": 1.137,
+        "min": 0,
+        "max": 4,
+        "p25": 1.0,
+        "p75": 3.0,
+        "p90": 4
+      },
+      "Q2_medlow": {
+        "n": 649,
+        "mean": 4.924,
+        "median": 5,
+        "stdev": 1.827,
+        "min": 1,
+        "max": 7,
+        "p25": 4,
+        "p75": 6,
+        "p90": 7.0
+      },
+      "Q3_medhigh": {
+        "n": 855,
+        "mean": 6.712,
+        "median": 8,
+        "stdev": 3.265,
+        "min": 1,
+        "max": 12,
+        "p25": 4.0,
+        "p75": 9.0,
+        "p90": 11.0
+      },
+      "Q4_long": {
+        "n": 1433,
+        "mean": 9.097,
+        "median": 8,
+        "stdev": 6.294,
+        "min": 1,
+        "max": 37,
+        "p25": 4,
+        "p75": 13,
+        "p90": 17.0
+      }
+    }
+  },
+  "within_response_sentence_length_variance": {
+    "tag": "OBSERVED",
+    "description": "Stdev of sentence lengths (words) computed within each multi-sentence response, then aggregated across responses. Measures rhythmic variability (e.g. long-setup/short-payoff) within a single turn.",
+    "sample_size": 778,
+    "note": "Only defined for responses with >=2 sentences (778 of 2535 = 30.7% of responses).",
+    "stats": {
+      "n": 778,
+      "mean": 3.772,
+      "median": 2.828,
+      "stdev": 3.438,
+      "min": 0.0,
+      "max": 22.627,
+      "p25": 1.414,
+      "p75": 5.128,
+      "p90": 7.778
+    }
+  },
+  "clause_count_per_sentence": {
+    "tag": "INFERRED",
+    "description": "Heuristic clause estimate = 1 (base clause) + count of coordinating conjunctions (and/but/or/nor/for/yet/so) and subordinating conjunctions/relative pronouns (because/if/when/which/who/that/etc.) + 1 bonus if sentence has >=2 commas (proxy for additional embedded clause/aside).",
+    "overall": {
+      "n": 3768,
+      "mean": 1.554,
+      "median": 1.0,
+      "stdev": 0.915,
+      "min": 1,
+      "max": 8,
+      "p25": 1.0,
+      "p75": 2.0,
+      "p90": 3.0
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "n": 831,
+        "mean": 1.111,
+        "median": 1,
+        "stdev": 0.34,
+        "min": 1,
+        "max": 3,
+        "p25": 1.0,
+        "p75": 1.0,
+        "p90": 2
+      },
+      "Q2_medlow": {
+        "n": 649,
+        "mean": 1.353,
+        "median": 1,
+        "stdev": 0.596,
+        "min": 1,
+        "max": 4,
+        "p25": 1,
+        "p75": 2,
+        "p90": 2.0
+      },
+      "Q3_medhigh": {
+        "n": 855,
+        "mean": 1.575,
+        "median": 1,
+        "stdev": 0.794,
+        "min": 1,
+        "max": 5,
+        "p25": 1.0,
+        "p75": 2.0,
+        "p90": 3.0
+      },
+      "Q4_long": {
+        "n": 1433,
+        "mean": 1.89,
+        "median": 1,
+        "stdev": 1.164,
+        "min": 1,
+        "max": 8,
+        "p25": 1,
+        "p75": 2,
+        "p90": 4.0
+      }
+    }
+  },
+  "sentence_classification": {
+    "tag": "INFERRED",
+    "description": "Rule-based classification per sentence: compound = has coordinating conjunction (FANBOYS) and no subordinator/relative pronoun; complex = has subordinator/relative pronoun and no coordinating conjunction; compound_complex = has both; simple = neither. This is a surface lexical heuristic, not a constituency parse, and will over/under-count 'that' and 'so' due to their dual grammatical roles.",
+    "overall_counts": {
+      "simple": 2593,
+      "compound": 506,
+      "complex": 462,
+      "compound_complex": 207
+    },
+    "overall_distribution_pct": {
+      "simple": 68.82,
+      "compound": 13.43,
+      "complex": 12.26,
+      "compound_complex": 5.49
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "total_sentences": 831,
+        "distribution_pct": {
+          "simple": 90.61,
+          "complex": 6.26,
+          "compound": 3.01,
+          "compound_complex": 0.12
+        }
+      },
+      "Q2_medlow": {
+        "total_sentences": 649,
+        "distribution_pct": {
+          "simple": 74.88,
+          "compound": 12.48,
+          "complex": 10.17,
+          "compound_complex": 2.47
+        }
+      },
+      "Q3_medhigh": {
+        "total_sentences": 855,
+        "distribution_pct": {
+          "simple": 64.91,
+          "complex": 14.27,
+          "compound": 17.08,
+          "compound_complex": 3.74
+        }
+      },
+      "Q4_long": {
+        "total_sentences": 1433,
+        "distribution_pct": {
+          "simple": 55.76,
+          "compound": 17.73,
+          "complex": 15.49,
+          "compound_complex": 11.03
+        }
+      }
+    }
+  },
+  "sentence_fragments": {
+    "tag": "INFERRED",
+    "description": "A sentence is flagged a fragment if ANY of: (a) no finite verb present (no VBP/VBZ/VBD/MD POS tag, and not an imperative starting with base-form VB), (b) it starts with a lowercase letter despite not being the first sentence in the response (suggests a mid-thought continuation/typo-like break), (c) it is <=2 words and ends in '!' (short exclamatory fragment, e.g. interjections).",
+    "overall": {
+      "count": 1298,
+      "total": 3768,
+      "rate": 0.3445,
+      "pct": 34.45
+    },
+    "by_response_length_quartile": {
+      "Q1_short": {
+        "count": 588,
+        "total": 831,
+        "rate": 0.7076,
+        "pct": 70.76
+      },
+      "Q2_medlow": {
+        "count": 196,
+        "total": 649,
+        "rate": 0.302,
+        "pct": 30.2
+      },
+      "Q3_medhigh": {
+        "count": 201,
+        "total": 855,
+        "rate": 0.2351,
+        "pct": 23.51
+      },
+      "Q4_long": {
+        "count": 313,
+        "total": 1433,
+        "rate": 0.2184,
+        "pct": 21.84
+      }
+    },
+    "fragment_usage_pattern": {
+      "tag": "HYPOTHESIS",
+      "description": "Cannot directly observe authorial intent. As a proxy: fragments that are the SOLE sentence of a response are labeled 'by_convention' (natural short reactive utterance, e.g. a one-word reaction); fragments occurring within a multi-sentence response (i.e., alongside at least one other sentence) are labeled 'likely_intentional' (stylistic beat/afterthought/interruption effect).",
+      "by_convention_solo_response": 613,
+      "likely_intentional_multi_sentence": 685,
+      "pct_of_all_fragments_by_convention": 47.23,
+      "pct_of_all_fragments_intentional": 52.77
+    }
+  }
+}
